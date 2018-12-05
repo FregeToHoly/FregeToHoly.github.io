@@ -8,7 +8,7 @@
 #+PROPERTY:  header-args :padline no
 #+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
 
-* [[~/Mythings/FregeToHoly.github.io/index.html][home]]
+* [[../../../index.html][home]]
 * Preface
 * chapter1
 * chapter2
