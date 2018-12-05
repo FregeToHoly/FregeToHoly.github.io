@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-06 Thu 02:41 -->
+<!-- 2018-12-06 Thu 02:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My collections</title>
@@ -243,40 +243,40 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0ebb82b">1. About me</a></li>
-<li><a href="#org9286a85">2. 정리과정</a>
+<li><a href="#org40b47dd">1. About me</a></li>
+<li><a href="#org5b389be">2. 정리과정</a>
 <ul>
-<li><a href="#org8c5b476">2.1. Project만들기 -(step 1)</a>
+<li><a href="#org6a2eda8">2.1. Project만들기 -(step 1)</a>
 <ul>
-<li><a href="#orgdf6850b">2.1.1. github 만들기.</a></li>
-<li><a href="#org59e7f5d">2.1.2. project folder</a></li>
-<li><a href="#orgf894b82">2.1.3. [기술] magit 사용법</a>
+<li><a href="#org302c0a0">2.1.1. github 만들기.</a></li>
+<li><a href="#org23a7f2f">2.1.2. project folder</a></li>
+<li><a href="#orgdd6cf51">2.1.3. [기술] magit 사용법</a>
 <ul>
-<li><a href="#org54d2051">magit 설치</a></li>
-<li><a href="#orgccf48dd">magit clone</a></li>
-<li><a href="#org788f437">magit add</a></li>
-<li><a href="#org9460d70">magit commit</a></li>
-<li><a href="#org65a8522">magit push</a></li>
+<li><a href="#org7f7d430">magit 설치</a></li>
+<li><a href="#org5ac08a7">magit clone</a></li>
+<li><a href="#org6ed2cb6">magit add</a></li>
+<li><a href="#org4f2f950">magit commit</a></li>
+<li><a href="#org963d0f9">magit push</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge8c5c78">2.2. Project만들기 -(step 2)</a>
+<li><a href="#orgea59dda">2.2. Project만들기 -(step 2)</a>
 <ul>
-<li><a href="#org4a97ecc">2.2.1. [기술] yasnippet사용법</a></li>
-<li><a href="#org2f543f0">2.2.2. yasnippet list</a>
+<li><a href="#orgd9e9c28">2.2.1. [기술] yasnippet사용법</a></li>
+<li><a href="#org4292a06">2.2.2. yasnippet list</a>
 <ul>
-<li><a href="#orgb1ed7c8">readtheorg header</a></li>
-<li><a href="#org5efb15f">admonition list</a></li>
+<li><a href="#org9cfb0ef">readtheorg header</a></li>
+<li><a href="#org8b9469e">admonition list</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf051844">2.3. Project만들기 -(step 3)</a>
+<li><a href="#org35b41cf">2.3. Project만들기 -(step 3)</a>
 <ul>
-<li><a href="#orga1c3d87">2.3.1. Domain구입</a></li>
-<li><a href="#org517d852">2.3.2. github settings</a></li>
-<li><a href="#orgac0e6d9">2.3.3. gabia settings</a></li>
+<li><a href="#org5fa258e">2.3.1. Domain구입</a></li>
+<li><a href="#orga68a372">2.3.2. github settings</a></li>
+<li><a href="#org5215168">2.3.3. gabia settings</a></li>
 </ul>
 </li>
 </ul>
@@ -284,8 +284,8 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org0ebb82b" class="outline-2">
-<h2 id="org0ebb82b"><span class="section-number-2">1</span> About me</h2>
+<div id="outline-container-org40b47dd" class="outline-2">
+<h2 id="org40b47dd"><span class="section-number-2">1</span> About me</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
 . 가난한 사람.
@@ -305,20 +305,20 @@ framework?를 사용하기로 했다. 그런데 예상과 달리, 복잡한 과�
 </div>
 </div>
 </div>
-<div id="outline-container-org9286a85" class="outline-2">
-<h2 id="org9286a85"><span class="section-number-2">2</span> 정리과정</h2>
+<div id="outline-container-org5b389be" class="outline-2">
+<h2 id="org5b389be"><span class="section-number-2">2</span> 정리과정</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org8c5b476" class="outline-3">
-<h3 id="org8c5b476"><span class="section-number-3">2.1</span> Project만들기 -(step 1)</h3>
+<div id="outline-container-org6a2eda8" class="outline-3">
+<h3 id="org6a2eda8"><span class="section-number-3">2.1</span> Project만들기 -(step 1)</h3>
 <div class="outline-text-3" id="text-2-1">
 <p class="verse">
 첫번째 단계는 github에 repository를 만들고, local에 clone하고 changes를 github에 반영하기 위해서<br />
 git명령어를 알아야 한다.<br />
 </p>
 </div>
-<div id="outline-container-orgdf6850b" class="outline-4">
-<h4 id="orgdf6850b"><span class="section-number-4">2.1.1</span> github 만들기.</h4>
+<div id="outline-container-org302c0a0" class="outline-4">
+<h4 id="org302c0a0"><span class="section-number-4">2.1.1</span> github 만들기.</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 내가 쓴 글을 저장하고 웹으로 보여주기 위해 첫번째로 해야 할건, github에 계정을 만드는 것이다.
@@ -327,8 +327,8 @@ git명령어를 알아야 한다.<br />
 </div>
 </div>
 
-<div id="outline-container-org59e7f5d" class="outline-4">
-<h4 id="org59e7f5d"><span class="section-number-4">2.1.2</span> project folder</h4>
+<div id="outline-container-org23a7f2f" class="outline-4">
+<h4 id="org23a7f2f"><span class="section-number-4">2.1.2</span> project folder</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 github을 만들었기 때문에 clone하면 RetroCS폴더가 만들어진다. 여기서 원하는 폴더와 문서를 작성하면 된다.
@@ -337,8 +337,8 @@ github을 만들었기 때문에 clone하면 RetroCS폴더가 만들어진다. �
 </div>
 </div>
 
-<div id="outline-container-orgf894b82" class="outline-4">
-<h4 id="orgf894b82"><span class="section-number-4">2.1.3</span> [기술] magit 사용법</h4>
+<div id="outline-container-orgdd6cf51" class="outline-4">
+<h4 id="orgdd6cf51"><span class="section-number-4">2.1.3</span> [기술] magit 사용법</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 github을 만들었기 때문에 github 저장소와 local machine간의 파일 전송및 이력관리를 위해 git을 사용할 줄 알아야 한다.
@@ -346,9 +346,9 @@ emacs를 사용하기 때문에 magit을 사용한다. 모든 기능을 살펴�
 </p>
 </div>
 
-<div id="outline-container-org54d2051" class="outline-5">
-<h5 id="org54d2051">magit 설치</h5>
-<div class="outline-text-5" id="text-org54d2051">
+<div id="outline-container-org7f7d430" class="outline-5">
+<h5 id="org7f7d430">magit 설치</h5>
+<div class="outline-text-5" id="text-org7f7d430">
 
 <div class="figure">
 <p><img src="./img/magit.png" alt="magit.png" />
@@ -356,9 +356,9 @@ emacs를 사용하기 때문에 magit을 사용한다. 모든 기능을 살펴�
 </div>
 </div>
 </div>
-<div id="outline-container-orgccf48dd" class="outline-5">
-<h5 id="orgccf48dd">magit clone</h5>
-<div class="outline-text-5" id="text-orgccf48dd">
+<div id="outline-container-org5ac08a7" class="outline-5">
+<h5 id="org5ac08a7">magit clone</h5>
+<div class="outline-text-5" id="text-org5ac08a7">
 <p>
 좋은 동영상이 있어서 참조한다. 
 </p>
@@ -373,9 +373,9 @@ M-x magit-clone을 입력한 후, clone할 source address, target address를 입
 </p>
 </div>
 </div>
-<div id="outline-container-org788f437" class="outline-5">
-<h5 id="org788f437">magit add</h5>
-<div class="outline-text-5" id="text-org788f437">
+<div id="outline-container-org6ed2cb6" class="outline-5">
+<h5 id="org6ed2cb6">magit add</h5>
+<div class="outline-text-5" id="text-org6ed2cb6">
 <div class="tip">
 <p>
 C-x g를 누르면 현재 git status(상태)가 보인다. untracked files(unstaged files)이 있다면 s를 눌러서 stage로 
@@ -391,9 +391,9 @@ C-x g를 누르면 현재 git status(상태)가 보인다. untracked files(unsta
 </p>
 </div>
 </div>
-<div id="outline-container-org9460d70" class="outline-5">
-<h5 id="org9460d70">magit commit</h5>
-<div class="outline-text-5" id="text-org9460d70">
+<div id="outline-container-org4f2f950" class="outline-5">
+<h5 id="org4f2f950">magit commit</h5>
+<div class="outline-text-5" id="text-org4f2f950">
 <div class="tip">
 <p>
 staged changes라고 붙은 label아래 파일에 커서를 놓고 c를 누르면 popup menu가 뜬다.
@@ -411,9 +411,9 @@ label에 커서를 올려놓으면 모든파일을 한번에 commit할 수 있�
 </p>
 </div>
 </div>
-<div id="outline-container-org65a8522" class="outline-5">
-<h5 id="org65a8522">magit push</h5>
-<div class="outline-text-5" id="text-org65a8522">
+<div id="outline-container-org963d0f9" class="outline-5">
+<h5 id="org963d0f9">magit push</h5>
+<div class="outline-text-5" id="text-org963d0f9">
 <div class="tip">
 <p>
 push는 p를 누르면 push가 될꺼 같지만, 그렇지 않다. 왜냐면 p는 previous line과 mapping되어
@@ -432,16 +432,16 @@ push는 p를 누르면 push가 될꺼 같지만, 그렇지 않다. 왜냐면 p�
 </div>
 </div>
 </div>
-<div id="outline-container-orge8c5c78" class="outline-3">
-<h3 id="orge8c5c78"><span class="section-number-3">2.2</span> Project만들기 -(step 2)</h3>
+<div id="outline-container-orgea59dda" class="outline-3">
+<h3 id="orgea59dda"><span class="section-number-3">2.2</span> Project만들기 -(step 2)</h3>
 <div class="outline-text-3" id="text-2-2">
 <p class="verse">
 2번째 단계에선 우리가 문서를 만든다. readtheorg형식을 단축키로 사용하기. admonition list 사용하는법을<br />
 기술한다.<br />
 </p>
 </div>
-<div id="outline-container-org4a97ecc" class="outline-4">
-<h4 id="org4a97ecc"><span class="section-number-4">2.2.1</span> [기술] yasnippet사용법</h4>
+<div id="outline-container-orgd9e9c28" class="outline-4">
+<h4 id="orgd9e9c28"><span class="section-number-4">2.2.1</span> [기술] yasnippet사용법</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <div class="important">
 <p>
@@ -465,21 +465,21 @@ push는 p를 누르면 push가 될꺼 같지만, 그렇지 않다. 왜냐면 p�
 </div>
 </div>
 
-<div id="outline-container-org2f543f0" class="outline-4">
-<h4 id="org2f543f0"><span class="section-number-4">2.2.2</span> yasnippet list</h4>
+<div id="outline-container-org4292a06" class="outline-4">
+<h4 id="org4292a06"><span class="section-number-4">2.2.2</span> yasnippet list</h4>
 <div class="outline-text-4" id="text-2-2-2">
 </div>
-<div id="outline-container-orgb1ed7c8" class="outline-5">
-<h5 id="orgb1ed7c8">readtheorg header</h5>
-<div class="outline-text-5" id="text-orgb1ed7c8">
+<div id="outline-container-org9cfb0ef" class="outline-5">
+<h5 id="org9cfb0ef">readtheorg header</h5>
+<div class="outline-text-5" id="text-org9cfb0ef">
 <pre class="example">
 snippet삽입할때 name(readtheorg_header)을 선택한다.      
 </pre>
 </div>
 </div>
-<div id="outline-container-org5efb15f" class="outline-5">
-<h5 id="org5efb15f">admonition list</h5>
-<div class="outline-text-5" id="text-org5efb15f">
+<div id="outline-container-org8b9469e" class="outline-5">
+<h5 id="org8b9469e">admonition list</h5>
+<div class="outline-text-5" id="text-org8b9469e">
 <p>
 (1) name:bnote     
 </p>
@@ -596,8 +596,8 @@ but not any simpler. &#x2013; Albert Einstein<br />
 </div>
 </div>
 </div>
-<div id="outline-container-orgf051844" class="outline-3">
-<h3 id="orgf051844"><span class="section-number-3">2.3</span> Project만들기 -(step 3)</h3>
+<div id="outline-container-org35b41cf" class="outline-3">
+<h3 id="org35b41cf"><span class="section-number-3">2.3</span> Project만들기 -(step 3)</h3>
 <div class="outline-text-3" id="text-2-3">
 <div class="tip">
 <p>
@@ -606,8 +606,8 @@ but not any simpler. &#x2013; Albert Einstein<br />
 
 </div>
 </div>
-<div id="outline-container-orga1c3d87" class="outline-4">
-<h4 id="orga1c3d87"><span class="section-number-4">2.3.1</span> Domain구입</h4>
+<div id="outline-container-org5fa258e" class="outline-4">
+<h4 id="org5fa258e"><span class="section-number-4">2.3.1</span> Domain구입</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -635,8 +635,8 @@ but not any simpler. &#x2013; Albert Einstein<br />
 </table>
 </div>
 </div>
-<div id="outline-container-org517d852" class="outline-4">
-<h4 id="org517d852"><span class="section-number-4">2.3.2</span> github settings</h4>
+<div id="outline-container-orga68a372" class="outline-4">
+<h4 id="orga68a372"><span class="section-number-4">2.3.2</span> github settings</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <p>
 github에서 github<sub>id.github.io란</sub> repository를 만든다. settings에서 custom domain을 설정.
@@ -648,8 +648,8 @@ github에서 github<sub>id.github.io란</sub> repository를 만든다. settings�
 </p>
 </div>
 </div>
-<div id="outline-container-orgac0e6d9" class="outline-4">
-<h4 id="orgac0e6d9"><span class="section-number-4">2.3.3</span> gabia settings</h4>
+<div id="outline-container-org5215168" class="outline-4">
+<h4 id="org5215168"><span class="section-number-4">2.3.3</span> gabia settings</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <p>
 gabia의 dns를 세팅한다.
@@ -662,7 +662,7 @@ gabia의 dns를 세팅한다.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-06 Thu 02:41</p>
+<p class="date">Created: 2018-12-06 Thu 02:42</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
