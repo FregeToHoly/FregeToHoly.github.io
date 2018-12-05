@@ -8,7 +8,7 @@
 #+PROPERTY:  header-args :padline no
 #+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
 
-* [[../../../index.html][home]]
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
 * Preface
 * chapter1
 * chapter2

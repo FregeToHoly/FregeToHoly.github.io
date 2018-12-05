@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-06 Thu 03:33 -->
+<!-- 2018-12-06 Thu 03:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Code</title>
@@ -243,34 +243,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9331d51">1. home</a></li>
-<li><a href="#orgbfb4618">2. Preface</a></li>
-<li><a href="#org51de414">3. chapter1</a></li>
-<li><a href="#org378e04b">4. chapter2</a></li>
-<li><a href="#orgeb06f2e">5. chapter3</a></li>
+<li><a href="#org8f67315">1. Preface</a></li>
+<li><a href="#orgbfc544f">2. chapter1</a></li>
+<li><a href="#org7622ba3">3. chapter2</a></li>
+<li><a href="#orgc306d95">4. chapter3</a></li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org9331d51" class="outline-2">
-<h2 id="org9331d51"><span class="section-number-2">1</span> <a href="../../../../index.html">home</a></h2>
+<ul class="org-ul">
+<li>go back <a href="http://www.holytofrege.space/index.html">home</a></li>
+</ul>
+<div id="outline-container-org8f67315" class="outline-2">
+<h2 id="org8f67315"><span class="section-number-2">1</span> Preface</h2>
 </div>
-<div id="outline-container-orgbfb4618" class="outline-2">
-<h2 id="orgbfb4618"><span class="section-number-2">2</span> Preface</h2>
+<div id="outline-container-orgbfc544f" class="outline-2">
+<h2 id="orgbfc544f"><span class="section-number-2">2</span> chapter1</h2>
 </div>
-<div id="outline-container-org51de414" class="outline-2">
-<h2 id="org51de414"><span class="section-number-2">3</span> chapter1</h2>
+<div id="outline-container-org7622ba3" class="outline-2">
+<h2 id="org7622ba3"><span class="section-number-2">3</span> chapter2</h2>
 </div>
-<div id="outline-container-org378e04b" class="outline-2">
-<h2 id="org378e04b"><span class="section-number-2">4</span> chapter2</h2>
-</div>
-<div id="outline-container-orgeb06f2e" class="outline-2">
-<h2 id="orgeb06f2e"><span class="section-number-2">5</span> chapter3</h2>
+<div id="outline-container-orgc306d95" class="outline-2">
+<h2 id="orgc306d95"><span class="section-number-2">4</span> chapter3</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-06 Thu 03:33</p>
+<p class="date">Created: 2018-12-06 Thu 03:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
