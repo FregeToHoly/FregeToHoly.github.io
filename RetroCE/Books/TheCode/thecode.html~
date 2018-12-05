@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-06 Thu 03:02 -->
+<!-- 2018-12-06 Thu 03:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Code</title>
@@ -243,17 +243,29 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org091b88c">1. Preface</a></li>
+<li><a href="#orgccc5858">1. Preface</a></li>
+<li><a href="#org5323569">2. chapter1</a></li>
+<li><a href="#org1eda48c">3. chapter2</a></li>
+<li><a href="#orgdbdca60">4. chapter3</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org091b88c" class="outline-2">
-<h2 id="org091b88c"><span class="section-number-2">1</span> Preface</h2>
+<div id="outline-container-orgccc5858" class="outline-2">
+<h2 id="orgccc5858"><span class="section-number-2">1</span> Preface</h2>
+</div>
+<div id="outline-container-org5323569" class="outline-2">
+<h2 id="org5323569"><span class="section-number-2">2</span> chapter1</h2>
+</div>
+<div id="outline-container-org1eda48c" class="outline-2">
+<h2 id="org1eda48c"><span class="section-number-2">3</span> chapter2</h2>
+</div>
+<div id="outline-container-orgdbdca60" class="outline-2">
+<h2 id="orgdbdca60"><span class="section-number-2">4</span> chapter3</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-06 Thu 03:02</p>
+<p class="date">Created: 2018-12-06 Thu 03:13</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
