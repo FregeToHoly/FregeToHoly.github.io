@@ -10,6 +10,8 @@
 
 - if you want go back?  [[http://www.holytofrege.space/index.html][home]]
 * Preface
+** 저자
+   
 * chapter1
 * chapter2
 * chapter3
