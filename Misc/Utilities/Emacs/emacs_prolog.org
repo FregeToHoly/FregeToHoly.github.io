@@ -1,0 +1,47 @@
+#+TITLE: Emacs에서 prolog 사용하기
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
+* 설정및 사용과정
+ #+begin_attention
+ Emacs는 Prolog engine이 없다. Emacs안에는 lisp interpreter처럼 built-in된 Prolog compiler, interpreter가 없다. 그래서 local system에
+prolog를 설치하고 연동해서 사용하는 방식이다. 아래 그림을 그려봤다.
+ #+end_attention
+[[./img/connectprolog.png]]
+** prolog connect swi-prolog
+    #+begin_attention
+    1) swi-prolog를 local에 설치한다.
+    2) prolog.el을 emacs에 설치한다.
+    3) 설정 파일에서 두개를 연결한다.
+    [[./img/prologsetting1.png]]
+    #+end_attention
+** edi-prolog의 사용
+    #+begin_attention
+    edi-prolog는 emacs buffer의 prolog 코드를 local의 swi-prolog에서 실행하게 만들어주는 툴이다.
+    설정은 https://www.metalevel.at/ediprolog/ 여기를 참조하면 된다.
+    #+end_attention
+** edi-prolog 설정 수정.
+    #+begin_attention
+    edi-prolog가 /usr/bin/pl과 연동되어 있을 수 있다. 그럴경우 제대로 수행이 안될 수 있기 때문에, 재설정이 필요하다.
+    1) M-x customize-group
+    2) ediprolog <enter
+    3) /usr/bin/pl을 /usr/local/bin/swipl로 변경해준다.
+
+    #+end_attention
+** prolog 코딩과 실행.
+    #+begin_attention
+    1) emacs buffer를 열고 coding을 한다.
+    2) query같은 경우는 ?-query-statement를 작성하고 edi-prolog로 실행한다.
+    3) consult도 가능하다.
+
+       자세한 설명은 동영상을 참조하자.
+    https://www.youtube.com/watch?v=e8Ftse6Vk1I&feature=youtu.be
+    #+end_attention
+
+

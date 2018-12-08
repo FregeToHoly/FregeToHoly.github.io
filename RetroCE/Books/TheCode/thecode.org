@@ -11,7 +11,19 @@
 - if you want go back?  [[http://www.holytofrege.space/index.html][home]]
 * Preface
 ** 저자
-   
+   찰스 페졸드(Charles Petzold)
+   #+begin_center
+   [[./img/charles.jpg]]   
+   #+end_center
+** 저자의 말
+    #+begin_quote
+    10년 정도 고민해서 만든 책. 사람들에게 이책은 컴퓨터의 작동원리를 설명하는 책이라고 함. 사람들은 
+    #+end_quote
+** 영어 단어
+    #+begin_example
+    
+    #+end_example
+
 * chapter1
 * chapter2
 * chapter3

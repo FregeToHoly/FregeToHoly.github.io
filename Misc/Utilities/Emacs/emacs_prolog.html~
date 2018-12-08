@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-07 Fri 22:33 -->
+<!-- 2018-12-08 Sat 13:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Code</title>
+<title>Emacs에서 prolog 사용하기</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Hoyoul Park" />
 <meta name="description" content="Org-HTML export made simple."
@@ -238,79 +238,111 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">The Code</h1>
+<h1 class="title">Emacs에서 prolog 사용하기</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb40fecd">1. Preface</a>
+<li><a href="#org4cb2679">1. 설정및 사용과정</a>
 <ul>
-<li><a href="#org0f7c14c">1.1. 저자</a></li>
-<li><a href="#org3172d6b">1.2. 저자의 말</a></li>
-<li><a href="#orga08ee58">1.3. 영어 단어</a></li>
+<li><a href="#org599c833">1.1. prolog connect swi-prolog</a></li>
+<li><a href="#orge55fcf6">1.2. edi-prolog의 사용</a></li>
+<li><a href="#orgfc32e08">1.3. edi-prolog 설정 수정.</a></li>
+<li><a href="#orgb746f5c">1.4. prolog 코딩과 실행.</a></li>
 </ul>
 </li>
-<li><a href="#orga359f07">2. chapter1</a></li>
-<li><a href="#orgecac884">3. chapter2</a></li>
-<li><a href="#org6bc6599">4. chapter3</a></li>
 </ul>
 </div>
 </div>
-<ul class="org-ul">
-<li>if you want go back?  <a href="http://www.holytofrege.space/index.html">home</a></li>
-</ul>
-<div id="outline-container-orgb40fecd" class="outline-2">
-<h2 id="orgb40fecd"><span class="section-number-2">1</span> Preface</h2>
+<div id="outline-container-org4cb2679" class="outline-2">
+<h2 id="org4cb2679"><span class="section-number-2">1</span> 설정및 사용과정</h2>
 <div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-org0f7c14c" class="outline-3">
-<h3 id="org0f7c14c"><span class="section-number-3">1.1</span> 저자</h3>
-<div class="outline-text-3" id="text-1-1">
+<div class="attention">
 <p>
-찰스 페졸드(Charles Petzold)
+ Emacs는 Prolog engine이 없다. Emacs안에는 lisp interpreter처럼 built-in된 Prolog compiler, interpreter가 없다. 그래서 local system에
+prolog를 설치하고 연동해서 사용하는 방식이다. 아래 그림을 그려봤다.
 </p>
-<div class="org-center">
+
+</div>
 
 <div class="figure">
-<p><img src="./img/charles.jpg" alt="charles.jpg" />   
+<p><img src="./img/connectprolog.png" alt="connectprolog.png" />
 </p>
 </div>
 </div>
+<div id="outline-container-org599c833" class="outline-3">
+<h3 id="org599c833"><span class="section-number-3">1.1</span> prolog connect swi-prolog</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="attention">
+<ol class="org-ol">
+<li>swi-prolog를 local에 설치한다.</li>
+<li>prolog.el을 emacs에 설치한다.</li>
+<li>설정 파일에서 두개를 연결한다.</li>
+</ol>
+
+<div class="figure">
+<p><img src="./img/prologsetting1.png" alt="prologsetting1.png" />
+</p>
+</div>
+
 </div>
 </div>
-<div id="outline-container-org3172d6b" class="outline-3">
-<h3 id="org3172d6b"><span class="section-number-3">1.2</span> 저자의 말</h3>
+</div>
+<div id="outline-container-orge55fcf6" class="outline-3">
+<h3 id="orge55fcf6"><span class="section-number-3">1.2</span> edi-prolog의 사용</h3>
 <div class="outline-text-3" id="text-1-2">
-<blockquote>
+<div class="attention">
 <p>
-10년 정도 고민해서 만든 책. 사람들에게 이책은 컴퓨터의 작동원리를 설명하는 책이라고 함. 사람들은 
+edi-prolog는 emacs buffer의 prolog 코드를 local의 swi-prolog에서 실행하게 만들어주는 툴이다.
+설정은 <a href="https://www.metalevel.at/ediprolog/">https://www.metalevel.at/ediprolog/</a> 여기를 참조하면 된다.
 </p>
-</blockquote>
+
 </div>
 </div>
-<div id="outline-container-orga08ee58" class="outline-3">
-<h3 id="orga08ee58"><span class="section-number-3">1.3</span> 영어 단어</h3>
+</div>
+<div id="outline-container-orgfc32e08" class="outline-3">
+<h3 id="orgfc32e08"><span class="section-number-3">1.3</span> edi-prolog 설정 수정.</h3>
 <div class="outline-text-3" id="text-1-3">
-<pre class="example">
+<div class="attention">
+<p>
+edi-prolog가 /usr/bin/pl과 연동되어 있을 수 있다. 그럴경우 제대로 수행이 안될 수 있기 때문에, 재설정이 필요하다.
+</p>
+<ol class="org-ol">
+<li>M-x customize-group</li>
+<li>ediprolog &lt;enter</li>
+<li>/usr/bin/pl을 /usr/local/bin/swipl로 변경해준다.</li>
+</ol>
 
-</pre>
 </div>
 </div>
 </div>
+<div id="outline-container-orgb746f5c" class="outline-3">
+<h3 id="orgb746f5c"><span class="section-number-3">1.4</span> prolog 코딩과 실행.</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="attention">
+<ol class="org-ol">
+<li>emacs buffer를 열고 coding을 한다.</li>
+<li>query같은 경우는 ?-query-statement를 작성하고 edi-prolog로 실행한다.</li>
+<li><p>
+consult도 가능하다.
+</p>
 
-<div id="outline-container-orga359f07" class="outline-2">
-<h2 id="orga359f07"><span class="section-number-2">2</span> chapter1</h2>
+<p>
+자세한 설명은 동영상을 참조하자.
+</p></li>
+</ol>
+<p>
+<a href="https://www.youtube.com/watch?v=e8Ftse6Vk1I&amp;feature=youtu.be">https://www.youtube.com/watch?v=e8Ftse6Vk1I&amp;feature=youtu.be</a>
+</p>
+
 </div>
-<div id="outline-container-orgecac884" class="outline-2">
-<h2 id="orgecac884"><span class="section-number-2">3</span> chapter2</h2>
 </div>
-<div id="outline-container-org6bc6599" class="outline-2">
-<h2 id="org6bc6599"><span class="section-number-2">4</span> chapter3</h2>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-07 Fri 22:33</p>
+<p class="date">Created: 2018-12-08 Sat 13:33</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
