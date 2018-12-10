@@ -8,7 +8,14 @@
 #+PROPERTY:  header-args :padline no
 #+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
 - if you want go back?  [[http://www.holytofrege.space/index.html][home]]
-* 설정및 사용과정
+
+*----------
+작성자: Fregeholy      
+작성일: <2018-12-08 Sat>
+작성장소: jeju island  
+날씨: bad, cloudy  
+-----------*
+* 설정및 사용과정 
  #+begin_attention
  Emacs는 Prolog engine이 없다. Emacs안에는 lisp interpreter처럼 built-in된 Prolog compiler, interpreter가 없다. 그래서 local system에
 prolog를 설치하고 연동해서 사용하는 방식이다. 아래 그림을 그려봤다.
@@ -43,5 +50,23 @@ prolog를 설치하고 연동해서 사용하는 방식이다. 아래 그림을 
        자세한 설명은 동영상을 참조하자.
     https://www.youtube.com/watch?v=e8Ftse6Vk1I&feature=youtu.be
     #+end_attention
+** prolog org babel setting
+    #+begin_attention
+    prolog를 babel에서 사용하기 위해서는 ob-prolog.el이 필요하다. 다른 언어들은 emacs에
+    built-in package라서 별도로 다운로드 받을 일이 없지만, prolog는 다운받아야 한다.
+    https://github.com/ljos/ob-prolog 여기서 다운받는다. .emacs.d/elpa/org-20xxx 폴더에 넣으면 
+    된다. 
+    그리고 설정파일에서 ob-prolog를 load하면 된다.
+    #+end_attention
+    [[./img/ob_prolog.png]]
+* Hello World
+[babel 사용예]
+#+BEGIN_SRC prolog
+?- write('Hello, World'), nl.
+#+END_SRC
 
+#+RESULTS:
+| Hello | World |
 
+[[./img/hello1.png]]
+[[./img/hello2.png]]

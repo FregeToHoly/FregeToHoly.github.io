@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-08 Sat 13:33 -->
+<!-- 2018-12-08 Sat 19:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs에서 prolog 사용하기</title>
@@ -243,19 +243,33 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4cb2679">1. 설정및 사용과정</a>
+<li><a href="#orgfb392a7">1. 설정및 사용과정</a>
 <ul>
-<li><a href="#org599c833">1.1. prolog connect swi-prolog</a></li>
-<li><a href="#orge55fcf6">1.2. edi-prolog의 사용</a></li>
-<li><a href="#orgfc32e08">1.3. edi-prolog 설정 수정.</a></li>
-<li><a href="#orgb746f5c">1.4. prolog 코딩과 실행.</a></li>
+<li><a href="#orgf3fd665">1.1. prolog connect swi-prolog</a></li>
+<li><a href="#org598bc95">1.2. edi-prolog의 사용</a></li>
+<li><a href="#org5d087f8">1.3. edi-prolog 설정 수정.</a></li>
+<li><a href="#org09e4481">1.4. prolog 코딩과 실행.</a></li>
+<li><a href="#orgc778c29">1.5. prolog org babel setting</a></li>
 </ul>
 </li>
+<li><a href="#orge0b3079">2. Hello World</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4cb2679" class="outline-2">
-<h2 id="org4cb2679"><span class="section-number-2">1</span> 설정및 사용과정</h2>
+<ul class="org-ul">
+<li>if you want go back?  <a href="http://www.holytofrege.space/index.html">home</a></li>
+</ul>
+
+<p>
+*-----&#x2013;&#x2014;
+작성자: Fregeholy      
+작성일: <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-12-08 Sat&gt;</span></span>
+작성장소: jeju island  
+날씨: bad, cloudy  
+------&#x2013;&#x2014;*
+</p>
+<div id="outline-container-orgfb392a7" class="outline-2">
+<h2 id="orgfb392a7"><span class="section-number-2">1</span> 설정및 사용과정</h2>
 <div class="outline-text-2" id="text-1">
 <div class="attention">
 <p>
@@ -270,8 +284,8 @@ prolog를 설치하고 연동해서 사용하는 방식이다. 아래 그림을 
 </p>
 </div>
 </div>
-<div id="outline-container-org599c833" class="outline-3">
-<h3 id="org599c833"><span class="section-number-3">1.1</span> prolog connect swi-prolog</h3>
+<div id="outline-container-orgf3fd665" class="outline-3">
+<h3 id="orgf3fd665"><span class="section-number-3">1.1</span> prolog connect swi-prolog</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="attention">
 <ol class="org-ol">
@@ -288,8 +302,8 @@ prolog를 설치하고 연동해서 사용하는 방식이다. 아래 그림을 
 </div>
 </div>
 </div>
-<div id="outline-container-orge55fcf6" class="outline-3">
-<h3 id="orge55fcf6"><span class="section-number-3">1.2</span> edi-prolog의 사용</h3>
+<div id="outline-container-org598bc95" class="outline-3">
+<h3 id="org598bc95"><span class="section-number-3">1.2</span> edi-prolog의 사용</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="attention">
 <p>
@@ -300,8 +314,8 @@ edi-prolog는 emacs buffer의 prolog 코드를 local의 swi-prolog에서 실행�
 </div>
 </div>
 </div>
-<div id="outline-container-orgfc32e08" class="outline-3">
-<h3 id="orgfc32e08"><span class="section-number-3">1.3</span> edi-prolog 설정 수정.</h3>
+<div id="outline-container-org5d087f8" class="outline-3">
+<h3 id="org5d087f8"><span class="section-number-3">1.3</span> edi-prolog 설정 수정.</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="attention">
 <p>
@@ -316,8 +330,8 @@ edi-prolog가 /usr/bin/pl과 연동되어 있을 수 있다. 그럴경우 제대
 </div>
 </div>
 </div>
-<div id="outline-container-orgb746f5c" class="outline-3">
-<h3 id="orgb746f5c"><span class="section-number-3">1.4</span> prolog 코딩과 실행.</h3>
+<div id="outline-container-org09e4481" class="outline-3">
+<h3 id="org09e4481"><span class="section-number-3">1.4</span> prolog 코딩과 실행.</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="attention">
 <ol class="org-ol">
@@ -338,11 +352,45 @@ consult도 가능하다.
 </div>
 </div>
 </div>
+<div id="outline-container-orgc778c29" class="outline-3">
+<h3 id="orgc778c29"><span class="section-number-3">1.5</span> prolog org babel setting</h3>
+<div class="outline-text-3" id="text-1-5">
+<div class="attention">
+<p>
+prolog를 babel에서 사용하기 위해서는 ob-prolog.el이 필요하다. 다른 언어들은 emacs에
+built-in package라서 별도로 다운로드 받을 일이 없지만, prolog는 다운받아야 한다.
+<a href="https://github.com/ljos/ob-prolog">https://github.com/ljos/ob-prolog</a> 여기서 다운받는다. .emacs.d/elpa/org-20xxx 폴더에 넣으면 
+된다. 
+그리고 설정파일에서 ob-prolog를 load하면 된다.
+</p>
+
+</div>
+
+<div class="figure">
+<p><img src="./img/ob_prolog.png" alt="ob_prolog.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge0b3079" class="outline-2">
+<h2 id="orge0b3079"><span class="section-number-2">2</span> Hello World</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-prolog">?- write(<span style="color: #61CE3C;">'Hello, World'</span>), nl.
+</pre>
+</div>
+
+<p>
+<img src="./img/hello1.png" alt="hello1.png" />
+<img src="./img/hello2.png" alt="hello2.png" />
+</p>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-08 Sat 13:33</p>
+<p class="date">Created: 2018-12-08 Sat 19:56</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -8,12 +8,38 @@
 #+PROPERTY:  header-args :padline no
 #+SETUPFILE: ~/Mythings/FregeToHoly.github.io/setup/theme-readtheorg.setup
 * About me
-
+#+attr_html: :width 300px
+#+attr_latex: :width 300px
+[[./img/me.jpg]]
 #+BEGIN_EXAMPLE
 . 가난한 사람.
 . 모르는 것을 알기 위해 노력함.
 . 제주에 거주
+. surfing을 하곤 함.
+[경력]
+. Bacheola degree: 컴퓨터공학
+. Master degree: computer science
+. Samsung Electronics(삼성전자) 선임연구원
+. 미국 Abionics 6 months 일함.
+. LG전자 선임연구원
+. 미국에서 3년 거주 (Master degree of Computer Science)
+. El Salvador 1년거주.
+. 일본 이이다바시 1년 거주.
+. 필리핀 마카티 1년거주.
+. 독일,영국,프랑스,이태리,체코, 태국,홍콩,중국, 멕시코,과테말라, 니카라과, 엘살바도르
+  출장 및 여행.
+[했던일]
+. IOT(Internet Of things)
+. A.I(Artificial Intelligence)
+[Language]
+. English (fluent)
+. Spanish (intermediate)
+. Japanese( on going..)
+
 #+END_EXAMPLE
+ 
+
+ 
 
   #+BEGIN_important
   공부하는 내용을 정리할 필요를 느꼈다. 블로그말고 홈페이지를 만들려고 했지만,

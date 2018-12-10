@@ -1,0 +1,26 @@
+#+TITLE: Logic For Computer Science
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
+*----------
+작성자: FregeHoly
+작성일: <2018-12-08 Sat>
+
+작성장소: Jeju
+날씨: cloudy
+-----------*
+* [Chap1] Introduction
+ #+begin_attention
+ Logic은 truth와 provability 개념과 관련지어 생각할 수 있다고 한다. 이 책의 목표는 두 개념을 설명하는 것이 아니다.
+이 책의 목표는 First order logic을 살펴보고, FOL의 속성들을 증명하고, theorem을 증명하는 알고리즘을 
+살펴보는 것이다.
+
+ 모든 logical system은 언어가 있다. 언어가 있어야만 문장을 쓸수 있다. 문장은 propostion이라고 부르거나 formulae라고 부른다.
+ 누군가는 문장을 쓰고, 또 누군가는 문장을 해석한다. 문장은 자연수의 속성을 
+ #+end_attention
