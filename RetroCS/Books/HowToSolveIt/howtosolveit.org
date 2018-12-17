@@ -1,0 +1,108 @@
+#+TITLE: How to Solve It
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
+*----------
+작성자: FregeHoly
+작성일: <2018-12-11 Tue>
+작성장소: Jeju
+날씨: rainy
+-----------*
+* In The ClassRoom [Part1]
+
+ #+begin_center
+ [Purpose]
+ #+end_center
+** Helping the student
+   #+begin_note
+   Polya는 이책을 학생들에게 문제를 어떻게 푸는지. 어떻게 풀어야 하는지  그 방
+   법론을 설명하려고 책을썼다. 그래서 선생과 학생의 역할을 설명한다. 선생의 가장
+   큰 임무는 학생을 돕는 것이다. 학생을 돕는다는 건 쉽지 않다. 시간,노력, 희생이
+   필요하기 때문이다. 학생들은 가능하면 혼자서 푸는 경험을 많이 가져야 한다. 그렇
+   다고 너무 혼자서 문제를 풀거나, 선생의 도움없이 문제를 풀면 진도가 안나갈 수도
+   있다. 그래서 선생이 도와줘야 하는데, 눈에 안띠게 (unobtrusively) 도와주라고
+   한다.
+   #+end_note
+** Question, Recommendations, mental operations.
+   #+begin_note
+   학생들을 효율적으로 돕지만, 눈에 띠지 않게 자연스럽게 도와주는데, 거기에 질문과
+   제안을 통해서 자꾸만 생각하게 만들어야 한다.
+    #+begin_example
+    [questions]
+    . what is unknown?
+    . what is required?
+    . what do you want to find?
+    . what are you supposed to seek?
+    [suggestions]
+    . Look at the unkown!
+    #+end_example
+
+   #+end_note
+** Generality
+   #+begin_note
+    #+begin_example
+    . what is the unknown?
+    . what are the data?
+    . what is the condition?
+    #+end_example
+    이런 질문들은 모두 일반성이 있다. 일반성이 있다는 것은 모든 문제 해결에 적용이
+    된다는 말이다. 즉 특정한 분야의 문제에만 한정되지 않는다는 것은, 대수적문제,
+    기하학문제, puzzle문제에 이르기까지 두루 적용된다. 하지만, 이런 질문이 적용되지
+    않는 문제가 있다. 증명을 위한 문제(problems to prove)에는 적용되지 않는다.
+    단지, 찾는 문제(Problems to find)에만 적용된다고 한다. 그래서 증명을 위한
+    문제엔 다른 질문을 해야 한다. 
+   #+end_note
+    #+begin_important
+    내 생각에 세상에는 2가지 문제가 있다. t/f를 알기위한 문제, quantities를
+    찾기 위한 문제. t/f를 찾기 위한 문제는 논리학에서 관심을 갖는 문제다. 어떤
+    문장이 주어졌을때 그 문장이 참인가? 어떤 주장이 참인가? 반면에 수학적 문제들
+    은 대부분 quantities를 찾는다. 3+4는 무엇인가? 몇개의 방법이 있는가? 등에
+    관심이 많다.
+    #+end_important
+
+** Common Sense
+   #+begin_note
+   이 책에서 우리가 나열한 질문과 조언들은 지극히 상식적인 것이다. 
+   다음 질문과 조언을 살펴보자.
+   #+begin_example
+   [suggestion]
+   . Look at the unknown!
+   . and try to think of a familiar problem having the same or a similar
+     unknown.
+   #+end_example
+   어떤 문제가 주어졌을때, 모르는 것을 찾아라, 그리고 그 모르는 문제와 비슷한
+   혹은 똑같은 문제를 생각해라. 이런것들은 조언이라기 보다, 진짜 너무나 상식적인
+   것이다. 예를들어, 지금 배고프다고 하자. 그러면 너는 음식이 필요한것이고, 음식을
+   얻었던 방식들을 생각해보고 그 방식대로 하면되는 것이다. 여기엔 특별한 조언 없이도
+   너가 자연스럽게 할 행동인것이다. 어떤 문제가 주어졌을때, 우리는 먼저 모르는것이
+   무언지를 찾고, 그 모르는것을 찾기 위해 예전에 성공했던, 너가 익숙한 방식, 쉬운
+   방식을 적용하면 되는 것이다. 이것이 우리가 하는 조언이다. 즉 뻔한 얘기라는 것.
+
+   기하학적인 도형을 만들어야 하는 문제가 있다고 하자. 그러면 우리가 생각해야 하는건
+   예전에 삼각형을 만들었던 그 방식을 생각하는 거다. 여러방식이 있겠지만, 가장
+   익숙하고 쉬운 방식..이렇게 생각하는 것이 우리가 원하는 방식이다. 그래서 우리가
+   하는 질문과 조언은 지극히 자연스러운 것이다. 이런 자연스러운, 지극히 당연한,
+   얘기를 왜 하는가? 대부분은 이런 방식을 따르지 않고, 제대로 따르는 사람은 표현을
+   하지 않기 때문이다.
+   
+   #+end_note
+** Teacher and Student. Imitation and practice
+   #+begin_note
+   문제를 해결하는 방식을 가르치는 선생님은 학생들에게 question과 suggestions을
+   반복해서 말해줄 필요가 있다고 한다. 선생님과 학생들이 어떻게 해라는 나완 상관이
+   별로 없어보여서 줄인다. 다만, probem solving은 흉내내고 꾸준히 연습함으로써
+   향상될 수 있다고 한다. 수영을 예로 든다. 수영할 때, 남들의 영법을 흉내내고 연습
+   하면서 기술 습득하듯이 problem solving도 하나의 skill이라고 한다.
+   #+end_note
+ #+begin_center
+ Main Divisions, Main Questions.
+ #+end_center
+
+ 
+
