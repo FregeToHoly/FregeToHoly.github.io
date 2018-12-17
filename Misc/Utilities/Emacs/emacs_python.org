@@ -15,4 +15,87 @@
 작성장소: Jeju
 날씨: cloudy
 -----------*
-* Python3 설치
+* Python3 설치 on mac
+** Pip
+    #+begin_attention
+    pip는 python package를 설치하는 tool. 기본적으로 python에 포함되어 있어
+    서 별도로 설치할 필요는 없다.
+    #+end_attention
+
+** Pyenv
+ #+begin_attention
+ pyenv는 python environment약자. python은 local machine에 여러 종류가
+ 설치 될 수 있다. python2.7, python3.0...
+ 맥북에는 기본적으로 python은 2.7이 설치되어 있다. 내가 만들 project가 python
+ 3.0을 사용해야 한다면 어떻게 할까? python2.7을 지우고 python3.0을 설치해서
+ 사용해야 한다. 그럼 다시 python2.7을 사용해야 한다면? 계속 설치하고 지우고를
+ 반복할 순 없는 일이다. pyenv는 그럴때 사용하면 편리한 툴이다. pyenv global 3.0
+ 이란 명령을 쓰면 python3.0을 사용할 수 있기 때문이다.
+ #+end_attention
+*** pyenv설치
+    #+BEGIN_SRC sh
+    brew install pyenv
+    #+END_SRC
+*** python list in pyenv
+    #+BEGIN_SRC sh
+    pyenv install --list
+    #+END_SRC
+     #+begin_attention
+     pyenv install --list는 설치할 파이썬 목록을 list로 보여준다.
+     #+end_attention
+*** install python in pyenv
+    #+BEGIN_SRC sh
+    pyenv install python-3,7.1
+    #+END_SRC
+*** pyenv -V (설치된 python확인)
+    #+BEGIN_SRC sh
+    pyenv -V
+    #+END_SRC
+*** pyenv global 3.7.1(설치된 python 선택)
+    #+BEGIN_SRC sh
+    pyenv global 3.7.1
+    #+END_SRC
+* python3설정 on Emacs
+ #+begin_attention
+ 필요한 packages
+. elpy
+   . jedi
+   . autopep8
+   . yapf
+   . flake8
+.ipython
+. python-epc
+ #+end_attention
+** elpy
+    #+begin_attention
+    elpy는 emacs에서 python coding을 위한 최고의 tool이라고 한다. 아직 어떤
+    역할을 하는지 모른다. 다만, elpy를 설치하기 위해서는 jedi,autopep8,yapf,
+    flake8을 설치해야 한다는 것이다. emacs가 이런 tool들을 emacs내에 설치하는게
+    아니라는 건 알아야 한다. 단지 emacs는 local system에 설치한 tool과 연결해서
+    사용한다는 것이다. 즉 local pc에 설치된 python package jedi,autopep8,
+    flake8을 elpy가 대표해서 emacs에서 사용하겠다는 뜻으로 이해가 된다.
+    #+end_attention
+*** install jedi, autopep8,yapf,flake8 on mac using pip
+     #+begin_attention
+     # Either of these
+     pip install rope
+     pip install jedi
+     # flake8 for code checks
+     pip install flake8
+     # and autopep8 for automatic PEP8 formatting
+     pip install autopep8
+     # and yapf for code formatting
+     pip install yapf
+     -> pip로 설치한다. pyenv로 python3로 선택한후 설치하기로 한다.
+     #+end_attention
+*** elpy install on emacs
+    #+BEGIN_EXAMPLE
+    (use-package elpy
+    :ensure t)를 추가.
+    #+END_EXAMPLE
+     
+** Ipython
+    #+begin_attention
+    Ipython은 python shell이다.
+    #+end_attention
+

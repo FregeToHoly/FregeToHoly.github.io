@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-11 Tue 02:30 -->
+<!-- 2018-12-11 Tue 02:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs에서 python설정하기</title>
@@ -243,29 +243,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc8c9e96">1. Python3 설치 on mac</a>
+<li><a href="#org5ef33ee">1. Python3 설치 on mac</a>
 <ul>
-<li><a href="#org931aefb">1.1. Pip</a></li>
-<li><a href="#orgbcb08ba">1.2. Pyenv</a>
+<li><a href="#orgf43b873">1.1. Pip</a></li>
+<li><a href="#orgf674495">1.2. Pyenv</a>
 <ul>
-<li><a href="#orgfa20fbe">pyenv설치</a></li>
-<li><a href="#orgfb431c9">python list in pyenv</a></li>
-<li><a href="#orga38fa21">install python in pyenv</a></li>
-<li><a href="#org9197b57">pyenv -V (설치된 python확인)</a></li>
-<li><a href="#orgc0f28e7">pyenv global 3.7.1(설치된 python 선택)</a></li>
+<li><a href="#org73750e1">pyenv설치</a></li>
+<li><a href="#org01b3253">python list in pyenv</a></li>
+<li><a href="#org9184308">install python in pyenv</a></li>
+<li><a href="#org40d0789">pyenv -V (설치된 python확인)</a></li>
+<li><a href="#org6b3e69e">pyenv global 3.7.1(설치된 python 선택)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org0e7345d">2. python3설정 on Emacs</a>
+<li><a href="#orgf12bf81">2. python3설정 on Emacs</a>
 <ul>
-<li><a href="#org5e45426">2.1. elpy</a>
-<ul>
-<li><a href="#org4e9488b">install jedi, autopep8,yapf,flake8 on mac using pip</a></li>
-<li><a href="#org135693e">elpy install on emacs</a></li>
-</ul>
-</li>
-<li><a href="#org4dbe0c8">2.2. Ipython</a></li>
+<li><a href="#org293c1c7">2.1. Ipython</a></li>
 </ul>
 </li>
 </ul>
@@ -282,12 +276,12 @@ for the JavaScript code in this tag.
 날씨: cloudy
 ------&#x2013;&#x2014;*
 </p>
-<div id="outline-container-orgc8c9e96" class="outline-2">
-<h2 id="orgc8c9e96"><span class="section-number-2">1</span> Python3 설치 on mac</h2>
+<div id="outline-container-org5ef33ee" class="outline-2">
+<h2 id="org5ef33ee"><span class="section-number-2">1</span> Python3 설치 on mac</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org931aefb" class="outline-3">
-<h3 id="org931aefb"><span class="section-number-3">1.1</span> Pip</h3>
+<div id="outline-container-orgf43b873" class="outline-3">
+<h3 id="orgf43b873"><span class="section-number-3">1.1</span> Pip</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="attention">
 <p>
@@ -299,8 +293,8 @@ pip는 python package를 설치하는 tool. 기본적으로 python에 포함되�
 </div>
 </div>
 
-<div id="outline-container-orgbcb08ba" class="outline-3">
-<h3 id="orgbcb08ba"><span class="section-number-3">1.2</span> Pyenv</h3>
+<div id="outline-container-orgf674495" class="outline-3">
+<h3 id="orgf674495"><span class="section-number-3">1.2</span> Pyenv</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="attention">
 <p>
@@ -315,18 +309,18 @@ pyenv는 python environment약자. python은 local machine에 여러 종류가
 
 </div>
 </div>
-<div id="outline-container-orgfa20fbe" class="outline-4">
-<h4 id="orgfa20fbe">pyenv설치</h4>
-<div class="outline-text-4" id="text-orgfa20fbe">
+<div id="outline-container-org73750e1" class="outline-4">
+<h4 id="org73750e1">pyenv설치</h4>
+<div class="outline-text-4" id="text-org73750e1">
 <div class="org-src-container">
 <pre class="src src-sh">brew install pyenv
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfb431c9" class="outline-4">
-<h4 id="orgfb431c9">python list in pyenv</h4>
-<div class="outline-text-4" id="text-orgfb431c9">
+<div id="outline-container-org01b3253" class="outline-4">
+<h4 id="org01b3253">python list in pyenv</h4>
+<div class="outline-text-4" id="text-org01b3253">
 <div class="org-src-container">
 <pre class="src src-sh">pyenv install --list
 </pre>
@@ -339,27 +333,27 @@ pyenv install &#x2013;list는 설치할 파이썬 목록을 list로 보여준다
 </div>
 </div>
 </div>
-<div id="outline-container-orga38fa21" class="outline-4">
-<h4 id="orga38fa21">install python in pyenv</h4>
-<div class="outline-text-4" id="text-orga38fa21">
+<div id="outline-container-org9184308" class="outline-4">
+<h4 id="org9184308">install python in pyenv</h4>
+<div class="outline-text-4" id="text-org9184308">
 <div class="org-src-container">
 <pre class="src src-sh">pyenv install python-3,7.1
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9197b57" class="outline-4">
-<h4 id="org9197b57">pyenv -V (설치된 python확인)</h4>
-<div class="outline-text-4" id="text-org9197b57">
+<div id="outline-container-org40d0789" class="outline-4">
+<h4 id="org40d0789">pyenv -V (설치된 python확인)</h4>
+<div class="outline-text-4" id="text-org40d0789">
 <div class="org-src-container">
 <pre class="src src-sh">pyenv -V
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc0f28e7" class="outline-4">
-<h4 id="orgc0f28e7">pyenv global 3.7.1(설치된 python 선택)</h4>
-<div class="outline-text-4" id="text-orgc0f28e7">
+<div id="outline-container-org6b3e69e" class="outline-4">
+<h4 id="org6b3e69e">pyenv global 3.7.1(설치된 python 선택)</h4>
+<div class="outline-text-4" id="text-org6b3e69e">
 <div class="org-src-container">
 <pre class="src src-sh">pyenv global 3.7.1
 </pre>
@@ -368,77 +362,25 @@ pyenv install &#x2013;list는 설치할 파이썬 목록을 list로 보여준다
 </div>
 </div>
 </div>
-<div id="outline-container-org0e7345d" class="outline-2">
-<h2 id="org0e7345d"><span class="section-number-2">2</span> python3설정 on Emacs</h2>
+<div id="outline-container-orgf12bf81" class="outline-2">
+<h2 id="orgf12bf81"><span class="section-number-2">2</span> python3설정 on Emacs</h2>
 <div class="outline-text-2" id="text-2">
 <div class="attention">
 <p>
  필요한 packages
 . elpy
-   . jedi
-   . autopep8
-   . yapf
-   . flake8
-.ipython
+. Ipython
+. autopep8
+. jedi
 . python-epc
+. flake8
 </p>
 
 </div>
 </div>
-<div id="outline-container-org5e45426" class="outline-3">
-<h3 id="org5e45426"><span class="section-number-3">2.1</span> elpy</h3>
+<div id="outline-container-org293c1c7" class="outline-3">
+<h3 id="org293c1c7"><span class="section-number-3">2.1</span> Ipython</h3>
 <div class="outline-text-3" id="text-2-1">
-<div class="attention">
-<p>
-elpy는 emacs에서 python coding을 위한 최고의 tool이라고 한다. 아직 어떤
-역할을 하는지 모른다. 다만, elpy를 설치하기 위해서는 jedi,autopep8,yapf,
-flake8을 설치해야 한다는 것이다. emacs가 이런 tool들을 emacs내에 설치하는게
-아니라는 건 알아야 한다. 단지 emacs는 local system에 설치한 tool과 연결해서
-사용한다는 것이다. 즉 local pc에 설치된 python package jedi,autopep8,
-flake8을 elpy가 대표해서 emacs에서 사용하겠다는 뜻으로 이해가 된다.
-</p>
-
-</div>
-</div>
-<div id="outline-container-org4e9488b" class="outline-4">
-<h4 id="org4e9488b">install jedi, autopep8,yapf,flake8 on mac using pip</h4>
-<div class="outline-text-4" id="text-org4e9488b">
-<div class="attention">
-<p>
-pip install rope
-pip install jedi
-</p>
-
-<p>
-pip install flake8
-</p>
-
-<p>
-pip install autopep8
-</p>
-
-<p>
-pip install yapf
--&gt; pip로 설치한다. pyenv로 python3로 선택한후 설치하기로 한다.
-</p>
-
-</div>
-</div>
-</div>
-<div id="outline-container-org135693e" class="outline-4">
-<h4 id="org135693e">elpy install on emacs</h4>
-<div class="outline-text-4" id="text-org135693e">
-<pre class="example">
-(use-package elpy
-:ensure t)를 추가.
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org4dbe0c8" class="outline-3">
-<h3 id="org4dbe0c8"><span class="section-number-3">2.2</span> Ipython</h3>
-<div class="outline-text-3" id="text-2-2">
 <div class="attention">
 <p>
 Ipython은 python shell이다.
@@ -451,7 +393,7 @@ Ipython은 python shell이다.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-11 Tue 02:30</p>
+<p class="date">Created: 2018-12-11 Tue 02:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
