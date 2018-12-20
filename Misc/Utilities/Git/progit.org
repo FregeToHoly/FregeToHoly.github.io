@@ -251,7 +251,8 @@
    저장소를 얻는? 방법은 2가지가 있다. 저장소를 만들거나, 혹은 있는 저장소를 
    복사하는 것이다. {{{color(green,복사하는 것은 clone이라고 부른다.)}}}
    #+end_note
-*** Initializing a Repository in an Existing Directory.
+*** Initializing a Repository in an Existing Directory.{{{color(red,[git init])}}}
+    
     #+begin_note
     저장소가 없는경우, 우선 Project폴더를 만든다. 이미 있다면 그쪽으로 이동한다.
     그리고 저장소를 만든다. 저장소를 만든다는 것은 version관리를 하겠다는 말이다.
@@ -268,7 +269,8 @@
     #+END_SRC
     이렇게 하면 .git이란 저장폴더에 저장이된다.
     #+end_note
-*** Cloning an Existing Repository
+*** Cloning an Existing Repository {{{color(red,[git clone])}}}
+    
     #+begin_note
     이제 다른 사람이 만든 저작물을 가져오는 경우를 생각하자. 다른 사람이 만든 
     project를 가져오는 것은 clone을 사용한다고 했다. 포토샵을 예로 들면, 다른 사람이
@@ -296,21 +298,22 @@
      $ git clone https://github.com/libgit2/libgit2 mylibgit
      #+END_SRC
     #+end_note
-*** Recording Changes to the Repository
-    #+begin_note
-    이번 장에서 설명하는 것은 용어인데 tracked/untracked라는 용어가 나온다. 솔직히
-    용어가 중요하진 않다. 이해만 하면 된다. 우리가 다른사람이 스케치한 history를 가진 저장폴더를
-    가져왔다고 가정하자. 그러면 작업화면에는 checkout(꺼낸)한 스케치그림이 보일 
-    것이다. 그 그림에서 우리는 작업을 하는데, 색깔을 넣을 수도 있고, 기존 스케치를
-    수정할 수도 있다. 기존에 있는 스케치를 수정하는 것은(이전 commit에 있던 file로
-    이해하면 된다.) modified했다고 말한다. 기존 commit에 있는 file을 tracked file
-    이라고 부르고, 이를 수정하면 modified라고 한다. 만일 수정되지 않은 그대로의 file
-    이라면 unmodified file이라고 말할 수 있다. 반면에 스케치에 없던 채색을 한다는 
-    것은 새로운것이다. 그래서 untracked file이라고 말한다. 용어는 git을 사용하는 
-    데 자주 나오는 용어라서 알아는 둬야 한다. 다음 그림은 책에 있는 그림이다.
-    [[./img/changes.png]]
-    #+end_note
-*** Checking the status of your files
+** Recording Changes to the Repository
+   #+begin_note
+   이번 장에서 설명하는 것은 용어인데 tracked/untracked라는 용어가 나온다. 솔직히
+   용어가 중요하진 않다. 이해만 하면 된다. 우리가 다른사람이 스케치한 history를 가진 저장폴더를
+   가져왔다고 가정하자. 그러면 작업화면에는 checkout(꺼낸)한 스케치그림이 보일 
+   것이다. 그 그림에서 우리는 작업을 하는데, 색깔을 넣을 수도 있고, 기존 스케치를
+   수정할 수도 있다. 기존에 있는 스케치를 수정하는 것은(이전 commit에 있던 file로
+   이해하면 된다.) modified했다고 말한다. 기존 commit에 있는 file을 tracked file
+   이라고 부르고, 이를 수정하면 modified라고 한다. 만일 수정되지 않은 그대로의 file
+   이라면 unmodified file이라고 말할 수 있다. 반면에 스케치에 없던 채색을 한다는 
+   것은 새로운것이다. 그래서 untracked file이라고 말한다. 용어는 git을 사용하는 
+   데 자주 나오는 용어라서 알아는 둬야 한다. 다음 그림은 책에 있는 그림이다.
+   [[./img/changes.png]]
+   #+end_note
+*** Checking the status of your files {{{color(red,[git status])}}}
+    
     #+begin_note
     git은 save와 관련된 일을 하는 tool이다. 이 tool은 포토샵이나 여타 application
     에서 하는 save기능보다 훨씬 복잡하다. 포토샵에선 save만 하면 되지만, git으로
@@ -376,7 +379,8 @@
     속 뜻을 이해하면 git을 사용하기 편한건 사실이다. 그냥 stage에 올라갔다고 
     생각하면 된다.
     #+end_note
-*** Staging Modified files
+*** Staging Modified files {{{color(red,[git add])}}}
+    
     #+begin_note
     untracked된 파일, 그러니까 기존에 없던 파일,스케치에 없던 채색을 하고 stage에
     올리는 것을 봤다. 그러면 이번엔 tracked file을 stage에 올리는 것을 보여준다.
@@ -464,5 +468,600 @@
     git status는 save하기 위해 어떤것들이 추가되었고, 변경되었고, 어떤게 삭제
     되었고, 지금 save할려는게 무엇이고... 등을 알려준다. 하지만, 자세하게 알려주진
     않는다. 단지 파일이름만 알려준다. 자세히 알기 위해선 git diff를 사용한다.
+    git status와 git diff없이 저장한다는 것은 말도 안된다. 따라서 git status,
+    git diff를 명확히 사용할 수 있어야 한다. 우선 git status에서 알아야 하는것을
+    간략하게 정리해 보자.
+
+    [[./img/statusindiff.png]]
+
+    1) git status를 보면 stage영역과 stage에 올라오지 않은 영역에 있는 파일을
+       알수 있다. 
+    2) git status에 보면 local branch와 remote branch를 알 수 있다. branch는
+       저장폴더안에 있는 subfolder라고 봐도 된다. 그런데 subfolder와는 좀 다른점은
+       있지만, 우선은 그렇게 이해하자.
+       
+     git diff는 파일을 비교하는데, 파일간의 비교를 하는 tool은 많다. 기업에서
+     많이 쓰는 beyond compare같은 유료 툴도 있고, 무료 툴도 있다. git diff는
+     이런 범용적인 tool이 아니다. git diff는 기존의 diff와 다르다.
+
+     {{{color(red,[git diff의 특징])}}}
+
+     {{{color(green,동일한 파일을 비교한다. 동일한 파일을 어떻게 비교하는가? 같은 파일인데
+	같을것이 아닌가? 동일한 파일이름이지만 내용은 다를 수 있다. commit에
+	있는 a.txt란 파일을 수정했다면 a.txt(commit)과 a.txt(working directory)
+	는 다르다. 마찬가지로 b.txt(working directory)와 b.txt(stage area)도
+	다른 것이다.
+     )}}}
+
+     git diff는 동일 이름의 파일만을 비교한다는 면에서 특이하다.
 
     #+end_note
+    #+begin_note
+    {{{color(red,[git diff:default 동작])}}}
+	 
+    이제 git diff를 사용해보자. 아무래도 가장 쉬운것은 git diff만 치는경우다.
+    우선 git init으로 저장소를 만들고 difftest.txt라는 파일을 만들자. 이상태에선
+    비교할것이 없기 때문에 아무것도 비교하지 않는다. difftest.txt를 staging area
+    에 올리고 difftest.txt를 수정하자. 그러면 2개의 파일이 생기게 된다. 여기서
+    비교해보자. 우선 파일의 내용은 다음과 같다.
+    
+    #+CAPTION: difftest in working directory
+    #+ATTR_HTML: :width 600px
+    [[./img/difftest_working.png]]
+
+    #+CAPTION: difftest in Staging
+    #+ATTR_HTML: :width 600px
+    [[./img/difftest_staging.png]]
+
+    #+CAPTION: git status of difftest file.
+    #+ATTR_HTML: :width 600px
+    [[./img/difftest_status.png]]
+
+    {{{color(blue,[상황1:working vs staging])}}}
+   
+    #+CAPTION: working vs staging
+    #+ATTR_HTML: :width 600px
+    [[./img/diff1.png]]
+   
+   
+    staging file과 working directory의 파일 비교는, staging파일이 기준이
+    된다. staging파일에서 무엇이 추가되고 삭제되었는지를 보여준다.
+
+   {{{color(blue,[상황2: working vs commit])}}}
+	 
+   두번째로 staging area에는 없고 commit과 working directory만 있을 경우를
+   보자. 비교를 아예 안할 수도 있고 할 수도 있다. 
+
+   #+CAPTION: working vs commit
+   #+ATTR_HTML: :width 600px
+   [[./img/diff3.png]]
+
+   보다 시피, staging area가 없다면 commit이 기준 파일이 된다. 기준파일에서
+   무엇이 삭제되고 추가되었는지를 보여준다. 
+
+   {{{color(blue,[상황3: staging vs commit])}}}
+
+   세번째로 staging과 commit만 있는 경우를 보자. 기준은 무엇이 될까?
+   
+   #+CAPTION: staging vs commit
+   #+ATTR_HTML: :width 600px
+   [[./img/diff4.png]]
+
+   {{{color(blue,[상황4: working vs staging vs commit])}}}
+
+   마지막으로, 파일이 3개 영역에 모두 있을 경우는 어떻게 될까? commit에서 difftest가 있고,
+   staging area에도 있고, working directory에도 있다. 이제 git diff를 해보자.
+   
+   #+CAPTION: working vs staging vs commit
+   #+ATTR_HTML: :width 600px
+   [[./img/diff2.png]]
+
+
+   {{{color(red,[git diff -staged])}}}
+
+   이제 git diff의 option을 살펴보자. --staged 옵션은 위의 상황4에서 적용되는
+   option이다. 3개의 영역 모두의 파일이 있는 경우 git diff는 stage영역의 기준에서
+   working directory의 파일이 무엇을 변경했는지를 보여준다. 그럴 경우 staging과
+   commit사이의 비교는 git diff로는 알 수 없다. 이럴 경우 option을 사용하는 것이다.
+
+   상황4에서 -staged option을 줘서 실행해 보자.
+
+   #+CAPTION: git diff --staged in [상황4]
+   #+ATTR_HTML: :width 600px
+   [[./img/diff4.png]]
+	
+
+   참고로, git diff --cached와 git diff --staged는 동일 명령어다. git version
+   에 따른 차이가 있을 뿐이다. 우리는 git diff --staged를 사용한다.
+   
+    #+end_note
+*** Commiting Your Changes. {{{color(red,[git commit])}}}
+    #+begin_note
+    이제 저장하는 것을 배울 차례다. 저장을 git에서는 commit(동사)한다고 한다.
+    저장하는 가장 쉬운 방법은 다음과 같다.
+    #+BEGIN_SRC sh
+    git commit    
+    #+END_SRC
+    commit(동사)해서 commit(명사)을 만들면 commit에 대한 설명이 포함되어야 한다.
+    git commit을 실행하면 자동으로 연결된 editor가 실행되게 된다. 이 과정이
+    귀찮기 때문에 보통은 다음과 같은 명령을 쓴다.
+    #+BEGIN_SRC sh
+    git commit -m " blah blah "
+    #+END_SRC
+    #+end_note
+*** Skipping the Staging Area {{{color(red,[일종의 commit])}}}
+    저장하는 방식은 stage area의 파일을 git commit으로 저장하는 것이다. 다른
+    방식도 있다. staging area를 사용하지 않고 바로 파일을 저장(commit)하는 
+    방식이다.
+    #+BEGIN_SRC sh
+    git commit -a -m " blah blah "
+    #+END_SRC
+    -a 라는 option을 주면 된다.
+*** Removing Files  {{{color(red,[git rm])}}}
+    #+begin_note
+    rm은 파일을 지우는 명령어다. git rm도 동일하게 파일을 지우는 명령어일까?
+    아니다. git rm이라는 명령어만 봐도 git과 관련한 무언가를 지우는데 사용될
+    것이라는 것은 예상할 수 있다. git과 관련된 무엇인가?는 무엇인가? git이 가진
+    구조와 연결지어 생각하면, staging에 올라간 파일이나 폴더를 제거? commit의 
+    삭제? untracked와 tracked와도 관련? 이런것을 생각할 수 있다. 하나 하나
+    생각해보자. 
+
+    {{{color(red,[default git rm])}}}
+	 
+    git rm을 option없이 실행하면, 어떤 상황에서 무엇을 지울까?
+     #+begin_quote
+    1. stage에 파일이 올라와 있는 경우
+       => 삭제가 안된다.
+    2. 새로운 파일인 경우(untracked)
+       => 삭제가 안된다.
+    3. commit에 있는 파일인데, 수정된 파일
+       => 삭제가 안된다.
+    4. commit에 있는 파일인데, 수정되서 staged에 올라와 있는 파일
+       => 삭제가 안된다.
+    5. commit에 있는 파일인데, 수정되지 않은파일
+       => 삭제가 된다.
+     #+end_quote
+     여기서 하나 하나 분석하자. 1,4는 당연히 지워지면 안된다. 왜 안되는가?
+     지금 commit에 반영하려는 의도가 있기 때문에 함부러 지울 수 없다. 그래서
+     지워지지 않는다. 2번이 지워지지 않는 것은, git과 관련이 없기 때문이다. 
+     그냥 rm으로 지우면 된다. git rm을 쓸 필요가 없다. 3번 경우도, commit에
+     있는데, 수정이 되었다는 것은 commit에 반영할 의도가 있는 것이다. 그래서 
+     지울 수 없다. 5번만이 git rm으로 삭제할 수 있다. 당연해 보인다.
+
+     그러면 2번을 제외하곤 나머지는 git과 관련이 있기 때문에 삭제는 가능할
+     것으로 예상된다. default로는 5번만 되기 때문에, 아마도 나머지는 option을
+     통해서 삭제가 가능하지 않을까? 이제 option을 사용해보자.
+     
+     우선 말로만 설명하면 추상적이 되버리니까, 이미지 간단히 하나 삽입해보자.
+
+     #+CAPTION: git rm default
+     #+ATTR_HTML: :width 600px
+     [[./img/gitrm1.png]]
+     
+     {{{color(red,[git rm --cached])}}}
+     cached란 말은 stage area의 다른말이다. staging area는 예전 cache라고 
+     불렀기 때문이다. cache는 컴퓨터에서 많이 사용되는데 역할을 보면 stage area는
+     cache로 볼만한 연관성이 있는 건 사실이다. 여튼 이름에서 보듯이 stage영역에
+     있는 파일을 지운다는 건다. stage파일에 있는 파일에는 2가지가 있을 수 있다.
+
+      #+begin_quote
+      1. commit에 있고, stage에 있는 경우
+      2. commit에 없고, stage에 있는 경우
+      #+end_quote
+      둘다 지워질 거라고 예상은 된다. 왜냐면 둘다 tracked file이기 때문에 
+      stage에 있는 파일을 지우라는 명령에서 commit에 있는 파일이냐 아니냐가
+      삭제기준은 아니라고 생각되기 때문이다.
+
+      #+CAPTION: git rm --cached without commit
+      #+ATTR_HTML: :width 600px
+      [[./img/gitrm2.png]]
+
+      그런데, 이렇게 지우면 staging area에서만 안보이고 다른 변화는 없는걸까?
+      혹시 working directory에 modified나 뭐 이런 변화가 있는건 아닌가? 결과
+      화면을 보자.
+
+      #+CAPTION: git rm --cached result
+      #+ATTR_HTML: :width 600px
+      [[./img/gitrm2_result.png]]
+
+      이번에는 이전 commit에 있는 파일을 수정하고, staging area에 올린다음
+      삭제를 해보자. 
+      
+      #+CAPTION: git rm --cached where was in previous commit
+      #+ATTR_HTML: :width 600px
+      [[./img/gitrm3.png]]
+
+      다르다. 결과화면이 다르다. 지웠다는 표식이 staging area에 남는다. 
+      이게 좀 재밌다.
+      이제 git rm은 working directory에 있는 파일을 지우거나, staging에
+      있는 파일을 지운다는 것을 알게 되었다.
+
+      {{{color(red,[git own file extension])}}}
+      
+      git rm을 사용해서 하나의 파일만 지우는 경우는 많지 않을 것이다. 여러개
+      지우는데, shell에서 하는 *(모든파일)을 그냥 사용하면 안된다. git만이 갖는
+      확장형태가 있다.
+       #+begin_quote
+       1) {{{color(red,git rm log/*.log (x))}}}
+	    
+       2) git rm log/\*.log  (O)
+       #+end_quote
+       2)와 같이 표현해야 한다.
+
+       그러면 다음과 같은 형식도 맞는 표현이라는것을 알아야 한다.
+        #+begin_quote
+	{{{color(green,git rm \*.log)}}}
+	#+end_quote
+
+    #+end_note
+*** Moving Files{{{color(red,[git mv])}}}
+    
+     #+begin_note
+     mv 명령어는 file이나 folder를 이동하거나 명령어다. 그런데 이런 명령어가
+     git에 별도로 있어야 할까? git은 특정 directory의 현재 상태를 그대로 이미지화
+     해서 저장하는 저장시스템인데 file의 이동이나 이름변경은 file system에서
+     mv 명령어로 해도 되는데, 특별히 git mv라는 명령이 있다는게 이해가 안갈 수 
+     있다. 그런데, git rm에서 우리는 힌트를 얻을 수 있다. staged에 있는 파일을
+     지우기 위해서 git rm을 사용하는 것을 봤다. stage영역이라는 것은 git만이 
+     가진 특수한 구조이고 이 구조의 파일을 삭제하는 것은 git에 rm이란 명령어가
+     있어야 하는 건 당연해 보인다. 하지만, 우리가 git rm으로 파일을 지웠을 때,
+     특이한 현상을 발견했다. git rm으로 파일을 지울 경우, 지워진 file이 이전 
+     commit에 있던 파일인 경우, stage 영역에 흔적을 남긴다. 그냥 stage영역에서
+     사라지고, working area의 수정된 파일... 이렇게 보이는 것이 아니다. deleted
+     file이라고 stage 영역에 흔적을 남겨서 commit을 만들때 기록이 된다. 이렇게
+     하므로써, 우리는 이전 commit으로부터 새로운 commit에서 해당 파일이 삭제
+     되었음을 알 수가 있었다. 이것을 이해한다면 git mv가 있어야 하는 이유도 예상
+     할 수 있을 것이다. 
+
+     {{{color(red,그렇다. git mv가 존재하는 것은 commit에 그 흔적을 남기려는
+     의도다.)}}}
+	 
+      #+begin_quote
+      1) git mv 명령어 without previous git commit
+      2) git mv 명령어 with previous git commit
+      #+end_quote
+      
+       git mv나 git rm은 이전 commit에 그 파일이 있을 경우 "변경사항 추적"을
+       위해서 그 흔적을 기록하기 때문에 2)의 경우는 그 흔적이 남을 것이라고 
+      예상할 수 있다. 한번 테스트해보자.
+
+      #+CAPTION: git mv without previous commit
+      #+ATTR_HTML: :width 600px
+      [[./img/gitmv2.png]]
+
+      #+CAPTION: git mv with previous commit
+      #+ATTR_HTML: :width 600px
+      [[./img/gitmv3.png]]
+
+      예상대로 이전 commit의 파일이 있는경우 변경 추적 이력을 유지하기 위해서
+      rename이라는 메시지가 stage영역에 남아 있는 것을 볼 수 있다.
+     #+end_note
+** Viewing the Commit History {{{color(red,[git log])}}}
+   #+begin_note
+   {{{color(red,[git log (default)])}}}
+	 
+   git log는 commit들간에 어떤 변경이 일어났는지 확인 할 수 있는 강력한 도구다.
+   가장 기본적인 명령어인 git log를 실행해보자.
+   #+BEGIN_SRC sh
+   git log
+   #+END_SRC
+   #+CAPTION: git log result
+   #+ATTR_HTML: :width 600px
+   [[./img/gitlog1.png]]
+
+   보는 법은 맨 위에 있는것이 가장 최근의 commit이라고 보면 된다. commit할때
+   작성한 message만 보여주는 아주 간단한 log다. 그렇기 때문에 이것은 많이 안
+   쓰인다고 보면된다. 
+
+   {{{color(red,[git log -p -2])}}}
+
+   코드 리뷰에 많이 쓰이는 방식은 commit간의 차이를 보여주는 option인 -p를 
+   사용한 방식이다.
+    
+   #+BEGIN_SRC sh
+   git log -p -2
+   #+END_SRC
+   2개의 commit을 보는데 좀 자세히 보겠다.
+   #+CAPTION: git log -p -2 result
+   #+ATTR_HTML: :width 600px
+   [[./img/gitlog2.png]]
+
+   이전 commit과 다른 점을 git diff를 이용해서 보여준다. 현재 commit이 이전
+   commit에서 추가된 내용이 +로 보여진다. -2는 2개의 commit만 보여주겠다는 
+   것이다.
+    
+   {{{color(red,[git log --stat])}}}
+   git log -p보다 더 간략하게 훒어볼 수 있는 git --stat란 옵션이 있다.
+   몇줄이 추가되고 삭제되었는지 보여준다.
+
+   #+CAPTION: git log --stat
+   #+ATTR_HTML: :width 600px
+   [[./img/gitlog3.png]]
+
+   {{{color(red,[git log --pretty=oneline])}}}
+
+   --pretty라는 옵션은 출력형태를 바꾸는 건데, 매우 유용하다고 써 있다. 그중
+   oneline은 commit을 요약해서 아주 간략하게 보여준다.
+
+   #+CAPTION: git log pretty=oneline
+   #+ATTR_HTML: :width 600px
+   [[./img/gitlogpretty1.png]]
+
+  {{{color(red,[git log --pretty=format])}}}
+
+  pretty가 유용한것은 format때문이다. 즉 출력을 customizing할 수 있다는 것이다.
+  사용법은 다음과 같다.
+   
+  #+CAPTION: git log --pretty=format
+  #+ATTR_HTML: :width 500px
+  [[./img/gitlogpretty2.png]]
+
+  format의 option은 다음과 같다.
+
+  #+CAPTION: git log pretty format option1
+  #+ATTR_HTML: :width 400px
+  [[./img/gitlogprettyoption1.png]]
+
+  #+CAPTION: git log pretty format option2
+  #+ATTR_HTML: :width 400px
+  [[./img/gitlogprettyoption2.png]]
+
+  책에선 author와 comitter의 차이를 설명했는데, 보통은 program이나 project의
+  patch파일을 작성한 후 원격에 있는 git 저장소에 바로 적용되는게 아니라, committee의
+  core member에게 보내면 core member가 반영을 하기 때문에 author와 committer는
+  다른 것이다. 이것은 open source에서는 흔한 일이다. 
+   
+
+ {{{color(red,[git log --pretty=format: " " --graph])}}}
+     
+  pretty=format과 oneline option은 --graph라는 또다른 option과 함께 사용되는
+  경우가 많다. --graph라는 option은 아직 배우지 않은 branching과 merge라는 변화를
+  시각적으로 보여준다. 이것 때문에 유용한 것이다. 난 아직 branching과 merging을
+  모르기 때문에 테스트를 하진 못했다. 다만 master branch하나에서 --graph option을
+  적용해 보았다.
+
+  #+CAPTION: git log --graph option
+  #+ATTR_HTML: :width 400px
+  [[./img/gitloggraph.png]]
+
+
+  git log에는 위에서 살펴본 --pretty, --graph말고도 많은 유용한 log option이
+  있다. 책에서는 표만 제공하는데, 나중에 다시 보게되면 유용한 option을 테스트
+  해보겠다.
+
+  #+CAPTION: common git log opton1
+  #+ATTR_HTML: :width 500px
+  [[./img/commonoption1.png]]
+
+  #+CAPTION: common git log opton2
+  #+ATTR_HTML: :width 500px
+  [[./img/commonoption2.png]]
+     
+   #+end_note
+*** Limiting Log output {{{color(red,[git log ])}}}
+    #+begin_note
+    Linmiting이란 건 그냥 filtering한다고 보면 된다.
+    git log로 보여지는 commit의 수는 무지하게 많을 수 있다. 그래서 우리는 -2와
+    같이 한정된 수의 commit만 보여주는 option을 보여준 적이 있다. 그런데
+    기본적으로 git log는 page단위로 보여주기 때문에 굳이 -2와같은 option을 사용할
+    일은 많지 않다. 사용하는 limiting관련 option으로 가장 많이 사용되는 것은
+    --since와 --until이라는 시간관련 option이라고 한다.
+
+    {{{color(red,[git log --since])}}}
+	 
+    #+CAPTION: git log --since
+    #+ATTR_HTML: :width 500px
+    [[./img/gitlogsince.png]]
+
+    {{{color(red,[git log --until])}}}
+    
+    --until의 시간을 기술하는 방법에는 다른 것을 사용해 보자. 예를 들면 today, 
+    timestamp도 가능하다.
+
+    #+CAPTION: git log --until
+    #+ATTR_HTML: :width 500px
+    [[./img/loguntil.png]]
+
+    {{{color(red,[git log --author])}}}
+
+    필터링할때 사용하는 것으로 --author도 많이 사용된다. 여러사람이 사용하는
+    git이기 때문이다.
+
+    #+CAPTION: log author
+    #+ATTR_HTML: :width 500px
+    [[./img/logauthor.png]]
+
+   {{{color(red,[git log --grep])}}}
+   
+   git log --grep 옵션은 commit message를 찾는 용도로 주로 쓰인다. 파일을
+   찾는다면 git grep이 더 유용할 수도 있다.
+
+   {{{color(red,[git log -S ])}}}
+
+   -S option은 commit에서 특정한 string을 찾는 option이다.
+
+   #+CAPTION: git log -S
+   #+ATTR_HTML: :width 500px
+   [[./img/gitlogS.png]]
+    #+end_note
+** Undoing Things {{{color(red,[git commit --amend])}}}
+    
+   #+begin_note
+   git에서 do는 working area에서 staging area로, staging area에서 commit으로
+   이동하는 것으로 볼 수 있다. undo는 그 반대다. 그럼 redo는 무엇인가? do하고 
+   undo한것을 다시 do할때 redo라고 한다. 
+    
+   #+CAPTION: do undo
+   #+ATTR_HTML: :width 600px
+   [[./img/doundo.png]]
+    
+   {{{color(red,[commit -> staging])}}}
+	 
+   undo를 하는 이유는 무언가를 빼먹고 commit하지 않았기 때문이다. 그래서 
+   undo하고 다시 빼먹은 파일을 합쳐서 redo할려는 의도다. 그런 명령어가 있다.
+   #+BEGIN_SRC sh
+   git commit --amend
+   #+END_SRC
+   위 명령어를 사용하면 undo가 가능하다. 이 과정을 설명해 보겠다.
+
+   {{{color(red,[1.git log -p로 우선 commit상태를 보자.])}}}
+	 
+
+   #+CAPTION: git log -p
+   #+ATTR_HTML: :width 500px
+   [[./img/amend1.png]]
+
+   위에서 보면, 최근 commit에 어떤 파일이 있는지 볼 수 있다. adding2.txt에
+   넣어야 할 내용을 빼먹었다고 가정하고 수정해보자. 그리고 staging에 올린다.
+
+   #+CAPTION: git add .
+   #+ATTR_HTML: :width 500px
+   [[./img/amend2.png]]
+
+   이제 git commit --amend를 해서 다시 commit을 수정하자.
+
+   #+CAPTION: git commit --amend
+   #+ATTR_HTML: :width 600px
+   [[./img/amend3.png]]
+    
+   이제 이전 commit은 지워지고 새로운 commit이 대체되게 된다.
+    #+begin_important
+    git commend --amend에서 반드시 알아야할 게 3가지가 있다.
+    1) 반드시 이전 commit에 들어있는 파일을 수정할 경우만 해당된다는 것이다.
+       새롭게 파일을 만들어서 내용을 넣고 staging area에 올리고 git commit --amend를
+       하면 이전 commit이 지워지면서 새로운 commit이 만들어질 거라고 생각하면
+       안된다.
+    2) 이전 commit은 삭제되고 새로운 commit으로 replace되는 것을 명심하자.
+    3) git commit --amend는 commit을 undo상태로 돌리는 게 아니다. 그것은 
+       undo했다가 다시 redo한다. 순수한 undo는 여기서 설명이 안되고 있다.
+    #+end_important
+
+   git amend 과정을 다시 그림으로 표시해보자.
+    
+   #+CAPTION: amend status
+   #+ATTR_HTML: :width 500px
+   [[./img/amendstatus1.png]]
+
+   위 그림처럼 commit을 했다. 그런데 a라는 파일에서 뭔가를 실수를 했다.
+   그러면 다시 고치고 새로운 commit을 만들어서 올릴 수도 있다. 그러면 이전
+   commit과 새로운 commit은 실수 고친거밖에 없다. git에서 commit하나는
+   version을 의미한다. 자기실수로 인해서 version을 만든다는건 아니지 않나?
+   그래서 그런 version을 만들면 안된다. 이럴때 amend를 사용하는 것이다.
+
+   #+CAPTION: amend status2
+   #+ATTR_HTML: :width 500px
+   [[./img/amendstatus2.png]]
+
+   위에 보면 staging area에 a라는 파일을 다시 수정해서 올린것을 볼 수 있다.
+   그 다음 git commend --amend를 하면 두 단계가 일어난다. 
+
+   1)기존의 commit의 내용이 staging area에 올라오고 commit은 삭제된다.
+
+   #+CAPTION: amend status3
+   #+ATTR_HTML: :width 500px
+   [[./img/amendstatus3.png]]
+
+   2) staging area의 파일들을 새로운 commit으로 올린다.
+   #+CAPTION: amend status4
+   #+ATTR_HTML: :width 500px
+   [[./img/amendstatus4.png]]
+
+   #+end_note
+*** Unstaging a Staged File {{{color(red,[git reset Head])}}}
+    
+    #+begin_note
+    그럼 staging에 올라온 파일을 다시 내릴려면 어떻게 할까?
+    우선 git status로 상태를 보자.
+    
+    #+CAPTION: git status
+    #+ATTR_HTML: :width 500px
+    [[./img/undostage1.png]]
+    
+    친절하게도 git status에 보면 unstage하는 법이 나왔다.
+    #+BEGIN_SRC sh
+    git reset HEAD <file>
+    #+END_SRC
+    위 처럼 git reset을 쓰면 된다고 한다. 해보자.
+
+    #+CAPTION: git reset HEAD
+    #+ATTR_HTML: :width 500px
+    [[./img/undostage2.png]]
+
+    쓰여진 대로 잘 동작한다. 그런데 이렇게 reset을 사용하는 것은 주의가 요한다고
+    책에 써있다. 특히 reset --hard 옵션은 매우 위헙하다라고 써있다. reset에
+    대한 추가 설명은 나중에 한다고 한다. 우선은 넘어가기로 하자.
+    #+end_note
+
+*** Unmodifying a Modified File. {{{color(red,[git checkout])}}}
+    #+begin_note
+    위에서 git reset Head <file>을 사용하면 staging area에서 파일이 없어진다.
+    workign directory의 file은 staging area에 올라가기전의 상태가 된다. 즉
+    modified된 상태. undo는 잘 되었다. 그렇다면, 다시 modified에서 commit상태로
+    undo는 어떻게 하는가? 이것도 git status보면 하는 방법이 나와있다.
+
+    #+CAPTION: git checkout
+    #+ATTR_HTML: :width 600px
+    [[./img/checkout.png]]
+
+    git checkout으로 commit과 동일한 파일로 바꿀 수 있다. 물론 그렇게 되면
+    변경 사항들은 다 없어지게 된다. 변경사항이 다 없어지기 때문에 매우 주의깊게 
+    사용해야 하는 명령어라고 한다.
+    #+end_note
+
+** Working with Remotes
+   #+begin_note
+   원격에 저장소가 있는 경우는 주로 협업하는 경우에 많이 사용된다. 공동의 저장소를
+   유지할려면 관리 기술이 필요하다. 이것을 배울것이다. 원격이라는 것은 반드시 외부를
+   뜻하는 건 아니다. 지금 local에서도 원격 저장소를 만들 수 있다.
+
+   {{{color(red,[git remote])}}}
+   
+   #+BEGIN_SRC sh
+   git remote
+   #+END_SRC
+
+   원격 저장소의 server name을 출력한다. 보통은 origin이다. clone한 저장소의
+   경우 테스트 할 수 있다.
+
+   #+BEGIN_SRC sh
+   git remote -v
+   #+END_SRC
+   이것은 server의 이름과 더불어 URL도 출력해준다.
+   
+   책에 나온 예를 보자.
+
+   #+CAPTION: git remote
+   #+ATTR_HTML: :width 600px
+   [[./img/remote.png]]
+
+   #+end_note
+** Tagging
+
+** Git Aliases 
+
+** Summary
+
+* Git Branching
+
+* Git on the Server
+
+* Distributed Git
+
+* GitHub
+
+* Git Tools
+
+* Customize Git
+
+* Git and Other Systems
+
+* Git Internals
+
+* Git in other Environments
+
+* Embedding Git in your Applications
+
+* Git Commands
+
+* 
+

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-16 Sun 09:39 -->
+<!-- 2018-12-20 Thu 10:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pro Git</title>
@@ -243,52 +243,86 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9f64e35">1. Getting Started</a>
+<li><a href="#org32cbb4f">1. Getting Started</a>
 <ul>
-<li><a href="#orgd05b32a">1.1. About Version Control</a>
+<li><a href="#orgb33ff6d">1.1. About Version Control</a>
 <ul>
-<li><a href="#orgc85c55a">Local VCS</a></li>
-<li><a href="#orgb07e8a7">Central Version Control System</a></li>
-<li><a href="#org16540bc">Distributed Version Control System</a></li>
+<li><a href="#org08be8a2">Local VCS</a></li>
+<li><a href="#orgebb693c">Central Version Control System</a></li>
+<li><a href="#org5eece62">Distributed Version Control System</a></li>
 </ul>
 </li>
-<li><a href="#orgc85ad42">1.2. Git Basics</a>
+<li><a href="#org832b5d7">1.2. Git Basics</a>
 <ul>
-<li><a href="#org0755720">snapshots</a></li>
-<li><a href="#orgcbe75f7">Nearly Every Operation is local</a></li>
-<li><a href="#org6e43f87">Git Has Integrity</a></li>
-<li><a href="#org0d0598d">The three states</a></li>
-<li><a href="#org08b32a3">The Command Line</a></li>
+<li><a href="#org319a604">snapshots</a></li>
+<li><a href="#orge271c6e">Nearly Every Operation is local</a></li>
+<li><a href="#orgd9dc3e6">Git Has Integrity</a></li>
+<li><a href="#orgbaa442c">The three states</a></li>
+<li><a href="#org2de9890">The Command Line</a></li>
 </ul>
 </li>
-<li><a href="#org54ab965">1.3. Installing git</a></li>
-<li><a href="#orgd934dec">1.4. First-Time Git Setup</a>
+<li><a href="#org3a357a2">1.3. Installing git</a></li>
+<li><a href="#orgb158f7b">1.4. First-Time Git Setup</a>
 <ul>
-<li><a href="#org3670754">Your Identity [setting1]</a></li>
-<li><a href="#org65f07d0">Your Editor [setting2]</a></li>
-<li><a href="#orgc3cac10">Checking your settings</a></li>
-<li><a href="#org01c49a9">Getting Help</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org124c783">2. Git Basics</a>
-<ul>
-<li><a href="#orga7503e2">2.1. Getting a Git Repository</a>
-<ul>
-<li><a href="#orge2c8d70">Initializing a Repository in an Existing Directory.</a></li>
-<li><a href="#org25f40c2">Cloning an Existing Repository</a></li>
-<li><a href="#org49f35df">Recording Changes to the Repository</a></li>
-<li><a href="#orgf1c93cf">Checking the status of your files</a></li>
-<li><a href="#org052521f">Tracking New Files</a></li>
-<li><a href="#org4ce8384">Staging Modified files</a></li>
-<li><a href="#org9a6c9d7">Short Status</a></li>
-<li><a href="#orgfe47074">Ignoring Files <font color="red">[중요]</font></a></li>
-<li><a href="#org5374c42">Viewing your staged and unstaged changes <font color="red">[git diff]</font></a></li>
+<li><a href="#org0b8fed4">Your Identity [setting1]</a></li>
+<li><a href="#orgef66379">Your Editor [setting2]</a></li>
+<li><a href="#org44b8a8c">Checking your settings</a></li>
+<li><a href="#orgeb5e1d5">Getting Help</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#orgbc14cd0">2. Git Basics</a>
+<ul>
+<li><a href="#org80e7fd8">2.1. Getting a Git Repository</a>
+<ul>
+<li><a href="#orgc20e7d9">Initializing a Repository in an Existing Directory.<font color="red">[git init]</font></a></li>
+<li><a href="#org62d53f9">Cloning an Existing Repository <font color="red">[git clone]</font></a></li>
+</ul>
+</li>
+<li><a href="#org7803987">2.2. Recording Changes to the Repository</a>
+<ul>
+<li><a href="#orge134ccd">Checking the status of your files <font color="red">[git status]</font></a></li>
+<li><a href="#org3eb386d">Tracking New Files</a></li>
+<li><a href="#orgf41fd71">Staging Modified files <font color="red">[git add]</font></a></li>
+<li><a href="#orgb05e270">Short Status</a></li>
+<li><a href="#org1465227">Ignoring Files <font color="red">[중요]</font></a></li>
+<li><a href="#orge665d68">Viewing your staged and unstaged changes <font color="red">[git diff]</font></a></li>
+<li><a href="#org5688892">Commiting Your Changes. <font color="red">[git commit]</font></a></li>
+<li><a href="#org54f2e98">Skipping the Staging Area <font color="red">[일종의 commit]</font></a></li>
+<li><a href="#org9b1601b">Removing Files  <font color="red">[git rm]</font></a></li>
+<li><a href="#org9d289cc">Moving Files<font color="red">[git mv]</font></a></li>
+</ul>
+</li>
+<li><a href="#org6ecd39d">2.3. Viewing the Commit History <font color="red">[git log]</font></a>
+<ul>
+<li><a href="#orgfce92ac">Limiting Log output <font color="red">[git log ]</font></a></li>
+</ul>
+</li>
+<li><a href="#orgf3891bb">2.4. Undoing Things <font color="red">[git commit --amend]</font></a>
+<ul>
+<li><a href="#orgdbe79fc">Unstaging a Staged File <font color="red">[git reset Head]</font></a></li>
+<li><a href="#org127c990">Unmodifying a Modified File. <font color="red">[git checkout]</font></a></li>
+</ul>
+</li>
+<li><a href="#org71fe122">2.5. Working with Remotes</a></li>
+<li><a href="#org18c4387">2.6. Tagging</a></li>
+<li><a href="#org83b2cd1">2.7. Git Aliases</a></li>
+<li><a href="#org392edad">2.8. Summary</a></li>
+</ul>
+</li>
+<li><a href="#orgc77c8cb">3. Git Branching</a></li>
+<li><a href="#orge48a6f9">4. Git on the Server</a></li>
+<li><a href="#org90ebe15">5. Distributed Git</a></li>
+<li><a href="#org945bc28">6. GitHub</a></li>
+<li><a href="#org51e3d41">7. Git Tools</a></li>
+<li><a href="#orgeaa8640">8. Customize Git</a></li>
+<li><a href="#orgf3e6dc5">9. Git and Other Systems</a></li>
+<li><a href="#org9fa022f">10. Git Internals</a></li>
+<li><a href="#org86c12bf">11. Git in other Environments</a></li>
+<li><a href="#org55da989">12. Embedding Git in your Applications</a></li>
+<li><a href="#org597b029">13. Git Commands</a></li>
+<li><a href="#orge53a8e3">14. </a></li>
 </ul>
 </div>
 </div>
@@ -303,17 +337,17 @@ for the JavaScript code in this tag.
 날씨: cloudy
 ------&#x2013;&#x2014;*
 </p>
-<div id="outline-container-org9f64e35" class="outline-2">
-<h2 id="org9f64e35"><span class="section-number-2">1</span> Getting Started</h2>
+<div id="outline-container-org32cbb4f" class="outline-2">
+<h2 id="org32cbb4f"><span class="section-number-2">1</span> Getting Started</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgd05b32a" class="outline-3">
-<h3 id="orgd05b32a"><span class="section-number-3">1.1</span> About Version Control</h3>
+<div id="outline-container-orgb33ff6d" class="outline-3">
+<h3 id="orgb33ff6d"><span class="section-number-3">1.1</span> About Version Control</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orgc85c55a" class="outline-4">
-<h4 id="orgc85c55a">Local VCS</h4>
-<div class="outline-text-4" id="text-orgc85c55a">
+<div id="outline-container-org08be8a2" class="outline-4">
+<h4 id="org08be8a2">Local VCS</h4>
+<div class="outline-text-4" id="text-org08be8a2">
 <div class="note">
 <pre class="example">
 version control: 시간에 따른 파일의 변경사항을 기록하는 system. 
@@ -342,9 +376,9 @@ version: software는 시간에 따라 파일이 변경되거나, 파일의 집�
 </div>
 </div>
 
-<div id="outline-container-orgb07e8a7" class="outline-4">
-<h4 id="orgb07e8a7">Central Version Control System</h4>
-<div class="outline-text-4" id="text-orgb07e8a7">
+<div id="outline-container-orgebb693c" class="outline-4">
+<h4 id="orgebb693c">Central Version Control System</h4>
+<div class="outline-text-4" id="text-orgebb693c">
 <div class="note">
 <p>
 Local system에 database로 관리하는 것은 여러사람이 공동작업을 할 수 없다.
@@ -360,9 +394,9 @@ Local system에 database로 관리하는 것은 여러사람이 공동작업을 
 </div>
 </div>
 
-<div id="outline-container-org16540bc" class="outline-4">
-<h4 id="org16540bc">Distributed Version Control System</h4>
-<div class="outline-text-4" id="text-org16540bc">
+<div id="outline-container-org5eece62" class="outline-4">
+<h4 id="org5eece62">Distributed Version Control System</h4>
+<div class="outline-text-4" id="text-org5eece62">
 <div class="note">
 <p>
 CVS의 server가 문제가 생기면 모든 이력이 날라간다. hdd가 문제가 있거나, 네
@@ -380,13 +414,13 @@ CVS의 server가 문제가 생기면 모든 이력이 날라간다. hdd가 문�
 </div>
 </div>
 
-<div id="outline-container-orgc85ad42" class="outline-3">
-<h3 id="orgc85ad42"><span class="section-number-3">1.2</span> Git Basics</h3>
+<div id="outline-container-org832b5d7" class="outline-3">
+<h3 id="org832b5d7"><span class="section-number-3">1.2</span> Git Basics</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org0755720" class="outline-4">
-<h4 id="org0755720">snapshots</h4>
-<div class="outline-text-4" id="text-org0755720">
+<div id="outline-container-org319a604" class="outline-4">
+<h4 id="org319a604">snapshots</h4>
+<div class="outline-text-4" id="text-org319a604">
 <div class="note">
 <blockquote>
 <p>
@@ -419,9 +453,9 @@ file에 변경사항이 없다면 ㅣink로 대체한다. 이것이 git이 기�
 </div>
 </div>
 
-<div id="outline-container-orgcbe75f7" class="outline-4">
-<h4 id="orgcbe75f7">Nearly Every Operation is local</h4>
-<div class="outline-text-4" id="text-orgcbe75f7">
+<div id="outline-container-orge271c6e" class="outline-4">
+<h4 id="orge271c6e">Nearly Every Operation is local</h4>
+<div class="outline-text-4" id="text-orge271c6e">
 <div class="note">
 <p>
 Git은 대부분의 local에서 작업을 한다. local에 db가 있기 때문이다.
@@ -431,9 +465,9 @@ Git은 대부분의 local에서 작업을 한다. local에 db가 있기 때문�
 </div>
 </div>
 
-<div id="outline-container-org6e43f87" class="outline-4">
-<h4 id="org6e43f87">Git Has Integrity</h4>
-<div class="outline-text-4" id="text-org6e43f87">
+<div id="outline-container-orgd9dc3e6" class="outline-4">
+<h4 id="orgd9dc3e6">Git Has Integrity</h4>
+<div class="outline-text-4" id="text-orgd9dc3e6">
 <div class="note">
 <p>
 git은 version이나 file들을 server와 주고받는 일을 많이 하는데, 이렇게 
@@ -453,9 +487,9 @@ sha-1 hash는 이렇게 생겼다. 40 characters.
 </div>
 </div>
 
-<div id="outline-container-org0d0598d" class="outline-4">
-<h4 id="org0d0598d">The three states</h4>
-<div class="outline-text-4" id="text-org0d0598d">
+<div id="outline-container-orgbaa442c" class="outline-4">
+<h4 id="orgbaa442c">The three states</h4>
+<div class="outline-text-4" id="text-orgbaa442c">
 <div class="note">
 <blockquote>
 <p>
@@ -538,9 +572,9 @@ area and stores that snapshot permanently to your Git directory.</li>
 </div>
 </div>
 
-<div id="outline-container-org08b32a3" class="outline-4">
-<h4 id="org08b32a3">The Command Line</h4>
-<div class="outline-text-4" id="text-org08b32a3">
+<div id="outline-container-org2de9890" class="outline-4">
+<h4 id="org2de9890">The Command Line</h4>
+<div class="outline-text-4" id="text-org2de9890">
 <div class="note">
 <p>
 git을 사용하는 여러방법이 있다. GUI방법이 많은데, 모든 기능이 있는게 아니다.
@@ -553,8 +587,8 @@ command line은 모든 기능이 있다. 그래서 command line을 사용한다.
 </div>
 </div>
 
-<div id="outline-container-org54ab965" class="outline-3">
-<h3 id="org54ab965"><span class="section-number-3">1.3</span> Installing git</h3>
+<div id="outline-container-org3a357a2" class="outline-3">
+<h3 id="org3a357a2"><span class="section-number-3">1.3</span> Installing git</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="note">
 <p>
@@ -566,8 +600,8 @@ git을 설치해야 사용할 수 있다. 설치는 알아서 하고, 이책에�
 </div>
 </div>
 
-<div id="outline-container-orgd934dec" class="outline-3">
-<h3 id="orgd934dec"><span class="section-number-3">1.4</span> First-Time Git Setup</h3>
+<div id="outline-container-orgb158f7b" class="outline-3">
+<h3 id="orgb158f7b"><span class="section-number-3">1.4</span> First-Time Git Setup</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="note">
 <p>
@@ -594,9 +628,9 @@ overwrite될수 있다는 건데, A라는 변수가 시스템,사용자,저장�
 </div>
 </div>
 
-<div id="outline-container-org3670754" class="outline-4">
-<h4 id="org3670754">Your Identity [setting1]</h4>
-<div class="outline-text-4" id="text-org3670754">
+<div id="outline-container-org0b8fed4" class="outline-4">
+<h4 id="org0b8fed4">Your Identity [setting1]</h4>
+<div class="outline-text-4" id="text-org0b8fed4">
 <div class="note">
 <p>
 git을 설치한후 제일 먼저 할것은 git의 username과 email address를 설정하는
@@ -612,9 +646,9 @@ $ git config --global user.email johndoe@ example.com
 </div>
 </div>
 
-<div id="outline-container-org65f07d0" class="outline-4">
-<h4 id="org65f07d0">Your Editor [setting2]</h4>
-<div class="outline-text-4" id="text-org65f07d0">
+<div id="outline-container-orgef66379" class="outline-4">
+<h4 id="orgef66379">Your Editor [setting2]</h4>
+<div class="outline-text-4" id="text-orgef66379">
 <div class="note">
 <p>
 commit할때 message를 남겨야 하기 때문에 editor설정이 필요하다. emacs를
@@ -629,9 +663,9 @@ commit할때 message를 남겨야 하기 때문에 editor설정이 필요하다.
 </div>
 </div>
 
-<div id="outline-container-orgc3cac10" class="outline-4">
-<h4 id="orgc3cac10">Checking your settings</h4>
-<div class="outline-text-4" id="text-orgc3cac10">
+<div id="outline-container-org44b8a8c" class="outline-4">
+<h4 id="org44b8a8c">Checking your settings</h4>
+<div class="outline-text-4" id="text-org44b8a8c">
 <div class="note">
 <p>
 설정된 모든 환경변수를 보여준다. system에 저장된 변수, user에게 저장된 변수,
@@ -666,9 +700,9 @@ commit할때 message를 남겨야 하기 때문에 editor설정이 필요하다.
 </div>
 </div>
 
-<div id="outline-container-org01c49a9" class="outline-4">
-<h4 id="org01c49a9">Getting Help</h4>
-<div class="outline-text-4" id="text-org01c49a9">
+<div id="outline-container-orgeb5e1d5" class="outline-4">
+<h4 id="orgeb5e1d5">Getting Help</h4>
+<div class="outline-text-4" id="text-orgeb5e1d5">
 <div class="note">
 <p>
 git의 도움말은 git help &lt;verb&gt; 형식으로 볼 수 있다.
@@ -697,8 +731,8 @@ git help 명령어를 통해 도움말을 볼 수도 있지만, 아래와 같이
 </div>
 </div>
 
-<div id="outline-container-org124c783" class="outline-2">
-<h2 id="org124c783"><span class="section-number-2">2</span> Git Basics</h2>
+<div id="outline-container-orgbc14cd0" class="outline-2">
+<h2 id="orgbc14cd0"><span class="section-number-2">2</span> Git Basics</h2>
 <div class="outline-text-2" id="text-2">
 <div class="note">
 <p>
@@ -707,8 +741,8 @@ git help 명령어를 통해 도움말을 볼 수도 있지만, 아래와 같이
 
 </div>
 </div>
-<div id="outline-container-orga7503e2" class="outline-3">
-<h3 id="orga7503e2"><span class="section-number-3">2.1</span> Getting a Git Repository</h3>
+<div id="outline-container-org80e7fd8" class="outline-3">
+<h3 id="org80e7fd8"><span class="section-number-3">2.1</span> Getting a Git Repository</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="note">
 <p>
@@ -719,9 +753,9 @@ git의 기초를 말할려면 우선 git 저장소에 대해 얘기해야 한다
 
 </div>
 </div>
-<div id="outline-container-orge2c8d70" class="outline-4">
-<h4 id="orge2c8d70">Initializing a Repository in an Existing Directory.</h4>
-<div class="outline-text-4" id="text-orge2c8d70">
+<div id="outline-container-orgc20e7d9" class="outline-4">
+<h4 id="orgc20e7d9">Initializing a Repository in an Existing Directory.<font color="red">[git init]</font></h4>
+<div class="outline-text-4" id="text-orgc20e7d9">
 <div class="note">
 <p>
 저장소가 없는경우, 우선 Project폴더를 만든다. 이미 있다면 그쪽으로 이동한다.
@@ -749,9 +783,9 @@ $ git commit -m <span style="color: #61CE3C;">'Initial Project Version'</span>
 </div>
 </div>
 </div>
-<div id="outline-container-org25f40c2" class="outline-4">
-<h4 id="org25f40c2">Cloning an Existing Repository</h4>
-<div class="outline-text-4" id="text-org25f40c2">
+<div id="outline-container-org62d53f9" class="outline-4">
+<h4 id="org62d53f9">Cloning an Existing Repository <font color="red">[git clone]</font></h4>
+<div class="outline-text-4" id="text-org62d53f9">
 <div class="note">
 <p>
 이제 다른 사람이 만든 저작물을 가져오는 경우를 생각하자. 다른 사람이 만든 
@@ -792,9 +826,10 @@ clone하는 방식은 공유하는 저장폴더가 보통은 특정 server에 �
 </div>
 </div>
 </div>
-<div id="outline-container-org49f35df" class="outline-4">
-<h4 id="org49f35df">Recording Changes to the Repository</h4>
-<div class="outline-text-4" id="text-org49f35df">
+</div>
+<div id="outline-container-org7803987" class="outline-3">
+<h3 id="org7803987"><span class="section-number-3">2.2</span> Recording Changes to the Repository</h3>
+<div class="outline-text-3" id="text-2-2">
 <div class="note">
 <p>
 이번 장에서 설명하는 것은 용어인데 tracked/untracked라는 용어가 나온다. 솔직히
@@ -812,10 +847,9 @@ clone하는 방식은 공유하는 저장폴더가 보통은 특정 server에 �
 
 </div>
 </div>
-</div>
-<div id="outline-container-orgf1c93cf" class="outline-4">
-<h4 id="orgf1c93cf">Checking the status of your files</h4>
-<div class="outline-text-4" id="text-orgf1c93cf">
+<div id="outline-container-orge134ccd" class="outline-4">
+<h4 id="orge134ccd">Checking the status of your files <font color="red">[git status]</font></h4>
+<div class="outline-text-4" id="text-orge134ccd">
 <div class="note">
 <p>
 git은 save와 관련된 일을 하는 tool이다. 이 tool은 포토샵이나 여타 application
@@ -876,9 +910,9 @@ to track)
 </div>
 </div>
 </div>
-<div id="outline-container-org052521f" class="outline-4">
-<h4 id="org052521f">Tracking New Files</h4>
-<div class="outline-text-4" id="text-org052521f">
+<div id="outline-container-org3eb386d" class="outline-4">
+<h4 id="org3eb386d">Tracking New Files</h4>
+<div class="outline-text-4" id="text-org3eb386d">
 <div class="note">
 <p>
 이 새로 만든 file을 git add하면 tracking이 시작된다고 보면 된다는데 tracking
@@ -908,9 +942,9 @@ README가 stage에 올라갔다. 그것을 git입장에선 tracked file이 새�
 </div>
 </div>
 </div>
-<div id="outline-container-org4ce8384" class="outline-4">
-<h4 id="org4ce8384">Staging Modified files</h4>
-<div class="outline-text-4" id="text-org4ce8384">
+<div id="outline-container-orgf41fd71" class="outline-4">
+<h4 id="orgf41fd71">Staging Modified files <font color="red">[git add]</font></h4>
+<div class="outline-text-4" id="text-orgf41fd71">
 <div class="note">
 <p>
 untracked된 파일, 그러니까 기존에 없던 파일,스케치에 없던 채색을 하고 stage에
@@ -987,9 +1021,9 @@ commit을 해서 새로운 commit으로 저장하면 되는 것이다.
 </div>
 </div>
 </div>
-<div id="outline-container-org9a6c9d7" class="outline-4">
-<h4 id="org9a6c9d7">Short Status</h4>
-<div class="outline-text-4" id="text-org9a6c9d7">
+<div id="outline-container-orgb05e270" class="outline-4">
+<h4 id="orgb05e270">Short Status</h4>
+<div class="outline-text-4" id="text-orgb05e270">
 <div class="note">
 <p>
 status 정보를 좀 더 간단히 보여줄 수 있다.
@@ -1006,9 +1040,9 @@ status 정보를 좀 더 간단히 보여줄 수 있다.
 </div>
 </div>
 </div>
-<div id="outline-container-orgfe47074" class="outline-4">
-<h4 id="orgfe47074">Ignoring Files <font color="red">[중요]</font></h4>
-<div class="outline-text-4" id="text-orgfe47074">
+<div id="outline-container-org1465227" class="outline-4">
+<h4 id="org1465227">Ignoring Files <font color="red">[중요]</font></h4>
+<div class="outline-text-4" id="text-org1465227">
 <div class="note">
 <p>
 이번에 설명할 내용은 실제 많이 사용된다. 저장하고 싶지 않은 파일들, git status로
@@ -1063,23 +1097,987 @@ recursive하게 적용된다. subdirectory마다 .gitignore파일을 둘 수도 
 </div>
 </div>
 </div>
-<div id="outline-container-org5374c42" class="outline-4">
-<h4 id="org5374c42">Viewing your staged and unstaged changes <font color="red">[git diff]</font></h4>
-<div class="outline-text-4" id="text-org5374c42">
+<div id="outline-container-orge665d68" class="outline-4">
+<h4 id="orge665d68">Viewing your staged and unstaged changes <font color="red">[git diff]</font></h4>
+<div class="outline-text-4" id="text-orge665d68">
 <div class="note">
 <p>
+git status는 save하기 위해 어떤것들이 추가되었고, 변경되었고, 어떤게 삭제
+되었고, 지금 save할려는게 무엇이고&#x2026; 등을 알려준다. 하지만, 자세하게 알려주진
+않는다. 단지 파일이름만 알려준다. 자세히 알기 위해선 git diff를 사용한다.
+git status와 git diff없이 저장한다는 것은 말도 안된다. 따라서 git status,
+git diff를 명확히 사용할 수 있어야 한다. 우선 git status에서 알아야 하는것을
+간략하게 정리해 보자.
+</p>
 
+
+<div class="figure">
+<p><img src="./img/statusindiff.png" alt="statusindiff.png" />
+</p>
+</div>
+
+<ol class="org-ol">
+<li>git status를 보면 stage영역과 stage에 올라오지 않은 영역에 있는 파일을
+알수 있다.</li>
+<li><p>
+git status에 보면 local branch와 remote branch를 알 수 있다. branch는
+저장폴더안에 있는 subfolder라고 봐도 된다. 그런데 subfolder와는 좀 다른점은
+있지만, 우선은 그렇게 이해하자.
+</p>
+
+<p>
+git diff는 파일을 비교하는데, 파일간의 비교를 하는 tool은 많다. 기업에서
+많이 쓰는 beyond compare같은 유료 툴도 있고, 무료 툴도 있다. git diff는
+이런 범용적인 tool이 아니다. git diff는 기존의 diff와 다르다.
+</p>
+
+<p>
+<font color="red">[git diff의 특징]</font>
+</p>
+
+<p>
+<font color="green">동일한 파일을 비교한다. 동일한 파일을 어떻게 비교하는가? 같은 파일인데
+	같을것이 아닌가? 동일한 파일이름이지만 내용은 다를 수 있다. commit에
+	있는 a.txt란 파일을 수정했다면 a.txt(commit)과 a.txt(working directory)
+	는 다르다. 마찬가지로 b.txt(working directory)와 b.txt(stage area)도
+	다른 것이다.
+     </font>
+</p>
+
+<p>
+git diff는 동일 이름의 파일만을 비교한다는 면에서 특이하다.
+</p></li>
+</ol>
+
+</div>
+<div class="note">
+<p>
+<font color="red">[git diff:default 동작]</font>
+</p>
+
+<p>
+이제 git diff를 사용해보자. 아무래도 가장 쉬운것은 git diff만 치는경우다.
+우선 git init으로 저장소를 만들고 difftest.txt라는 파일을 만들자. 이상태에선
+비교할것이 없기 때문에 아무것도 비교하지 않는다. difftest.txt를 staging area
+에 올리고 difftest.txt를 수정하자. 그러면 2개의 파일이 생기게 된다. 여기서
+비교해보자. 우선 파일의 내용은 다음과 같다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/difftest_working.png" alt="difftest_working.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 18: </span>difftest in working directory</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./img/difftest_staging.png" alt="difftest_staging.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 19: </span>difftest in Staging</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./img/difftest_status.png" alt="difftest_status.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 20: </span>git status of difftest file.</p>
+</div>
+
+<p>
+<font color="blue">[상황1:working vs staging]</font>
+</p>
+
+
+<div class="figure">
+<p><img src="./img/diff1.png" alt="diff1.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 21: </span>working vs staging</p>
+</div>
+
+
+<p>
+staging file과 working directory의 파일 비교는, staging파일이 기준이
+된다. staging파일에서 무엇이 추가되고 삭제되었는지를 보여준다.
+</p>
+
+<p>
+<font color="blue">[상황2: working vs commit]</font>
+</p>
+
+<p>
+두번째로 staging area에는 없고 commit과 working directory만 있을 경우를
+보자. 비교를 아예 안할 수도 있고 할 수도 있다. 
+</p>
+
+
+<div class="figure">
+<p><img src="./img/diff3.png" alt="diff3.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 22: </span>working vs commit</p>
+</div>
+
+<p>
+보다 시피, staging area가 없다면 commit이 기준 파일이 된다. 기준파일에서
+무엇이 삭제되고 추가되었는지를 보여준다. 
+</p>
+
+<p>
+<font color="blue">[상황3: staging vs commit]</font>
+</p>
+
+<p>
+세번째로 staging과 commit만 있는 경우를 보자. 기준은 무엇이 될까?
+</p>
+
+
+<div class="figure">
+<p><img src="./img/diff4.png" alt="diff4.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 23: </span>staging vs commit</p>
+</div>
+
+<p>
+<font color="blue">[상황4: working vs staging vs commit]</font>
+</p>
+
+<p>
+마지막으로, 파일이 3개 영역에 모두 있을 경우는 어떻게 될까? commit에서 difftest가 있고,
+staging area에도 있고, working directory에도 있다. 이제 git diff를 해보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/diff2.png" alt="diff2.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 24: </span>working vs staging vs commit</p>
+</div>
+
+
+<p>
+<font color="red">[git diff -staged]</font>
+</p>
+
+<p>
+이제 git diff의 option을 살펴보자. &#x2013;staged 옵션은 위의 상황4에서 적용되는
+option이다. 3개의 영역 모두의 파일이 있는 경우 git diff는 stage영역의 기준에서
+working directory의 파일이 무엇을 변경했는지를 보여준다. 그럴 경우 staging과
+commit사이의 비교는 git diff로는 알 수 없다. 이럴 경우 option을 사용하는 것이다.
+</p>
+
+<p>
+상황4에서 -staged option을 줘서 실행해 보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/diff4.png" alt="diff4.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 25: </span>git diff &#x2013;staged in [상황4]</p>
+</div>
+
+
+<p>
+참고로, git diff &#x2013;cached와 git diff &#x2013;staged는 동일 명령어다. git version
+에 따른 차이가 있을 뿐이다. 우리는 git diff &#x2013;staged를 사용한다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org5688892" class="outline-4">
+<h4 id="org5688892">Commiting Your Changes. <font color="red">[git commit]</font></h4>
+<div class="outline-text-4" id="text-org5688892">
+<div class="note">
+<p>
+이제 저장하는 것을 배울 차례다. 저장을 git에서는 commit(동사)한다고 한다.
+저장하는 가장 쉬운 방법은 다음과 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">git commit    
+</pre>
+</div>
+<p>
+commit(동사)해서 commit(명사)을 만들면 commit에 대한 설명이 포함되어야 한다.
+git commit을 실행하면 자동으로 연결된 editor가 실행되게 된다. 이 과정이
+귀찮기 때문에 보통은 다음과 같은 명령을 쓴다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">git commit -m <span style="color: #61CE3C;">" blah blah "</span>
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org54f2e98" class="outline-4">
+<h4 id="org54f2e98">Skipping the Staging Area <font color="red">[일종의 commit]</font></h4>
+<div class="outline-text-4" id="text-org54f2e98">
+<p>
+저장하는 방식은 stage area의 파일을 git commit으로 저장하는 것이다. 다른
+방식도 있다. staging area를 사용하지 않고 바로 파일을 저장(commit)하는 
+방식이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">git commit -a -m <span style="color: #61CE3C;">" blah blah "</span>
+</pre>
+</div>
+<p>
+-a 라는 option을 주면 된다.
+</p>
+</div>
+</div>
+<div id="outline-container-org9b1601b" class="outline-4">
+<h4 id="org9b1601b">Removing Files  <font color="red">[git rm]</font></h4>
+<div class="outline-text-4" id="text-org9b1601b">
+<div class="note">
+<p>
+rm은 파일을 지우는 명령어다. git rm도 동일하게 파일을 지우는 명령어일까?
+아니다. git rm이라는 명령어만 봐도 git과 관련한 무언가를 지우는데 사용될
+것이라는 것은 예상할 수 있다. git과 관련된 무엇인가?는 무엇인가? git이 가진
+구조와 연결지어 생각하면, staging에 올라간 파일이나 폴더를 제거? commit의 
+삭제? untracked와 tracked와도 관련? 이런것을 생각할 수 있다. 하나 하나
+생각해보자. 
+</p>
+
+<p>
+<font color="red">[default git rm]</font>
+</p>
+
+<p>
+git rm을 option없이 실행하면, 어떤 상황에서 무엇을 지울까?
+</p>
+<blockquote>
+<ol class="org-ol">
+<li>stage에 파일이 올라와 있는 경우
+=&gt; 삭제가 안된다.</li>
+<li>새로운 파일인 경우(untracked)
+=&gt; 삭제가 안된다.</li>
+<li>commit에 있는 파일인데, 수정된 파일
+=&gt; 삭제가 안된다.</li>
+<li>commit에 있는 파일인데, 수정되서 staged에 올라와 있는 파일
+=&gt; 삭제가 안된다.</li>
+<li>commit에 있는 파일인데, 수정되지 않은파일
+=&gt; 삭제가 된다.</li>
+</ol>
+</blockquote>
+<p>
+여기서 하나 하나 분석하자. 1,4는 당연히 지워지면 안된다. 왜 안되는가?
+지금 commit에 반영하려는 의도가 있기 때문에 함부러 지울 수 없다. 그래서
+지워지지 않는다. 2번이 지워지지 않는 것은, git과 관련이 없기 때문이다. 
+그냥 rm으로 지우면 된다. git rm을 쓸 필요가 없다. 3번 경우도, commit에
+있는데, 수정이 되었다는 것은 commit에 반영할 의도가 있는 것이다. 그래서 
+지울 수 없다. 5번만이 git rm으로 삭제할 수 있다. 당연해 보인다.
+</p>
+
+<p>
+그러면 2번을 제외하곤 나머지는 git과 관련이 있기 때문에 삭제는 가능할
+것으로 예상된다. default로는 5번만 되기 때문에, 아마도 나머지는 option을
+통해서 삭제가 가능하지 않을까? 이제 option을 사용해보자.
+</p>
+
+<p>
+우선 말로만 설명하면 추상적이 되버리니까, 이미지 간단히 하나 삽입해보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitrm1.png" alt="gitrm1.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 26: </span>git rm default</p>
+</div>
+
+<p>
+<font color="red">[git rm --cached]</font>
+cached란 말은 stage area의 다른말이다. staging area는 예전 cache라고 
+불렀기 때문이다. cache는 컴퓨터에서 많이 사용되는데 역할을 보면 stage area는
+cache로 볼만한 연관성이 있는 건 사실이다. 여튼 이름에서 보듯이 stage영역에
+있는 파일을 지운다는 건다. stage파일에 있는 파일에는 2가지가 있을 수 있다.
+</p>
+
+<blockquote>
+<ol class="org-ol">
+<li>commit에 있고, stage에 있는 경우</li>
+<li>commit에 없고, stage에 있는 경우</li>
+</ol>
+</blockquote>
+<p>
+둘다 지워질 거라고 예상은 된다. 왜냐면 둘다 tracked file이기 때문에 
+stage에 있는 파일을 지우라는 명령에서 commit에 있는 파일이냐 아니냐가
+삭제기준은 아니라고 생각되기 때문이다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitrm2.png" alt="gitrm2.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 27: </span>git rm &#x2013;cached without commit</p>
+</div>
+
+<p>
+그런데, 이렇게 지우면 staging area에서만 안보이고 다른 변화는 없는걸까?
+혹시 working directory에 modified나 뭐 이런 변화가 있는건 아닌가? 결과
+화면을 보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitrm2_result.png" alt="gitrm2_result.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 28: </span>git rm &#x2013;cached result</p>
+</div>
+
+<p>
+이번에는 이전 commit에 있는 파일을 수정하고, staging area에 올린다음
+삭제를 해보자. 
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitrm3.png" alt="gitrm3.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 29: </span>git rm &#x2013;cached where was in previous commit</p>
+</div>
+
+<p>
+다르다. 결과화면이 다르다. 지웠다는 표식이 staging area에 남는다. 
+이게 좀 재밌다.
+이제 git rm은 working directory에 있는 파일을 지우거나, staging에
+있는 파일을 지운다는 것을 알게 되었다.
+</p>
+
+<p>
+<font color="red">[git own file extension]</font>
+</p>
+
+<p>
+git rm을 사용해서 하나의 파일만 지우는 경우는 많지 않을 것이다. 여러개
+지우는데, shell에서 하는 *(모든파일)을 그냥 사용하면 안된다. git만이 갖는
+확장형태가 있다.
+</p>
+<blockquote>
+<ol class="org-ol">
+<li><font color="red">git rm log/*.log (x)</font></li>
+
+<li>git rm log/\*.log  (O)</li>
+</ol>
+</blockquote>
+<p>
+2)와 같이 표현해야 한다.
+</p>
+
+<p>
+그러면 다음과 같은 형식도 맞는 표현이라는것을 알아야 한다.
+</p>
+<blockquote>
+<p>
+<font color="green">git rm \*.log</font>
+</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org9d289cc" class="outline-4">
+<h4 id="org9d289cc">Moving Files<font color="red">[git mv]</font></h4>
+<div class="outline-text-4" id="text-org9d289cc">
+<div class="note">
+<p>
+mv 명령어는 file이나 folder를 이동하거나 명령어다. 그런데 이런 명령어가
+git에 별도로 있어야 할까? git은 특정 directory의 현재 상태를 그대로 이미지화
+해서 저장하는 저장시스템인데 file의 이동이나 이름변경은 file system에서
+mv 명령어로 해도 되는데, 특별히 git mv라는 명령이 있다는게 이해가 안갈 수 
+있다. 그런데, git rm에서 우리는 힌트를 얻을 수 있다. staged에 있는 파일을
+지우기 위해서 git rm을 사용하는 것을 봤다. stage영역이라는 것은 git만이 
+가진 특수한 구조이고 이 구조의 파일을 삭제하는 것은 git에 rm이란 명령어가
+있어야 하는 건 당연해 보인다. 하지만, 우리가 git rm으로 파일을 지웠을 때,
+특이한 현상을 발견했다. git rm으로 파일을 지울 경우, 지워진 file이 이전 
+commit에 있던 파일인 경우, stage 영역에 흔적을 남긴다. 그냥 stage영역에서
+사라지고, working area의 수정된 파일&#x2026; 이렇게 보이는 것이 아니다. deleted
+file이라고 stage 영역에 흔적을 남겨서 commit을 만들때 기록이 된다. 이렇게
+하므로써, 우리는 이전 commit으로부터 새로운 commit에서 해당 파일이 삭제
+되었음을 알 수가 있었다. 이것을 이해한다면 git mv가 있어야 하는 이유도 예상
+할 수 있을 것이다. 
+</p>
+
+<p>
+<font color="red">그렇다. git mv가 존재하는 것은 commit에 그 흔적을 남기려는
+     의도다.</font>
+</p>
+
+<blockquote>
+<ol class="org-ol">
+<li>git mv 명령어 without previous git commit</li>
+<li>git mv 명령어 with previous git commit</li>
+</ol>
+</blockquote>
+
+<p>
+ git mv나 git rm은 이전 commit에 그 파일이 있을 경우 "변경사항 추적"을
+ 위해서 그 흔적을 기록하기 때문에 2)의 경우는 그 흔적이 남을 것이라고 
+예상할 수 있다. 한번 테스트해보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitmv2.png" alt="gitmv2.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 30: </span>git mv without previous commit</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./img/gitmv3.png" alt="gitmv3.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 31: </span>git mv with previous commit</p>
+</div>
+
+<p>
+예상대로 이전 commit의 파일이 있는경우 변경 추적 이력을 유지하기 위해서
+rename이라는 메시지가 stage영역에 남아 있는 것을 볼 수 있다.
 </p>
 
 </div>
 </div>
 </div>
 </div>
+<div id="outline-container-org6ecd39d" class="outline-3">
+<h3 id="org6ecd39d"><span class="section-number-3">2.3</span> Viewing the Commit History <font color="red">[git log]</font></h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="note">
+<p>
+<font color="red">[git log (default)]</font>
+</p>
+
+<p>
+git log는 commit들간에 어떤 변경이 일어났는지 확인 할 수 있는 강력한 도구다.
+가장 기본적인 명령어인 git log를 실행해보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">git log
+</pre>
+</div>
+
+<div class="figure">
+<p><img src="./img/gitlog1.png" alt="gitlog1.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 32: </span>git log result</p>
+</div>
+
+<p>
+보는 법은 맨 위에 있는것이 가장 최근의 commit이라고 보면 된다. commit할때
+작성한 message만 보여주는 아주 간단한 log다. 그렇기 때문에 이것은 많이 안
+쓰인다고 보면된다. 
+</p>
+
+<p>
+<font color="red">[git log -p -2]</font>
+</p>
+
+<p>
+코드 리뷰에 많이 쓰이는 방식은 commit간의 차이를 보여주는 option인 -p를 
+사용한 방식이다.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">git log -p -2
+</pre>
+</div>
+<p>
+2개의 commit을 보는데 좀 자세히 보겠다.
+</p>
+
+<div class="figure">
+<p><img src="./img/gitlog2.png" alt="gitlog2.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 33: </span>git log -p -2 result</p>
+</div>
+
+<p>
+이전 commit과 다른 점을 git diff를 이용해서 보여준다. 현재 commit이 이전
+commit에서 추가된 내용이 +로 보여진다. -2는 2개의 commit만 보여주겠다는 
+것이다.
+</p>
+
+<p>
+<font color="red">[git log --stat]</font>
+git log -p보다 더 간략하게 훒어볼 수 있는 git &#x2013;stat란 옵션이 있다.
+몇줄이 추가되고 삭제되었는지 보여준다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitlog3.png" alt="gitlog3.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 34: </span>git log &#x2013;stat</p>
+</div>
+
+<p>
+<font color="red">[git log --pretty=oneline]</font>
+</p>
+
+<p>
+&#x2013;pretty라는 옵션은 출력형태를 바꾸는 건데, 매우 유용하다고 써 있다. 그중
+oneline은 commit을 요약해서 아주 간략하게 보여준다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitlogpretty1.png" alt="gitlogpretty1.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 35: </span>git log pretty=oneline</p>
+</div>
+
+<p>
+<font color="red">[git log --pretty=format]</font>
+</p>
+
+<p>
+pretty가 유용한것은 format때문이다. 즉 출력을 customizing할 수 있다는 것이다.
+사용법은 다음과 같다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitlogpretty2.png" alt="gitlogpretty2.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 36: </span>git log &#x2013;pretty=format</p>
+</div>
+
+<p>
+format의 option은 다음과 같다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitlogprettyoption1.png" alt="gitlogprettyoption1.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 37: </span>git log pretty format option1</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./img/gitlogprettyoption2.png" alt="gitlogprettyoption2.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 38: </span>git log pretty format option2</p>
+</div>
+
+<p>
+책에선 author와 comitter의 차이를 설명했는데, 보통은 program이나 project의
+patch파일을 작성한 후 원격에 있는 git 저장소에 바로 적용되는게 아니라, committee의
+core member에게 보내면 core member가 반영을 하기 때문에 author와 committer는
+다른 것이다. 이것은 open source에서는 흔한 일이다. 
+</p>
+
+
+<p>
+<font color="red">[git log --pretty=format: " " --graph]</font>
+</p>
+
+<p>
+pretty=format과 oneline option은 &#x2013;graph라는 또다른 option과 함께 사용되는
+경우가 많다. &#x2013;graph라는 option은 아직 배우지 않은 branching과 merge라는 변화를
+시각적으로 보여준다. 이것 때문에 유용한 것이다. 난 아직 branching과 merging을
+모르기 때문에 테스트를 하진 못했다. 다만 master branch하나에서 &#x2013;graph option을
+적용해 보았다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitloggraph.png" alt="gitloggraph.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 39: </span>git log &#x2013;graph option</p>
+</div>
+
+
+<p>
+git log에는 위에서 살펴본 &#x2013;pretty, &#x2013;graph말고도 많은 유용한 log option이
+있다. 책에서는 표만 제공하는데, 나중에 다시 보게되면 유용한 option을 테스트
+해보겠다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/commonoption1.png" alt="commonoption1.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 40: </span>common git log opton1</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./img/commonoption2.png" alt="commonoption2.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 41: </span>common git log opton2</p>
+</div>
+
+</div>
+</div>
+<div id="outline-container-orgfce92ac" class="outline-4">
+<h4 id="orgfce92ac">Limiting Log output <font color="red">[git log ]</font></h4>
+<div class="outline-text-4" id="text-orgfce92ac">
+<div class="note">
+<p>
+Linmiting이란 건 그냥 filtering한다고 보면 된다.
+git log로 보여지는 commit의 수는 무지하게 많을 수 있다. 그래서 우리는 -2와
+같이 한정된 수의 commit만 보여주는 option을 보여준 적이 있다. 그런데
+기본적으로 git log는 page단위로 보여주기 때문에 굳이 -2와같은 option을 사용할
+일은 많지 않다. 사용하는 limiting관련 option으로 가장 많이 사용되는 것은
+&#x2013;since와 &#x2013;until이라는 시간관련 option이라고 한다.
+</p>
+
+<p>
+<font color="red">[git log --since]</font>
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitlogsince.png" alt="gitlogsince.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 42: </span>git log &#x2013;since</p>
+</div>
+
+<p>
+<font color="red">[git log --until]</font>
+</p>
+
+<p>
+&#x2013;until의 시간을 기술하는 방법에는 다른 것을 사용해 보자. 예를 들면 today, 
+timestamp도 가능하다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/loguntil.png" alt="loguntil.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 43: </span>git log &#x2013;until</p>
+</div>
+
+<p>
+<font color="red">[git log --author]</font>
+</p>
+
+<p>
+필터링할때 사용하는 것으로 &#x2013;author도 많이 사용된다. 여러사람이 사용하는
+git이기 때문이다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/logauthor.png" alt="logauthor.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 44: </span>log author</p>
+</div>
+
+<p>
+<font color="red">[git log --grep]</font>
+</p>
+
+<p>
+git log &#x2013;grep 옵션은 commit message를 찾는 용도로 주로 쓰인다. 파일을
+찾는다면 git grep이 더 유용할 수도 있다.
+</p>
+
+<p>
+<font color="red">[git log -S ]</font>
+</p>
+
+<p>
+-S option은 commit에서 특정한 string을 찾는 option이다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/gitlogS.png" alt="gitlogS.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 45: </span>git log -S</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf3891bb" class="outline-3">
+<h3 id="orgf3891bb"><span class="section-number-3">2.4</span> Undoing Things <font color="red">[git commit --amend]</font></h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="note">
+<p>
+git에서 do는 working area에서 staging area로, staging area에서 commit으로
+이동하는 것으로 볼 수 있다. undo는 그 반대다. 그럼 redo는 무엇인가? do하고 
+undo한것을 다시 do할때 redo라고 한다. 
+</p>
+
+
+<div class="figure">
+<p><img src="./img/doundo.png" alt="doundo.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 46: </span>do undo</p>
+</div>
+
+<p>
+<font color="red">[commit -> staging]</font>
+</p>
+
+<p>
+undo를 하는 이유는 무언가를 빼먹고 commit하지 않았기 때문이다. 그래서 
+undo하고 다시 빼먹은 파일을 합쳐서 redo할려는 의도다. 그런 명령어가 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">git commit --amend
+</pre>
+</div>
+<p>
+위 명령어를 사용하면 undo가 가능하다. 이 과정을 설명해 보겠다.
+</p>
+
+<p>
+<font color="red">[1.git log -p로 우선 commit상태를 보자.]</font>
+</p>
+
+
+
+<div class="figure">
+<p><img src="./img/amend1.png" alt="amend1.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 47: </span>git log -p</p>
+</div>
+
+<p>
+위에서 보면, 최근 commit에 어떤 파일이 있는지 볼 수 있다. adding2.txt에
+넣어야 할 내용을 빼먹었다고 가정하고 수정해보자. 그리고 staging에 올린다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/amend2.png" alt="amend2.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 48: </span>git add .</p>
+</div>
+
+<p>
+이제 git commit &#x2013;amend를 해서 다시 commit을 수정하자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/amend3.png" alt="amend3.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 49: </span>git commit &#x2013;amend</p>
+</div>
+
+<p>
+이제 이전 commit은 지워지고 새로운 commit이 대체되게 된다.
+</p>
+<div class="important">
+<p>
+git commend &#x2013;amend에서 반드시 알아야할 게 3가지가 있다.
+</p>
+<ol class="org-ol">
+<li>반드시 이전 commit에 들어있는 파일을 수정할 경우만 해당된다는 것이다.
+새롭게 파일을 만들어서 내용을 넣고 staging area에 올리고 git commit &#x2013;amend를
+하면 이전 commit이 지워지면서 새로운 commit이 만들어질 거라고 생각하면
+안된다.</li>
+<li>이전 commit은 삭제되고 새로운 commit으로 replace되는 것을 명심하자.</li>
+<li>git commit &#x2013;amend는 commit을 undo상태로 돌리는 게 아니다. 그것은 
+undo했다가 다시 redo한다. 순수한 undo는 여기서 설명이 안되고 있다.</li>
+</ol>
+
+</div>
+
+<p>
+git amend 과정을 다시 그림으로 표시해보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/amendstatus1.png" alt="amendstatus1.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 50: </span>amend status</p>
+</div>
+
+<p>
+위 그림처럼 commit을 했다. 그런데 a라는 파일에서 뭔가를 실수를 했다.
+그러면 다시 고치고 새로운 commit을 만들어서 올릴 수도 있다. 그러면 이전
+commit과 새로운 commit은 실수 고친거밖에 없다. git에서 commit하나는
+version을 의미한다. 자기실수로 인해서 version을 만든다는건 아니지 않나?
+그래서 그런 version을 만들면 안된다. 이럴때 amend를 사용하는 것이다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/amendstatus2.png" alt="amendstatus2.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 51: </span>amend status2</p>
+</div>
+
+<p>
+위에 보면 staging area에 a라는 파일을 다시 수정해서 올린것을 볼 수 있다.
+그 다음 git commend &#x2013;amend를 하면 두 단계가 일어난다. 
+</p>
+
+<p>
+1)기존의 commit의 내용이 staging area에 올라오고 commit은 삭제된다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/amendstatus3.png" alt="amendstatus3.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 52: </span>amend status3</p>
+</div>
+
+<ol class="org-ol">
+<li>staging area의 파일들을 새로운 commit으로 올린다.</li>
+</ol>
+
+<div class="figure">
+<p><img src="./img/amendstatus4.png" alt="amendstatus4.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 53: </span>amend status4</p>
+</div>
+
+</div>
+</div>
+<div id="outline-container-orgdbe79fc" class="outline-4">
+<h4 id="orgdbe79fc">Unstaging a Staged File <font color="red">[git reset Head]</font></h4>
+<div class="outline-text-4" id="text-orgdbe79fc">
+<div class="note">
+<p>
+그럼 staging에 올라온 파일을 다시 내릴려면 어떻게 할까?
+우선 git status로 상태를 보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/undostage1.png" alt="undostage1.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 54: </span>git status</p>
+</div>
+
+<p>
+친절하게도 git status에 보면 unstage하는 법이 나왔다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">git reset HEAD &lt;file&gt;
+</pre>
+</div>
+<p>
+위 처럼 git reset을 쓰면 된다고 한다. 해보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/undostage2.png" alt="undostage2.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 55: </span>git reset HEAD</p>
+</div>
+
+<p>
+쓰여진 대로 잘 동작한다. 그런데 이렇게 reset을 사용하는 것은 주의가 요한다고
+책에 써있다. 특히 reset &#x2013;hard 옵션은 매우 위헙하다라고 써있다. reset에
+대한 추가 설명은 나중에 한다고 한다. 우선은 넘어가기로 하자.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org127c990" class="outline-4">
+<h4 id="org127c990">Unmodifying a Modified File. <font color="red">[git checkout]</font></h4>
+<div class="outline-text-4" id="text-org127c990">
+<div class="note">
+<p>
+위에서 git reset Head &lt;file&gt;을 사용하면 staging area에서 파일이 없어진다.
+workign directory의 file은 staging area에 올라가기전의 상태가 된다. 즉
+modified된 상태. undo는 잘 되었다. 그렇다면, 다시 modified에서 commit상태로
+undo는 어떻게 하는가? 이것도 git status보면 하는 방법이 나와있다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/checkout.png" alt="checkout.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 56: </span>git checkout</p>
+</div>
+
+<p>
+git checkout으로 commit과 동일한 파일로 바꿀 수 있다. 물론 그렇게 되면
+변경 사항들은 다 없어지게 된다. 변경사항이 다 없어지기 때문에 매우 주의깊게 
+사용해야 하는 명령어라고 한다.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71fe122" class="outline-3">
+<h3 id="org71fe122"><span class="section-number-3">2.5</span> Working with Remotes</h3>
+</div>
+
+<div id="outline-container-org18c4387" class="outline-3">
+<h3 id="org18c4387"><span class="section-number-3">2.6</span> Tagging</h3>
+</div>
+
+<div id="outline-container-org83b2cd1" class="outline-3">
+<h3 id="org83b2cd1"><span class="section-number-3">2.7</span> Git Aliases</h3>
+</div>
+
+<div id="outline-container-org392edad" class="outline-3">
+<h3 id="org392edad"><span class="section-number-3">2.8</span> Summary</h3>
+</div>
+</div>
+
+<div id="outline-container-orgc77c8cb" class="outline-2">
+<h2 id="orgc77c8cb"><span class="section-number-2">3</span> Git Branching</h2>
+</div>
+
+<div id="outline-container-orge48a6f9" class="outline-2">
+<h2 id="orge48a6f9"><span class="section-number-2">4</span> Git on the Server</h2>
+</div>
+
+<div id="outline-container-org90ebe15" class="outline-2">
+<h2 id="org90ebe15"><span class="section-number-2">5</span> Distributed Git</h2>
+</div>
+
+<div id="outline-container-org945bc28" class="outline-2">
+<h2 id="org945bc28"><span class="section-number-2">6</span> GitHub</h2>
+</div>
+
+<div id="outline-container-org51e3d41" class="outline-2">
+<h2 id="org51e3d41"><span class="section-number-2">7</span> Git Tools</h2>
+</div>
+
+<div id="outline-container-orgeaa8640" class="outline-2">
+<h2 id="orgeaa8640"><span class="section-number-2">8</span> Customize Git</h2>
+</div>
+
+<div id="outline-container-orgf3e6dc5" class="outline-2">
+<h2 id="orgf3e6dc5"><span class="section-number-2">9</span> Git and Other Systems</h2>
+</div>
+
+<div id="outline-container-org9fa022f" class="outline-2">
+<h2 id="org9fa022f"><span class="section-number-2">10</span> Git Internals</h2>
+</div>
+
+<div id="outline-container-org86c12bf" class="outline-2">
+<h2 id="org86c12bf"><span class="section-number-2">11</span> Git in other Environments</h2>
+</div>
+
+<div id="outline-container-org55da989" class="outline-2">
+<h2 id="org55da989"><span class="section-number-2">12</span> Embedding Git in your Applications</h2>
+</div>
+
+<div id="outline-container-org597b029" class="outline-2">
+<h2 id="org597b029"><span class="section-number-2">13</span> Git Commands</h2>
+</div>
+
+<div id="outline-container-orge53a8e3" class="outline-2">
+<h2 id="orge53a8e3"><span class="section-number-2">14</span> </h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-16 Sun 09:39</p>
+<p class="date">Created: 2018-12-20 Thu 10:17</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -92,7 +92,7 @@
    하지 않기 때문이다.
    
    #+end_note
-** Teacher and Student. Imitation and practice
+  ** Teacher and Student. Imitation and practice
    #+begin_note
    문제를 해결하는 방식을 가르치는 선생님은 학생들에게 question과 suggestions을
    반복해서 말해줄 필요가 있다고 한다. 선생님과 학생들이 어떻게 해라는 나완 상관이
