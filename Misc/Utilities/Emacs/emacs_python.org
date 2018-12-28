@@ -1,13 +1,12 @@
-#+TITLE: emacs에서 python설정하기
+#+TITLE: Emacs Python 환경 설정
 #+AUTHOR: Hoyoul Park
 #+DESCRIPTION: Org-HTML export made simple.
 #+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
 #+LANGUAGE:  en
 #+OPTIONS:   H:4 toc:t num:2
-
+#+MACRO: color @@html:<font color="$1">$2</font>@@
 #+PROPERTY:  header-args :padline no
 #+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
-
 - if you want go back?  [[http://www.holytofrege.space/index.html][home]]
 *----------
 작성자: FregeHoly
@@ -15,87 +14,375 @@
 작성장소: Jeju
 날씨: cloudy
 -----------*
-* Python3 설치 on mac
-** Pip
-    #+begin_attention
-    pip는 python package를 설치하는 tool. 기본적으로 python에 포함되어 있어
-    서 별도로 설치할 필요는 없다.
-    #+end_attention
-
-** Pyenv
- #+begin_attention
- pyenv는 python environment약자. python은 local machine에 여러 종류가
- 설치 될 수 있다. python2.7, python3.0...
- 맥북에는 기본적으로 python은 2.7이 설치되어 있다. 내가 만들 project가 python
- 3.0을 사용해야 한다면 어떻게 할까? python2.7을 지우고 python3.0을 설치해서
- 사용해야 한다. 그럼 다시 python2.7을 사용해야 한다면? 계속 설치하고 지우고를
- 반복할 순 없는 일이다. pyenv는 그럴때 사용하면 편리한 툴이다. pyenv global 3.0
- 이란 명령을 쓰면 python3.0을 사용할 수 있기 때문이다.
- #+end_attention
-*** pyenv설치
-    #+BEGIN_SRC sh
-    brew install pyenv
-    #+END_SRC
-*** python list in pyenv
-    #+BEGIN_SRC sh
-    pyenv install --list
-    #+END_SRC
-     #+begin_attention
-     pyenv install --list는 설치할 파이썬 목록을 list로 보여준다.
-     #+end_attention
-*** install python in pyenv
-    #+BEGIN_SRC sh
-    pyenv install python-3,7.1
-    #+END_SRC
-*** pyenv -V (설치된 python확인)
-    #+BEGIN_SRC sh
-    pyenv -V
-    #+END_SRC
-*** pyenv global 3.7.1(설치된 python 선택)
-    #+BEGIN_SRC sh
-    pyenv global 3.7.1
-    #+END_SRC
-* python3설정 on Emacs
- #+begin_attention
- 필요한 packages
-. elpy
-   . jedi
-   . autopep8
-   . yapf
-   . flake8
-.ipython
-. python-epc
- #+end_attention
-** elpy
-    #+begin_attention
-    elpy는 emacs에서 python coding을 위한 최고의 tool이라고 한다. 아직 어떤
-    역할을 하는지 모른다. 다만, elpy를 설치하기 위해서는 jedi,autopep8,yapf,
-    flake8을 설치해야 한다는 것이다. emacs가 이런 tool들을 emacs내에 설치하는게
-    아니라는 건 알아야 한다. 단지 emacs는 local system에 설치한 tool과 연결해서
-    사용한다는 것이다. 즉 local pc에 설치된 python package jedi,autopep8,
-    flake8을 elpy가 대표해서 emacs에서 사용하겠다는 뜻으로 이해가 된다.
-    #+end_attention
-*** install jedi, autopep8,yapf,flake8 on mac using pip
-     #+begin_attention
-     # Either of these
-     pip install rope
-     pip install jedi
-     # flake8 for code checks
-     pip install flake8
-     # and autopep8 for automatic PEP8 formatting
-     pip install autopep8
-     # and yapf for code formatting
-     pip install yapf
-     -> pip로 설치한다. pyenv로 python3로 선택한후 설치하기로 한다.
-     #+end_attention
-*** elpy install on emacs
-    #+BEGIN_EXAMPLE
-    (use-package elpy
-    :ensure t)를 추가.
-    #+END_EXAMPLE
+ 
+* 맥북에서 Python개발
+#+begin_note
+맥북은 python(version2.7) 이미 설치 되어 있다. 그냥 하면 되는거 아닌가?
      
-** Ipython
-    #+begin_attention
-    Ipython은 python shell이다.
-    #+end_attention
+ #+begin_attention
+ 파이썬 세계는 다른 언어와 달리 여러버전이 혼용되어 사용된다. project마다 
+ 다양한 python 버전이 사용된다. 이것이 다른언어와 매우 다른 부분이다.
+ 그래서 python개발에는 python의 버전을 바꿀 수 있는 pyenv가 반드시 필요하다.
+ 순서는, pyenv를 설치하고, pyenv에서 python을 설치한다. 이렇게 하면 기본적인
+ python을 코딩할 수 있는 환경이 설정이된다. 하지만, python을 사용하는 아주 중요한
+ 이유중에 하나가, 수많은 library(package)를 사용할 수 있다는 것이다. 이 라이브러리를
+ 설치하는데 pip라는 툴이 필요하다. pip라는 tool은 built-in package라서 문제없이
+ 자동으로 설치된다. 그런데 또다른 문제가 있다. project마다 사용되는 python이 다르듯이
+ library version도 제각각이다. 그래서 특정 library를 사용할 수 있는 가상환경이
+ 필요하다. 그것이 virtualenv다. 
 
+ 이제 다 된것일까? 메모장으로 코딩하고 shell에서 해석하면 코딩은 할 수 있지만,
+ 요즘에는 그렇게 하지 않는다. IDE에서 제공하는 기능을 사용해서 효율적으로 코딩하기
+ 때문이다. IDE를 사용하면 code hightlighting, code formating, code auto 
+ complete와 같은 편리한 기능을 제공한다. 나는 emacs를 사용하기 때문에 이런 기능을
+ emacs에 설치하는 방법도 설명하겠다. 그래서 두 파트로 나누어 설명한다.
+ #+begin_quote
+ 1. python을 local에서 사용하는 방법(pyenv,pip)
+ 2. Emacs를 python IDE로 만들기.(IDE 기능) 
+ #+end_quote
+ #+end_attention
+#+end_note
+** Python3 설치 on mac(local machine)
+ #+begin_note
+ 우선 python을 설치하기 위해선, pyenv로 python을 원하는 version으로 선택한다.
+ 그러면  pip로 원하는 package를 실행할 수 있을 것이다.
+ #+end_note
+*** Pyenv
+  #+begin_note
+  pyenv는 python environment약자. python은 local machine에 여러 종류가
+  설치 될 수 있다. python2.7, python3.0...
+  맥북에는 기본적으로 python은 2.7이 설치되어 있다. 내가 만들 project가 python
+  3.0을 사용해야 한다면 어떻게 할까? python2.7을 지우고 python3.0을 설치해서
+  사용해야 한다. 그럼 다시 python2.7을 사용해야 한다면? 계속 설치하고 지우고를
+  반복할 순 없는 일이다. pyenv는 그럴때 사용하면 편리한 툴이다. pyenv global 3.0
+  이란 명령을 쓰면 python3.0을 사용할 수 있기 때문이다.
+
+  #+CAPTION: pyenv
+  #+ATTR_HTML: :width 600px
+  [[./img/pyenv.png]]
+
+  #+end_note
+**** pyenv설치
+     #+begin_note
+     시스템에 brew를 사용하여 pyenv를 설치한다.
+
+     #+BEGIN_SRC sh
+     brew install pyenv
+     #+END_SRC
+
+     #+end_note
+**** python list in pyenv
+     #+begin_note
+     pyenv를 설치했으면, python도 설치할 수 있다. 설치할 python 목록은
+     --list옵션으로 확인할 수 있다.
+     #+BEGIN_SRC sh
+     pyenv install --list
+     #+END_SRC
+
+     #+end_note
+**** install python in pyenv
+     #+begin_note
+     목록에서 하나를 선택해서 설치해보자.
+     #+BEGIN_SRC sh
+     pyenv install python-3,7.1
+     #+END_SRC
+     #+end_note
+
+**** 설치된 python확인
+     #+begin_note
+     현재 설치된 version은 아래와 같이 확인하면 된다. 
+
+     #+BEGIN_SRC sh
+     pyenv global
+     #+END_SRC
+
+     모든 version확인은 다음과 같이 하면 된다.
+     #+BEGIN_SRC sh
+     pyenv versions
+     #+END_SRC
+     #+end_note
+
+**** pyenv global 3.7.1(설치된 python 선택)
+     #+BEGIN_SRC sh
+     pyenv global 3.7.1
+     #+END_SRC
+*** virtualenv
+    #+begin_note
+    위에서 말했듯이, project에 따라 사용되는 library가 다른데, 이 문제를 해결하기
+    위해서 virtualenv가 나왔다. virtualenv는 두가지 종류가 있다. 하나는 python 
+    package로 제공된다. 이말은 현재 사용하고 있는 python runtime instance에서 pip를 
+    사용해서 다운로드 받아 사용해야 한다는 것이다. pyenv로 특정 python runtime instance를
+    선택한 후 가상환경을 만든다. 다른 하나는 system에 다운 받아서 실행하는
+    pyenv-virtualenv인데 이것은 python package가 아닌 system 응용 프로그램이다.
+    나는 python package인 virtualenv를 사용하고자 한다. 이것을 사용하는 이유는
+    emacs의 elpy와 호환이 잘 된다는 근거없는 생각에서 출발한다. 여튼 virtualenv를
+    설치하고 사용하는 과정을 보여주겠다. pyenv로 특정 python runtime instance를
+    선택한다.
+
+    #+CAPTION: current python runtime instance
+    #+ATTR_HTML: :width 500px
+    [[./img/python/set1.png]]
+
+    이제 virtualenv를 설치하자.
+    #+BEGIN_SRC sh
+    pip3 install virtualenv
+    #+END_SRC
+	 
+    가상환경을 만드는 작업의 첫번째는 가상환경을 저장할 폴더를 만드는 것이다.
+    나는 mytemp라는 폴더를 만들고 여기에 가상환경을 만들어 보겠다.
+    가상환경은 다음과 같이 만든다.
+    #+BEGIN_SRC sh
+    virtualenv [가상환경이름]
+    #+END_SRC
+
+    #+CAPTION: make virtual enviroment
+    #+ATTR_HTML: :width 600px
+    [[./img/python/set2.png]]
+
+    이제 만든 가상환경에 진입해보자. 진입하는 방법은 다음과 같다.
+    #+BEGIN_SRC sh
+    source [가상환경이름]/bin/activate
+    #+END_SRC
+    
+    #+CAPTION: source environment
+    #+ATTR_HTML: :width 600px
+    [[./img/python/set3.png]]
+
+    가상환경에서 나가는 방법은 아래와 같다.
+    #+BEGIN_SRC sh
+    deactivate
+    #+END_SRC
+
+    그런데 이렇게 virtualenv만 사용하면 불편한게 많다.
+    만든 가상환경의 위치를 늘 기억해야하고 진입해서 /bin/activate를 날려야
+    하는것도 불편하다. 이것을 해결하는게 virtualenvwrapper이다.
+    #+end_note
+*** virtualenvwrapper
+    #+begin_note
+    virtualenvwrapper를 설치해 보자.
+
+    #+BEGIN_SRC sh
+    pip3 install virtualenvwrapper
+    #+END_SRC
+    
+    virtualenvwrapper는 virtualenv가 여러군데에 가상환경을 저장하는 것과 
+    달리 저장폴더를 fix해 버린다. 그리고 그 위치를 shell의 환경변수로 저장
+    한다.
+
+    그래서 우선 저장폴더를 만들자.
+    #+BEGIN_SRC sh
+    mkdir ~/.virtualenvs
+    #+END_SRC
+
+    .zshrc에 다음 내용을 저장한다.
+     #+begin_quote
+     $ export WORKON_HOME=~/.virtualenvs
+     $ export VIRTUALENVWRAPPER_PYTHON='파이썬의 경로'  
+     $ source /usr/local/bin/virtualenvwrapper.sh
+     #+end_quote
+     
+     '파이썬의 경로'는 which python3를 실행하면 알 수 있다.
+    
+     이제 virtualenvwrapper를 사용해서 쉽게 가상환경을 만들고 진입할 수 있다.
+     
+     
+
+     {{{color(red,[virtualenvwrapper로 가상환경 만들기])}}}
+     
+     가상환경을 만드는 것은 쉽다.
+     #+BEGIN_SRC sh
+     mkvirtualenv myfirstenv
+     #+END_SRC
+
+     #+CAPTION: make virtualenv
+     #+ATTR_HTML: :width 500px
+     [[./img/python/set4.png]]
+     
+     {{{color(red,[virtualenvwrapper로 가상환경 지우기])}}}
+
+     가상환경은 지우는 것은 rmvirtualenv를 사용한다.
+
+     #+BEGIN_SRC sh
+     rmvirtualenv myfirstenv
+     #+END_SRC
+
+     {{{color(red,[virtualenvwrapper로 가상환경 진입하기])}}}
+
+     virtualwrapper를 사용하면 언제 어디서나 가상환경에 진입할 수 있다.
+
+     #+BEGIN_SRC sh
+     workon myfirstenv
+     #+END_SRC
+
+     {{{color(red,[virtualenvwrapper로 가상환경 나가기])}}}
+
+     deactivate만 치면 가상환경에서 나가게 된다.
+
+     #+BEGIN_SRC sh
+     deactivate
+     #+END_SRC
+
+    #+end_note
+*** Pip
+     #+begin_note
+     pip는 python package를 설치하는 tool. 기본적으로 python에 포함되어 있어
+     서 별도로 설치할 필요는 없다. 다만, 먼저 virtual environment를 활성화
+     한 후 pip로 설치 하면 된다.
+      #+begin_quote
+      비슷한 tool로 brew, melpa, elpa도 매우 비슷한 package management system이다.
+      #+end_quote
+
+     #+end_note
+* python3설정 on Emacs
+  #+begin_note
+  mac에선 pyenv와 virtualenv,virtualenvwrapper만 있으면, 파이썬에 대한 
+  기본 작업이 가능하다. 그런데 메모장에서 소스코드를 작성하고 shell에서 실행한다는
+  가정이다. 우리는 IDE가 필요하다. Emacs를 사용하기로 한다. local에서 설정된
+  것을 emacs에도 적용하기로 하자. pyenv,virtualenv, virtualenvwrapper를 적용
+  하는 것부터하자. 
+  #+end_note
+** pyenv in emacs
+   #+begin_note
+   emacs는 기본적으로 local machine에서 설치한 프로그램을 사용할 수 있다.
+   emacs extension(package)를 사용하면 된다.  emacs에서 통신을 통해서 동일하게
+   사용하는 것이 가능하다. 우리는 위에서 pyenv를 설치하고, python을 설치했다. 그렇다면
+   emacs에서 pyenv를 사용할 수 있다는 말이다.우선 melpa에 보면 pyenv-mode라는
+   패키지가 있다.설치한다.
+   #+BEGIN_SRC sh
+   (use-package pyenv-mode
+   :ensure t)
+   #+END_SRC
+   그러면 shell에 설치된 pyenv를 emacs에서도 사용 가능하다.
+   #+end_note
+*** pyenv-mode-set
+    #+begin_note
+    pyenv에 설치된 python을 선택한다.
+    #+end_note
+
+** elpy
+    #+begin_note
+    emacs에서 python을 하려면 elpy를 설치하라고 한다. elpy가 무엇인지 검색해 보았다.
+    elpy는 emacs에서 python coding을 위한 최고의 개발환경을 제공하는 package라고
+    한다. elpy가 어떤것인지 이해가 잘 안간다. 간단하게 elpy가 emacs를 python IDE로 
+    만들어 준다고 생각하면 된다. 기존의 python IDE가 하는 기능을 emacs에서 할 수
+    있게 도와준다고 생각하자. 좀 더 구체적으로 알기위해서 다음과 같이 해보자.
+    M-x elpy-config를 입력하자.
+
+    #+CAPTION: elpy-config
+    #+ATTR_HTML: :width 500px
+    [[./img/python/elpyconfig.png]]
+
+    이 화면을 보면 대충 elpy가 무슨일을 하는지 이해가 간다. python을 프로그래밍
+    하기위한 모든 것들을 지원해주는 extension. 그렇게 이해하면 된다. 그런데,
+    elpy는 약간 local system의 연결자? 같은 생각도 든다. emacs에 설치하는게
+    아니라, local system에 설치된 python에 필요한 툴을 연결한다는 느낌?
+
+    우선, 위에 보면 
+
+     {{{color(red,[virtualenv설정])}}}
+     
+    1. virtualenv, RPC Python, Interactive Python
+    => 이것은 가상환경을 선택하면 자연스럽게 세팅된다.
+
+    2. 나머지 항목도 가상환경에 의존적이다. 어떤 가상환경에선 pip로 
+       jedi를 install했다면, 그 가상환경을 선택하는 동시에 jedi항목이
+       설정되어 있을것이다.
+       
+    #+end_note     
+** virtualenv설정  
+   #+begin_note
+
+   {{{color(red,[pyvenv])}}}
+   
+   emacs에선, pyvenv로 가상환경을 생성,삭제,workon이 모두 가능하다. pyvenv는
+   python environment를 설정한다는 뜻이고, pyvenv는 python virtual environment
+   의 의미다.
+
+   1. virtual environment의 생성
+      M-x pyvenv-create를  사용.
+
+   2. virtual environment의 사용
+      M-x pyvenv-workon
+
+   #+end_note
+** jedi(auto completion package)
+    #+begin_note
+    python이 가진 package 중 하나다. python 자동완성 기능을 도와준다. jedi란게 
+    python이 가진 name을 모두 갖고 있다고 생각하면 된다. 그래서 자동 완성이
+    가능하다. emacs의 elpy설정은 기본적으로 virtual environment의 의존적이다.
+    이것도 마찬가지다. 그래서 가상환경으로 진입한 이후에 pip install jedi를 
+    설정했다면 elpy에도 jedi가 설정된것으로 나올 것이다.
+    #+end_note
+** Rope
+   #+begin_note
+   python의 refactoring 패키지라고 한다. 이것도 마찬가지로 virtual environment
+   에 설정이  되어 있다면, elpy에도 자동으로 설정된다.
+   #+end_note
+** flake8(coding convention package)
+   #+begin_note
+   python은 coding convention이 있다. syntax rule처럼 안지키면 에러를 발생
+   하는 rule은 아니나 암묵적으로 동의하는 rule이 있는 것이다. 코드 스타일이라고도
+   할 수 있는데, PEP8(python Enhance Proposal 8)이라고 guide line을 제시한다.
+   flake8을 설치하면 자기가 작성한 코드가 이 coding convention을 따르는지 
+   안 따르는지를 알 수 있다. 그래서 python package로 flake8을 설치한다.
+   #+end_note
+** YAPF(Yet Another Python Formatter-code convention package)
+   #+begin_note
+   source code의 style에 관한 규약으로 pep8이 있었다. 이것때문에 flake8과 autopep8을
+   설치했는데, 다른 style을 적용할 수 있게 해주는 package다. pep8말고도 google
+   style이라던지 facebook style이 있다.
+   아래를 참조하자. 
+    #+begin_quote
+    https://yapf.now.sh    
+    #+end_quote
+   #+end_note
+* 실행
+#+begin_note
+
+ {{{color(red,[python interpreter])}}}
+
+#+BEGIN_SRC sh
+M-x run-python
+#+END_SRC
+
+{{{color(red,[python compile])}}}
+
+#+BEGIN_SRC sh
+C-c C-t (elpy-test)
+#+END_SRC     
+#+end_note
+* Summary
+#+begin_note
+마지막으로 내가 설치한 과정은 step1-4다.
+step5로 pyenv-virtualenv, pyenv-virtualenvwrapper를 사용할 수도 있다.
+
+{{{color(red,[step1])}}}
+     
+#+CAPTION: step1
+#+ATTR_HTML: :width 400px
+[[./img/python/virtualenv1.png]]
+
+{{{color(red,[step2])}}}
+
+#+CAPTION: step2
+#+ATTR_HTML: :width 400px
+[[./img/python/virtualenv2.png]]
+
+{{{color(red,[step3])}}}
+
+#+CAPTION: step3
+#+ATTR_HTML: :width 400px
+[[./img/python/virtualenv3.png]]
+
+{{{color(red,[step4])}}}
+
+#+CAPTION: step4
+#+ATTR_HTML: :width 400px
+[[./img/python/virtualenv4.png]]
+
+{{{color(red,[step5])}}}
+
+#+CAPTION: step5
+#+ATTR_HTML: :width 400px
+[[./img/python/virtualenv5.png]]
+#+end_note

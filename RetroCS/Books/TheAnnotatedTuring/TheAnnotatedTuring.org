@@ -1,0 +1,21 @@
+#+TITLE: The Annotated Turing
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+#+MACRO: color @@html:<font color=""></font>@@
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
+*----------
+작성자: FregeHoly
+작성일: <2018-12-23 Sun>
+작성장소: Jeju
+날씨: cloudy
+-----------*
+* Introduction
+  #+begin_note
+  
+  #+end_note

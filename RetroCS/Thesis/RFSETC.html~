@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-12-28 Fri 00:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part1</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Hoyoul Park" />
+<meta name="description" content="Org-HTML export made simple."
+ />
+<meta name="keywords" content="org-mode, export, html, theme, style, css, js, bigblow" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part1</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org362ecb1">1. Review</a>
+<ul>
+<li><a href="#orge516d9f">1.1. 문제(problem)</a></li>
+<li><a href="#org96cbdcc">1.2. 답(values)</a></li>
+<li><a href="#orge74e2be">1.3. 문제의 기술 1 - expressions</a></li>
+<li><a href="#org10af912">1.4. 문제의 기술2 - function(1)</a></li>
+<li><a href="#orgcfcf26d">1.5. 문제의 기술2 - function과 expression의 비교</a></li>
+<li><a href="#org7b54da1">1.6. 함수의 사용과 특징.</a></li>
+<li><a href="#org0c939ca">1.7. 기타</a></li>
+</ul>
+</li>
+<li><a href="#org0a55228">2. Introduction</a></li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li>if you want go back?  <a href="http://www.holytofrege.space/index.html">home</a></li>
+</ul>
+<p>
+*-----&#x2013;&#x2014;
+작성자: FregeHoly
+작성일: <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-12-22 Sat&gt;</span></span>
+작성장소: Jeju
+날씨: cloudy
+------&#x2013;&#x2014;*
+</p>
+
+<div id="outline-container-org362ecb1" class="outline-2">
+<h2 id="org362ecb1"><span class="section-number-2">1</span> Review</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+#+begin<sub>note</sub>
+이 논문은 lisp의 기본원리를 설명한다. 이 논문을 이해하기 위해선 기본적으로 알아야
+할 것이 있다.
+</p>
+</div>
+
+<div id="outline-container-orge516d9f" class="outline-3">
+<h3 id="orge516d9f"><span class="section-number-3">1.1</span> 문제(problem)</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="note">
+<p>
+<font color="red">[태초에 문제가 있었다.]</font>
+</p>
+
+
+<div class="figure">
+<p><img src="./img/mccarthy/review1.png" alt="review1.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 1: </span>태초에 문제가 있었다.</p>
+</div>
+
+
+<p>
+<font color="red">[문제를 풀기위해 학문이 발전했다.]</font>
+</p>
+
+
+<div class="figure">
+<p><img src="./img/mccarthy/questions.png" alt="questions.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 2: </span>세가지 가지 문제</p>
+</div>
+
+<p>
+문제를 풀기 위해서 학문이 발전했다. propositional logic은 t/f를 알기위한 질문을
+풀기 위해서 만들어졌다. Predicate Logic은 t를 만족하는 thing을 찾기 위한 질문을
+풀기 위해서 만들어졌다. 혹은 f를 만족하는 thing을 찾기 위한 질문을 풀기 위해 만들
+어졌다. Predicate logic은 propostional에서 다루는 t/f문제에서 파생되었다. 수학은
+수치를 알기위한 질문을 풀기 위해 만들어 졌다.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org96cbdcc" class="outline-3">
+<h3 id="org96cbdcc"><span class="section-number-3">1.2</span> 답(values)</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="note">
+<p>
+<font color="red">[세가지 values]</font>
+</p>
+
+
+<div class="figure">
+<p><img src="./img/mccarthy/answers.png" alt="answers.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 3: </span>세가지 values</p>
+</div>
+
+<p>
+우리는 문제에만 매몰되서 푸는 것에만 집중한다. 변수를 만들고 함수를 만든다. 무언가를
+풀려고 하는데, 과연 우리가 알고자하는 답은 무엇일까? 답에 대해선 큰 신경을 쓰지 않는다.
+그래서 답을 주어도 답을 인식하지 못하는 불상사가 일어나기도 한다. 각각의 학문에서 
+알고자 하는 답은 123,"사과",yes(T), 이 세가지다. 이 세가지밖에 없다. 이제 문제에
+집중하자.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge74e2be" class="outline-3">
+<h3 id="orge74e2be"><span class="section-number-3">1.3</span> 문제의 기술 1 - expressions</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="note">
+<p>
+<font color="red">[expressions]</font>
+</p>
+
+<p>
+각각의 학문은 자신이 알고자하는 것을 알기 위해서 많은 이론이나 법칙을 통해 발전해 왔다.
+문제의 답을 찾기 위한 발전이다. 처음에 문제는 자연어로 기술 되었지만,
+자연어를 써서 문제를 기술하는 것은 문제가 많기 때문에 각각의 학문은 자신만의 언어를 가지고 
+문제를 기술하고 문제를 풀어 왔다. 문제를 어떻게 기술하느냐?도 또다른 학문이다.
+그만큼 할 얘기가 많은 분야다. 여튼 우리는 문제를 기술할 때 (1)이미 알고 있는 것과 
+(2)모르는 것과의 (3) 그들의 관계를 통해서 문제를 해결하려고 한다. 따라서, 이 3개가 포함이 된다.
+수학에서 예를 들어보자.
+</p>
+
+<blockquote>
+<p>
+y = x + 1
+</p>
+</blockquote>
+
+<p>
+우리는 모르는게 2개있다. x,y 이것을 찾는게 답이다. x,y라는 것은 숫자일 것이다. 
+왜냐 수학에서 우리가 찾을 답(value)은 수이기 때문에&#x2026;그럼 1이라는건 무엇인가? 
+1은 값이다. value&#x2026;이것을 해석할 때, 그냥 value가 아닌, 이미 이전에 구한 답이거나
+답으로 이미 정해 놓은것이라고 해석하는게 좋다. axiom처럼&#x2026;
+그런 다음에  우리는 이미 알고 있는 것과 모르는 것과의 관계를 기술한다. 이게
+문제를 기술하는 방식이다. 그럼 수학말고 propositional logic을 살펴보자.
+</p>
+
+<p>
+<font color="red">[propositional logic에서의 문제 기술]</font>
+</p>
+<blockquote>
+<p>
+false and true
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Propositional logic에서 우리가 이미 알고 있는 것은 무엇인가?
+</p>
+
+<p>
+==&gt; true, false다. 
+</p>
+
+<p>
+Propositional logic에서 알고자 하는 것(모르는것)은 무엇인가?
+</p>
+
+<p>
+==&gt; false and true가 무엇이냐?
+</p>
+
+<p>
+Propositional logic에서 관계는 무엇이 있는가?
+</p>
+
+<p>
+and or not xor&#x2026;
+</p>
+</blockquote>
+
+<p>
+수학과는 약간 차이가 있지만, 왜냐면, true and false라는 문장은
+우리가 아는것이고 관계(and)만을 사용해서 표현했기 때문에.. 하지만, 이렇게 아는것과
+관계만을 표시해서 모르는 것을 표현하는게 propositiaonl logic의 특징이기도 하다.
+물론 표기법을 x = true and false로 한다면 수학과 비슷하다.
+여튼 1)아는것(이미 알고있는것) 2) 모르는것 3)관계를 통해 문제를 기술하는 것은 
+확실하다. 
+</p>
+
+<p>
+결론적으로 우리는 이런 필수적인 정보들을 조합해서 문제를 기술 한다.
+</p>
+
+<p>
+이런 필수적인 정보는 언어마다 다르고, 표현하는 심볼도 각기 다르다. 당연하다. 
+알고자하는 게 다르고, 그 값이 다르기 때문이다. 
+여튼 이런 필수적인 정보를 특정한 symbol을 사용하고, 이런 심볼들을 조합한 것을
+expression이라고 하는 것을 아는게 중요하다. 
+</p>
+
+<blockquote>
+<p>
+그러면 여기서 질문! 모르는 것이 없을 때 아는것만의 관계를 통해서 무언가를
+표현한다면 그것도 expression이라고 말 할 수 있는가? 예를 들어보자.
+</p>
+
+<p>
+[수학]: 3 + 2 = 5 
+</p>
+
+<p>
+[논리학]: true and true 
+</p>
+
+<p>
+수학은 맞다. 그런데 논리학은 좀 다르다. true라는 사실과 and라는 관계만
+사용해서 표현 했지만, 이게 질문이 된다. true and true가 true인지 아닌지를
+묻는 질문이다. 즉 학문마다, expression을 나타내는 표현 방식은 다르다.
+</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org10af912" class="outline-3">
+<h3 id="org10af912"><span class="section-number-3">1.4</span> 문제의 기술2 - function(1)</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="note">
+<p>
+function은 수학에서 사용되었다. leibniz가 만들었다고 알려져 있다. function은 문제를
+기술하는 최고의 방법이다. math뿐만 아니라 propositional logic, predicate logic에
+모두 사용할 수 있는 방법이기 때문이다. expression과 function은 문제를 기술한다는 점은
+같지만, 개념적으로 다르다. 첫번째로,  expression은 그 학문을 기술하는 언어가 가진 
+요소들을 combination한 것이라서, domain specific한 면이있다. 반면에 function은
+domain-specific하기 보단 개념적이다. 아래 그림처럼 개념적이다.
+</p>
+
+<p>
+<font color="red">[functions vs expressions: 개념적 차이]</font>
+</p>
+
+<p width="400px">
+<img src="./img/mccarthy/function1.png" alt="function1.png" width="400px" /> <img src="./img/mccarthy/function2.png" alt="function2.png" />
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcfcf26d" class="outline-3">
+<h3 id="orgcfcf26d"><span class="section-number-3">1.5</span> 문제의 기술2 - function과 expression의 비교</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+<font color="red">[functions vs expressions: 일반화]</font>
+</p>
+
+<p>
+expression자체는 values들과 관계와 변수를 조합해서 문제를 기술한다. 반면에 
+함수에서 문제를 기술하는 방식은 일반화의 방식을 사용한다. fomalism이라고도
+부를 수 있는데, 수많은 케이스를 케이스 별로 기술하는게 하는게 아니라, 특정집합
+이 모두 적용되는 방식으로 기술 된다. 그래서 함수는 법칙,theorem을 만드는
+것과 비슷하다. 그러면 어떻게 문제를 해결하나? 매번 법칙을 만든다는게 쉬운
+일이 아닌데&#x2026; 그런데 그렇다. 각각의 학문에선 어떤 문제를 푸는데 있어서, 기존의
+법칙(함수)를 이용해서 문제를 풀곤했다. 물론 함수로 문제를 푸는 것은 이렇게 기존에
+만들어 놓은 함수를 이용하는 방식과, 자기자신을 재사용하는 재귀적인 방식이 있다. 재귀적으로
+호출해서 사용하는 방식이 일반적이고, 다른 함수를 이용하는 방식은 operator라고 
+부르는 아주 기본 함수로 부터 확장되는 방식을 이용한다. 이것은 문제 기술보단 풀이에
+해당 하기 때문에 다음 섹션에서 정리하기로 한다.
+</p>
+
+<p>
+다시 돌아와서 함수로 문제를 표시하는 것은 법칙을 만드는 것과 같다고 했다. 
+법칙은 definition이 필요하다. 특정 케이스가 아닌 여러 케이스에 적용되어야 하기 
+때문에 definition을 만들어야 하는 것이다. function이 expression과는 다른점이다.
+</p>
+
+<p>
+function과 expression과의 비교설명도 끝이 났다. function이 expression과 다른점이
+domain-specific하지 않기 때문에, 개념만 존재하기 때문에, 각각의 학문에도 function이
+사용될 수 있다는 것이다. 각각의 학문에서 function이 사용되는데 특징이 있다. 문제(학문)에
+따라 함수의 종류가 결정되어 있다는 것이다.
+</p>
+
+<p>
+<font color="red">[proposition logic을 function으로]</font>
+</p>
+
+<p>
+propositional logic은 truth value를 truth value로 mapping하는 함수로 
+볼 수 있다. logical connectivities들이 곧 함수다. 즉 propositional logic에서
+만들어지는 모든 함수는 t/f -&gt; t/f로 가는 함수로 표현된다. 
+</p>
+
+
+<p>
+<font color="red">[predicate logic을 function으로]</font>
+</p>
+
+<p>
+predicate logic은 모양 자체도 함수의 모습을 띠고 있고 그 자체가 함수로 표현된다.
+특정 양, object, thing을 나타내는 문자열과 truth value를 mapping하는 함수다.
+"string" =&gt; t/f로 가는 함수로 표현된다.
+</p>
+
+<p>
+<font color="red">[math를 function으로]</font>
+</p>
+
+<p>
+math의 모든 것은 function으로 표현된다. math가 곧 function으로 봐도 무방.
+number =&gt; number로 모든 함수가 표현.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7b54da1" class="outline-3">
+<h3 id="org7b54da1"><span class="section-number-3">1.6</span> 함수의 사용과 특징.</h3>
+<div class="outline-text-3" id="text-1-6">
+<div class="note">
+<p>
+다시 한번 정리하자면, 함수는 보편적인 개념이기 때문에 어느 문제에도 적용될 수 
+있다.
+각각의 학문에는 기본적인 함수가 존재한다. 이 함수를 foundation을 삼아서 새로운
+function을 작성한다. 기본이 되는 함수를 operator라고 한다. 마치 axiom과 같다.
+</p>
+
+<p>
+axiom으로 새로운 함수를 만들기도 하지만, 다른 방식으로는 재귀를 사용하는 방식이
+있다. 이 방식으로 함수를 만드는 경우가 상당히 많다고 한다.
+</p>
+
+<p>
+문제를 기술한다는거&#x2026;즉 함수를 만든 다는 것은, 그 문제 한개에만 적용 되지 않는다.
+여러 케이스에 적용되게 보편적으로 만들어지기 때문에 만드는 데는 시간이 걸리고 
+어려운 작업이다. 문제를 푸는 것은 이렇게 어렵게 만든 함수를 적용하는 것일 뿐이다.
+</p>
+
+<p>
+함수를 만든다는 것은 기존의 알고있는 값과 relation,변수를 조합하게 되는데, 솔직히
+relation도 이미 알려진 함수(operator)로 보면 되고, value들은 (이미 알고 있는, 
+이미 계산된 값)으로 보면 된다.  즉 이미 알려진 정보(data)와 알고자하는 정보(변수)와의
+관계를 기존의 함수를 이용해 연결하는 식으로 함수를 design한다. 
+</p>
+
+<blockquote>
+<p>
+y = x + 1
+</p>
+</blockquote>
+
+<p>
+이런 함수를 봐도, 1, +(기존에 알고있는 값과 함수)를 x와 연결하는 것을 볼 수 있다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org0c939ca" class="outline-3">
+<h3 id="org0c939ca"><span class="section-number-3">1.7</span> 기타</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+<font color="red">[ Logic]</font>
+</p>
+<div class="attention">
+<p>
+
+</p>
+
+<p>
+T/F를 묻는 질문에 대한 연구는 Aristotle이 시작한다. Aristotle은 Propositional
+logic과 predicate logic 모두에 대한 기반 연구를 했다. 그런데 Aristotle이 죽고
+난 후, 중세에는 주로 propositional logic에 대한 연구가 활발히 되었다. 이 연구의
+한계와 문제점은 자연어를 사용해서 propostional logic 표현하고 연구했다는 것이다.
+자연어는 명확하지 않다. 자연어가 가진 특성때문에 모호해 질 수 있다. 예를 들어보자.
+물을 적당히 뜨겁게 해! 치타는 매우 빠르게 움직인다. "적당히", "빠르게"는 너무 
+모호하다. 그리고 자연어를 쓰면 문장이 너무 길어진다. 그래서 이것을 symbol화할 필요가
+있게 된다. 이것을 G. Boole이란 사람이 하게 된다. 그런데, 이런 시도는 수학에서
+이미 했다. 수학이란 학문은 시작할 때 부터, 자연어의 문제로 부터 벗어나기 위해
+기호를 사용해서 표현했다. 솔직히 Boole도 수학의 그런 특징을 알고 논리학에 적용한
+것이다. 그런데 symbol을 사용한다는 것은 단순한 게 아니였다. symbol을 사용한다는
+것은 언어를 만드는것이기 때문이다. 그런데 Boole이 symbol을 도입할때만 하더라도 
+언어학적 입장에서 분석하진 않았다. 언어학적인 분석은 후대에 이루어졌다. 여튼 boole이
+문장에 symbol을 대응하면서 A∧B∧C∧D∧E∨F&#x2026;.이런식의 표현이 가능해 졌다. 이런표현을
+문장으로 쓰면 8줄이상인데 1줄로 해결되는 것이다. 사고의 폭이 넓어지고 생각이 넓어
+지게 된다. 다루는 문장의 수가 엄청 늘어나게 되는 것이다.
+</p>
+
+</div>
+<p>
+#+end<sub>note</sub>
+</p>
+<div class="note">
+<p>
+<font color="red">[Lisp의 아이디어]</font>
+</p>
+
+
+<div class="figure">
+<p><img src="./img/mccarthy/idea1.png" alt="idea1.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 4: </span>lisp idea</p>
+</div>
+
+<p>
+Propositional logic은 t/f라는 value가 있고, 그 value를 나타내는 symbol들이
+이 있으며, 그것을      
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0a55228" class="outline-2">
+<h2 id="org0a55228"><span class="section-number-2">2</span> Introduction</h2>
+<div class="outline-text-2" id="text-2">
+<div class="note">
+<p>
+LISP(LISt Processor)은 IBM704 컴퓨터에서 돌아갈 수 있는 programming system이라고
+한다. MIT에서 만들었다. 
+</p>
+
+
+<div class="figure">
+<p><img src="./img/mccarthy/704.jpg" alt="704.jpg" width="500px" />
+</p>
+<p><span class="figure-number">Figure 5: </span>704 컴퓨터</p>
+</div>
+
+<p>
+Mccarthy는 Advice Taker라는 상식을 수행하는 computer를 만들고 싶었는데, 그래서
+논문도 썼다. 이것은 또 다른 논문이라서 여기선 언급하지 않겠지만, 상식을 수행하기
+위해선 Declarative sentence의 처리와 imperative sentence에 대한 처리를 할 수
+있어야 하기 때문에 LISp이 만들어진거라고 한다. 
+</p>
+<div class="tip">
+<p>
+모든 언어는 목적이 있다. LISP의 목적은 deduction을 수행할 수 있어야 하기 때문에
+</p>
+
+</div>
+
+
+
+<p>
+Lisp을 단순화 하려고 여러번 고쳤는데, 결국 최종적으로는 symbolic expression중에 일부를
+partial recursive function으로 표현하는 방식을 사용했다고 한다. 
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Hoyoul Park</p>
+<p class="date">Created: 2018-12-28 Fri 00:59</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

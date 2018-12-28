@@ -1,0 +1,25 @@
+#+TITLE: Emacs Tip
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+#+MACRO: color @@html:<font color=""></font>@@
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
+
+*----------
+작성자: FregeHoly
+작성일: <2018-12-25 Tue>
+작성장소: Jeju
+날씨: sunny
+-----------*
+* org에서 특수문자 쓰기
+#+begin_note
+#+BEGIN_SRC sh
+C-x 8 
+#+END_SRC
+특수문자는 C-x 8을 사용하면된다.
+#+end_note
