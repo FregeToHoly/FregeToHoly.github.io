@@ -1,0 +1,20 @@
+#+TITLE: My thinking
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+#+MACRO: color @@html:<font color=""></font>@@
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+
+* Computer Graphics (text mode와 graphics mode)
+#+begin_note
+컴퓨터에서 grpahic을 표시하는 데 필요한 장치.
+**  모니터(lcd display)
+   #+CAPTION: 모니터의 구조.
+   #+ATTR_HTML: :width 600px
+   [[./img/display1.pngㄴ]]
+**  비디오카드 (lcd controller)
+** cpu and system memory
+ #+end_note

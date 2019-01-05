@@ -1,0 +1,41 @@
+#+TITLE: Algorithms for python
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+#+MACRO: color @@html:<font color=$1></font>@@
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+* 참조
+#+begin_note
+https://www.youtube.com/watch?v=DFuqGk548vo&index=2&list=PLib7LoYR5PuDxi8TxxGKxMgf8b-jtoS3i
+
+#+end_note
+* Complexity of python
+
+#+begin_note
+big O표기법에서 가장 오래 걸리는 문제는... 
+O(n!)- TSP:brute force사용
+
+언어를 생각해보자. 언어는 alphabet으로 구성되어 있다. alphabet으로 이름을
+만든다. 이름을 만들때 규칙이 없다면, 우리는 무한개의 이름을 만들 수 있다. 그리고
+만든 이름이 어딘가에 저장되어 찾아야 한다면, N!의 횟수가 필요하다.
+
+예를 들어서, {a,b}라는 알파벳으로 N개의 이름을 만들었고 여기서 마지막에 이름을
+찾아야 한다면?
+
+aa,aaa,bbb,bbbb, ab,ababa,...,a =>N개의 이름을 만들었다. 
+
+N개를 검사해야 한다. 그러면 O(N)의 시간이 걸린다. for loop한번이면 끝난다.
+
+그런데 문제가 N개의 알파벳으로 N개길이의 문자열을 만드는 방법의 수를 생각해보자.
+{a,b,c,d}라는 4개의 알파벳으로 4개길이의 모든 문자열을 만들려면,
+첫번째 자리, 두번째,자리, 3번째자리, 4번째 자리,
+4*4*4*4의 4개의 for loop를 사용해서 만든다면 O(n^n)의 시간이 걸린다. 여기서
+시간을 줄이는 법을 연구해야 한다. 시간을 줄이는 법은, 정렬을 통하거나, 자료구조를
+통하는 방법이 있을 수 있다. 아니면 heuristic한 방법을 쓸 수도 있다.
+
+
+
+#+end_note

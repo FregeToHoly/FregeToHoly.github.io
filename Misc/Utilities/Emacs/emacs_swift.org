@@ -1,0 +1,78 @@
+#+TITLE: Swift 설정 on Emacs
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+#+MACRO: color @@html:<font color="$1">@@$2@@html:</font>@@
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+
+
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
+*----------
+작성자: FregeHoly
+작성일: <2018-12-30 Sun>
+작성장소: Jeju
+날씨: cloudy
+-----------*
+* sourcekit lsp설치
+#+begin_note
+LSP(Language Server Protocol)를 사용해야 swift IDE와 같은 역할을 할 수 있다고 한다.
+code highlighting, syntax checking같은 IDE의 기능을 server에서 제공한다고 한다. lsp는
+현재 개발중이라서 source를 직접받아서 build해서 사용해야 한다고 한다. build하기 위해선 
+toolchiain부터 깔아야 한다. 이런 과정이 아래 링크에 기술되어 있다.
+
+[[https://github.com/apple/sourcekit-lsp]]
+
+{{{color(red,[1. swift development toolchain 설치])}}}
+
+아래에 접속해서 xcode용으로 toolchain을 하나 다운받았다.
+https://swift.org/download/#releases
+그리고 설치함. 설치는 /Library/Developer/Toolchains/swift-latest.xtoolchain이라는 
+symbolic link가 나오는데 이것을 shell이 알수 있게 환경변수에 setting한다.나는 .zshrc
+에 추가했다.
+
+#+BEGIN_SRC 
+SOURCEKIT_TOOLCHAIN_PATH=/Library/Developer/Toolchains/swift-latest.xtoolchain
+#+END_SRC
+
+      
+{{{color(red,[1. sourcekit-lsp build])}}}
+
+이제 lsp를 다운 받는다. 맨처음 알려준 link에서 다운받으면 된다.
+lsp는 swift package형태로 되어 있다. 그래서 swift build라는 명령으로 
+build한다. swift는 이제  package형태로 배포되고 이를 설치해서 사용하는 방식으로 바뀌었다.
+여튼  다음 명령으로 build한다.
+
+#+BEGIN_SRC 
+swift build
+#+END_SRC
+
+헉 그런데 에러가 발생한다.
+
+#+CAPTION: build error
+#+ATTR_HTML: :width 600px
+[[./img/swift/build1.png]]
+
+구글링해서 해결했다. 아래와 같이 해결했다.
+
+#+BEGIN_SRC 
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+#+END_SRC
+이제 build가 정상적으로 된다.
+이렇게 lsp가 만들어졌다. 만들어진 위치는 .build/debug/sourcekit-lsp에 
+있다. 이 path는 emacs에서 사용될것이다.
+
+{{{color(red,[emacs에서 lsp package설치])}}}
+local system에 lsp의 executable이 생겼기 때문에 이것을 emacs에서 사용하기
+위해서 lsp-sourcekit.el이란 package를 emacs에 설치하자. 
+
+https://github.com/emacs-lsp/lsp-sourcekit
+그리고 아래를 설치한다.
+#+BEGIN_SRC 
+(require 'lsp-sourcekit)
+(setenv "SOURCEKIT_TOOLCHAIN_PATH" "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2018-12-07-a.xctoolchain")
+(setq lsp-sourcekit-executable (expand-file-name "<path_to_sourcekit-lsp_executable>"))
+#+END_SRC     
+#+end_note

@@ -1,0 +1,86 @@
+% Created 2019-01-05 Sat 11:54
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\setcounter{secnumdepth}{2}
+\author{Hoyoul Park}
+\date{\today}
+\title{The Code}
+\hypersetup{
+ pdfauthor={Hoyoul Park},
+ pdftitle={The Code},
+ pdfkeywords={org-mode, export, html, theme, style, css, js, bigblow},
+ pdfsubject={Org-HTML export made simple.},
+ pdfcreator={Emacs 26.1 (Org mode 9.1.14)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{itemize}
+\item if you want go back?  \href{http://www.holytofrege.space/index.html}{home}
+\end{itemize}
+\section{Preface}
+\label{sec:orge4bce45}
+\subsection{저자}
+\label{sec:orgb6cbb29}
+찰스 페졸드(Charles Petzold)
+\begin{center}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./img/charles.jpg}
+\end{center}   
+\end{center}
+\subsection{저자의 말}
+\label{sec:orgdaa8733}
+\begin{quote}
+10년 정도 고민해서 만든 책. 사람들에게 이책은 컴퓨터의 작동원리를 설명하는 책이라고 함. 사람들은 
+\end{quote}
+\subsection{영어 단어}
+\label{sec:org2922496}
+
+\section{chapter1. Best Friends}
+\label{sec:org92ec605}
+\begin{note}
+\begin{quote}
+ 10살짜리 애들이 나온다. 그들은 밤이 되면 서로 얘기하고 싶지만, 통행금지 시간에
+걸려 대화를 할 수 없다. 서로간의 대화\ldots{}그것은 인간의 본능이다.라고 petzold는
+말한다.
+그럼 어떻게 10살짜리들은 대화를 하려고 할까? 불이꺼진 밤에\ldots{}첫번째 시도는 전화를
+하는 것이다. 그러나 전화는 다른 가족이 쉽게 눈치챈다. 소리가 나기 때문이다. 그러면
+컴퓨터로 대화하는 건 어떨까? 나우누리같은거\ldots{}그런데 컴퓨터는 10살짜리 꼬마방에
+있을 수가 없다.
+
+Flashlight다. 후레쉬는 원래 밤에 공부할 학생을 위해 만들어진 것이기 때문에 10살
+학생들이라면 누구나 갖고 있다. 10살짜리 학생들은 서로 대화하기 위해서 flashlight
+를 사용하기로 한다.
+
+창문에 서서 flashlight로 공중에 글자를 그린다. 그리고 조금 쉬었다가 또 그린다. 그런데
+그렇게 그린 문자는 정확하지 않다. 그리고 팔이 너무 아프다. 다른 방법을 찾는다. 
+영화에서 보면, 먼곳에 떨어진 사람끼리 flash를 깜빡이면서 서로간의 대화를 하는 것을
+본적이 있을 것이다. 그 방법을 이용하기로 한다. A는 1번깜빡임, B는 2번,..Z는 26번..이렇게
+하면 BAD라는 문자는 2,1,4번으로 표시할 수 있다. 이렇게 하면 더이상 공중에 팔을 휘둘려
+문자를 나타낼 필요는 없다. 그런데 "How are you?"라는 문장을 나타낸다고 생각해보자. 
+131번이나 깜빡여야 한다.?는 또 어떻게 나타낼 것인가?
+
+이런 고민을 했던 또다른 사람이 있다. 모르스다. 그리고 그가 발명한 Morse Code다.
+Morse code는 깜빡임을 2개로 나눴다. 긴 깜박임, 짧은 깜빡임. 
+\end{quote}
+\end{note}
+\section{chapter2}
+\label{sec:orga439f11}
+\section{chapter3}
+\label{sec:org50c5df4}
+\end{document}

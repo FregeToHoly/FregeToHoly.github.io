@@ -1,0 +1,463 @@
+#+TITLE: Python Tutorial
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+#+MACRO: color @@html:<font color="Python Tutorial"></font>@@
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
+*----------
+작성자: FregeHoly
+작성일: <2019-01-01 Tue>
+작성장소: Jeju
+날씨: cloudy
+-----------*
+* values
+#+begin_note
+python의 기본 value는 "string",number다. true나 false는 value가 아니다.
+대신 True,False가 value다. 이런 기본적인 value만 있는것이 아니다. python에는
+class가 있기 때문에, class의 instance도 value가 된다. programming language에선
+기본적인 value조차도 내부적으론 class로 구현한다. class를 type이라고도 부를수
+있는 이유다. 원래 value라는 것은 질문에 의해 시작되었다. 수많은 질문은 3가지 
+종류를 나눌 수 있었으며, 그에 따른 답도 3가지였다. 그 답이 value가 된다.
+
+아래에 value의 실행 과정을 살펴보자.
+#+BEGIN_SRC python :results output
+print(type("string"))
+#+END_SRC
+
+#+RESULTS:
+: <class 'str'>
+
+#+BEGIN_SRC python :results output
+print(type(33))
+#+END_SRC
+
+#+RESULTS:
+: <class 'int'>
+
+#+BEGIN_SRC python :results output
+print(type(True))
+#+END_SRC
+
+#+RESULTS:
+: <class 'bool'>
+
+value라는 것은 기본적으로 immutable이라고 부른다. 이말은 value는 변경이 불가
+하다는 것이다. 이건 당연한 말이다. value가 변경된다면 새로운 value가 된다.
+그런데 value중에 특이한 value가 있다. 이것은 string이란 value다. string은
+value이긴 하지만, character라는 또다른 value로 이루어진 data structure로 볼
+수도 있다. value와 value를 모아논 data structure는 다르다. data structure는
+value를 모아놓은 것이기 때문에 value들의 이동이나 삭제가 변경이 너무나 당연하다.
+즉 mutable하다는 것이다. String은 grammar에서는 value로 취급하지만, 실제 구조는
+data structure로 취급된다는 것이다. string은 mutable하기도 하지만, immutable
+하기도 하다는 것이다.
+
+#+end_note
+* name
+#+begin_note
+모든 value는 답이다. 답을 안다면, 프로그래밍을 할 필요가 없다. 답은 이미 
+풀려진 것이기 때문이다. 우리가 프로그래밍을 하는 이유는 모르는것을 해결하기
+위한 것이다. 그렇지만, value는 필요하다. 새로운 문제를 풀기위해선 기존의
+알고 있는 지식으로 부터 푼다. 따라서 우리는 기존의 답이 필요하다. 그리고 
+그 답은 알기쉽게 다른 이름으로 지칭되어 사용된다. 그게 constants다. 그리고
+우리가 알고자 하는 것은 variables라고 부른다.
+
+둘다, value를 가리키는 name일 뿐이다. 
+
+{{{color(red,[상수])}}}
+python에는 상수가 없다 한다.단지 대문자로 쓰면 된다고 한다.
+변수로 쓴다.
+#+BEGIN_SRC python :results output
+PI = 3.14
+PI = 3.5
+
+print(PI)
+#+END_SRC
+
+#+RESULTS:
+: 3.5
+     
+
+{{{color(red,[변수])}}}
+
+python에서 name은 모든 value를 가리키는 이름이라는 철학을 충실히 구현하고
+있는 언어다. 모든 symbol은 이름이다. 그래서 값을 가리킨다. 따라서 symbol에
+상수를 뜻하는, 변수를 뜻하는 const, var과 같은 거추장 스러운것도 다 빼버렸다.
+
+python에서 name은 그냥 쓰고 value를 가리키면 된다. 단순함의 미학이다.
+#+BEGIN_SRC python :results output
+name = "hoyoul"
+print(name)
+
+#+END_SRC
+
+#+RESULTS:
+: hoyoul
+
+#+end_note
+* operator
+#+begin_note
+value와 structure는 뗄레야 뗄 수 없는 관계다. value가 있다면 structure가 
+있을 수 밖에 없다. value만 독단적으로 있지 않다. string,number, bool과 같은 기본
+value에는 structure가 없어 보이지만, 있다. set이란 structure다. 
+
+value가 있으면, value간의 relation이 생긴다. 또한 structure가 있다면, value와
+structure간의 relation이 생긴다. 우리는 이것을 operator라고 한다. operator도 relation의 일종이라서
+function으로 말할 수 있다. 이런 relation은 문제해결의 중요한 역할을 한다. 예를 들어보자.
+#+BEGIN_SRC 
+3+5=8
+#+END_SRC
+위의 관계를 보면, (3,5)와 8사이에는 +란 관계가 있다. 이런 관계를 이미 
+알고 있을때, 모르는 것을 구할 수 있다. 예를 들어
+#+BEGIN_SRC 
+x + 5 = 8
+#+END_SRC
+에서 우리는 x가 3이라는 것을 이전의 관계로 부터 알수 있다. 우리가 모르는 것은
+이렇게 주어진 관계로 부터 찾을 수 있는 것이다.
+
+아까 말한, 기본적인 value도 set이라는 structure를 갖는다고 했다. 이 set이라는
+structure는 모든 type에 적용되는 cross-over적인 relation을 갖는다. 그 relation은
+membership relation이라고 한다. operator 이기도 하다.
+
+{{{color(red,[기본적인 python operator])}}}
+     
+이제 python으로 돌아가자. 
+operator는 relation이라고 했다. relation은 structure와 value와의 관계도 있고,
+value와 value의 관계도 있다고 했다. 대표적인 operator를 다뤄보자.
+
+1) numbers
+
+:operator - +,*,-,/
+ 
+#+BEGIN_SRC python :results output
+ print(3 + 4)
+ print(3 - 4)
+ print(3 * 4)
+ print(3 / 4)
+#+END_SRC
+
+#+RESULTS:
+: 7
+: -1
+: 12
+: 0.75
+
+2) bool
+
+#+BEGIN_SRC python :results output
+print(True and False)
+print(True or False)
+print(not True)
+#+END_SRC
+
+#+RESULTS:
+: False
+: True
+: False
+
+3) String
+
+String은 predicate logic에서 사용하는 값이다. 이 값은 좀 특이하다. 이 값은
+character라는 값을 모아논 data structure다. 그런데 이것이 기본 value로 
+쓰이는 이유는 predicate logic에서 value는 string형태지, character형태가
+아니다. value가 또 다른 value로 만들어졌다면 primitive value는 아니지만,
+문법적으로는 string이 primitive value로 사용된다는 특징이 있다.
+
+우선 string은 자연수를 domain으로 갖는 function으로 해석될 수 있다. function은
+모든 value를 표현할 수 있기 때문이다. 이런 특징으로, 다음과 같은 operator를
+보자.
+
+1) string to char
+
+String은 value이면서 data structure의 특징을 둘다 가지고 있다. immutable하면서
+mutable하다. 아래는 string이 data structure의 형태를 가지고 있음을 보여준다.
+
+#+BEGIN_SRC python :results output
+message = "Hello World"
+print(message[0])
+
+message2 ="slicing example"
+print(message2[0:7])
+
+message3 = "slicing example"
+print(message3[:5])
+
+message4 = "slicing example"
+print(message4[4:])
+
+#+END_SRC
+
+#+RESULTS:
+: H
+: slicing
+: slici
+: ing example
+
+2) string replace
+
+#+BEGIN_SRC python :results output
+message = "Hello World"
+print(message.replace("Hello","Hi"))
+#+END_SRC
+
+#+RESULTS:
+: Hi World
+
+3) +
+#+BEGIN_SRC python :results output
+message = "hi"
+mname = 'hoyoul'
+print(message + " " + mname)
+#+END_SRC
+
+#+RESULTS:
+: hi hoyoul
+
+4) *
+#+BEGIN_SRC python :results output
+message = "holy"
+print(message*2)
+#+END_SRC
+
+#+RESULTS:
+: holyholy
+
+
+5) formatting
+
+String은 value이면서 data structure의 특징을 둘다 가지고 있다. immutable하면서
+mutable하다. 
+한번 예를 보자.
+
+#+BEGIN_SRC python :results output
+immutable ="string"
+print(immutable[1])
+
+immutable[1] = "p"
+print(immutable)
+#+END_SRC
+
+#+RESULTS:
+에러가 난다. 값을 변경시킬수 없다고 에러가 난다. 그런데 아래를 보자.
+아래는 note라는 string값에 또다른 string을 합한다. 이경우는 mutable의
+예로 봐야 할까? 아니다. 아래는 변수의 특징일 뿐이다. python에는 
+상수가 없기 때문에 이런현상이 일어나는 것이다. 
+
+#+BEGIN_SRC python :results output
+note = "my note"
+note = note + "attached"
+print(note)
+#+END_SRC
+
+#+RESULTS:
+: my noteattached
+
+그럼 data structure의 특징인 mutable로서 string을 볼 수 있는 예가
+뭐가 있을까? formatting이다. formatting은 mutalbe한 특성을 보여준다.
+
+#+BEGIN_SRC python :results output
+print("I eat %d apples." % 3)
+#+END_SRC
+
+#+RESULTS:
+: I eat 3 apples.
+
+#+BEGIN_SRC python :results output
+print("I eat %s apples." % "five")
+#+END_SRC
+
+#+RESULTS:
+: I eat five apples.
+
+#+BEGIN_SRC python :results output
+print("I eat {0} apples".format(3))
+#+END_SRC
+
+보듯이 string이란 value를 기술할때 %로 특정값을 집어 넣을 수 있게 했다. format
+이란 함수를 써도 된다. 이것은 마치 value안에 특정 변수를 넣은것과 같다. 
+그리고 % value 형태로 값을 넣는다. 이것이 mutable한 특징을 보여주는 예이다.
+#+end_note
+* list
+#+begin_note
+list는 data structure다. data structure는 value를 모아놓은 것이기 때문에
+value다. 그래서 이름으로 가리킬 수 있다. data structure이기 때문에 type 
+dependency하다. 즉 같은 type의 value만을 모아놓은 것이다. 그런데 python에선
+여러 value를 다 모아 놓을 수 있다. 아래를 보자.
+
+#+BEGIN_SRC python :results output
+mystory = [ 3, 4 , "holy", "park"]
+print(mystory)
+#+END_SRC
+
+#+RESULTS:
+: [3, 4, 'holy', 'park']
+
+#+end_note
+* list indexing
+#+begin_note
+function은 모든 것을 표현할 수 있다. list도 함수라는 개념으로 바라 볼 수 있다.
+그것이 indexing이다. indexing은 function이지 operator는 아니다. index결과가
+list라면 list operator이겠지만, value다. 이것은 function이다.>
+#+BEGIN_SRC python :results output
+mylist = ["one", "two", 3, 4 ]
+print(mylist[1])
+print(mylist[-1])
+#+END_SRC
+
+#+RESULTS:
+: two
+: 4
+indexing으로 value에 접근할 수 있다. - index도 가능하다.
+
+indexing의 또다른 예
+
+#+BEGIN_SRC python :results output
+newIndex =["one","two",[ 12,34]]
+print(newIndex[2][1])
+
+#+END_SRC
+
+#+RESULTS:
+: 34
+
+#+end_note
+* list slicing(operator)
+#+begin_note
+slicing은 list의 특정 value를 가져오는데, list의 형태로 가져온다. list도
+value이기 때문에, 이 연산은 list operator의 전형적 예다.
+#+BEGIN_SRC python :results output
+message = ["one","two",[3 ,4]]
+
+print(message[:1])
+print(message[:2])
+print(message[:3])
+print(message[2][:1])
+#+END_SRC
+
+#+RESULTS:
+: ['one']
+: ['one', 'two']
+: ['one', 'two', [3, 4]]
+: [3]
+맨 마지막 예는 중첩된 list의 slicing예를 보여준다. 다시 한번 강조하면,
+slicing은 list operation이라서 list를 리턴한다.
+#+end_note
+* list operators
+#+begin_note
+list도 문자열도 simple하게 operator를 구현한다. 그것은 math의 operator를
+그대로 적용한것이다.
+
+1) +
+
+#+BEGIN_SRC python :results output
+message = ["msg1","msg2"]
+msgop = [ 1,2]
+print(message + msgop)
+#+END_SRC
+
+#+RESULTS:
+: ['msg1', 'msg2', 1, 2]
+
+2) *
+
+#+BEGIN_SRC python :results output
+msg1 = ["msg", "msg2"]
+msg2 = ["msg4", "msg5"]
+print(msg1 *2)
+
+print(msg1*"value")
+#+END_SRC
+
+#+RESULTS:
+
+operator는 *는 list operator는 맞다. 하지만, list * list의 형태는 적용되지
+않는다. 또한 list * "string" 형태도 되지 않는다. list * int의 형태만 가능하다.
+#+end_note
+* list 값 수정하기
+#+begin_note
+list는 data structure이기 때문에 mutable한 특징이 있다. 이것은 string이란
+value와 차이가 있다. data structure의 values는 value를 모아놓은 것이기 때문에
+indexing으로 value의 변경이 가능하다.
+
+#+BEGIN_SRC python :results output
+mydata = [222,434,"one","two"]
+mydata[1] =33
+print(mydata)
+#+END_SRC
+
+#+RESULTS:
+: [222, 33, 'one', 'two']
+
+#+end_note
+* list 삭제 
+#+begin_note
+list를 삭제하는 방식은 del을 사용하거나 slicing을 사용한다.
+#+BEGIN_SRC python :results output
+mylist = [33, 44, "one", "two"]
+del mylist[1]
+print(mylist)
+#+END_SRC
+
+#+RESULTS:
+: [33, 'one', 'two']
+
+#+BEGIN_SRC python :results output
+mylist = ["one",2,"three"]
+mylist = mylist[1:3]
+print(mylist)
+#+END_SRC
+
+#+RESULTS:
+: [2, 'three']
+
+list의 원소를 지울때, del이나 slicing을 사용할 수 있다. 또한 remove와
+pop함수도 있다고 한다.
+
+#+BEGIN_SRC python :results output
+mylist = ["one","two", 3 , 4,"one"]
+mylist.remove("one")
+print(mylist)
+#+END_SRC
+
+#+RESULTS:
+: ['two', 3, 4]
+del이 indexing으로 list를 삭제하는 대신에, remove는 value의 값을 
+삭제한다.
+#+end_note
+* list에 원소 추가
+#+begin_note
+append라는 함수를 사용하면 원소 추가가 가능하다.
+insert라는 함수도 가능하다.
+#+BEGIN_SRC python :results output
+mylist = ["one","two",3]
+mylist.append("known")
+print(mylist)
+
+mylist.insert(10,10)
+print(mylist)
+#+END_SRC
+
+#+RESULTS:
+: ['one', 'two', 3, 'known']
+: ['one', 'two', 3, 'known', 10]
+
+#+end_note
+* list의 pop함수
+#+begin_note
+list는 stack처럼 쓸수도 있는데, pop함수가 있다. stack의 pop과 같다.
+#+BEGIN_SRC python :results output
+mylist = ["one", "two", "three"]
+mylist.pop()
+print(mylist)
+#+END_SRC
+
+#+RESULTS:
+: ['one', 'two']
+
+pop을 하면 마지막 원소를 return한다. 그리고 list는 그 원소가 삭제된 형태를
+띤다. 이건 list가 mutable한 특성을 보여준다.
+#+end_note

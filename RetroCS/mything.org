@@ -1,0 +1,41 @@
+#+TITLE: My thinking
+#+AUTHOR: Hoyoul Park
+#+DESCRIPTION: Org-HTML export made simple.
+#+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 toc:t num:2
+#+MACRO: color @@html:<font color=""></font>@@
+#+PROPERTY:  header-args :padline no
+#+SETUPFILE: ~/Mythings/Myprojects/setup/theme-readtheorg.setup
+
+- if you want go back?  [[http://www.holytofrege.space/index.html][home]]
+*----------
+작성자: FregeHoly
+작성일: <2018-12-31 Mon>
+작성장소: Jeju
+날씨: sunny
+-----------*
+* Recursive Definition
+ #+begin_important
+ 우리가 언어를 만들때 왜 recursive하게 define할까?
+ #+end_important
+ #+begin_note
+언어를 만들때, 우리는 symbol을 만든다. symbol중에 특정한 모양을 value라고 한다.
+모든 programming 언어에서 value는 " ", 123, true, false를 보통 사용한다.
+형태도 같고 의미도 같다. 웃기지 않은가? 우리가 value라고 부르는것은 그냥 
+symbol이다. 즉 모든 것은 알파벳으로 조합한 symbol인데, 특정한 모양을 갖춘것을
+value, symbol로 구분한다. adfasd는 symbol이고, "adfasd"는 value다. 
+
+lisp에서의 list나 prolog에서의 horn clause의 형태를 보면 recursive하게
+정의 되어 있다. Programming language에서 expression이 recursive한 형태를 
+갖는건(formal한건), 증명가능하냐, 결정가능하냐, 계산가능하냐라고 물었을때, yes라고 대답할
+수 있기 때문이다. 예를 들어보자. 
+#+BEGIN_SRC 
+S : atom
+S : ( S)
+S : (S S)
+#+END_SRC
+
+symbol을 사용해서 value,name(variable,constant),operator, function을 
+특정 형태로 정해놓는 건 구분하기 위해선 어쩔 수 없는 당연한 선택이다. 
+#+end_note

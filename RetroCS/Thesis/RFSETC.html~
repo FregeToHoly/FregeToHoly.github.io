@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-28 Fri 00:59 -->
+<!-- 2018-12-29 Sat 14:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part1</title>
@@ -243,18 +243,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org362ecb1">1. Review</a>
+<li><a href="#org99bce81">1. Review</a>
 <ul>
-<li><a href="#orge516d9f">1.1. 문제(problem)</a></li>
-<li><a href="#org96cbdcc">1.2. 답(values)</a></li>
-<li><a href="#orge74e2be">1.3. 문제의 기술 1 - expressions</a></li>
-<li><a href="#org10af912">1.4. 문제의 기술2 - function(1)</a></li>
-<li><a href="#orgcfcf26d">1.5. 문제의 기술2 - function과 expression의 비교</a></li>
-<li><a href="#org7b54da1">1.6. 함수의 사용과 특징.</a></li>
-<li><a href="#org0c939ca">1.7. 기타</a></li>
+<li><a href="#orgdf94aa1">1.1. 문제(problem)</a></li>
+<li><a href="#org20ccdaa">1.2. 답(values)</a></li>
+<li><a href="#orgc1fda49">1.3. 문제의 기술 1 - expressions</a></li>
+<li><a href="#org67e9c91">1.4. 문제의 기술2 - function(1)</a></li>
+<li><a href="#orgdbe2d7d">1.5. 문제의 기술2 - function과 expression의 비교</a></li>
+<li><a href="#orgc78a282">1.6. 함수의 사용과 특징.</a></li>
+<li><a href="#org29a5101">1.7. 기타</a></li>
+<li><a href="#org5ac1ef2">1.8. code와 data 그리고 data structure 그리고 알고리즘.</a></li>
 </ul>
 </li>
-<li><a href="#org0a55228">2. Introduction</a></li>
+<li><a href="#org619b051">2. Introduction</a></li>
 </ul>
 </div>
 </div>
@@ -270,8 +271,8 @@ for the JavaScript code in this tag.
 ------&#x2013;&#x2014;*
 </p>
 
-<div id="outline-container-org362ecb1" class="outline-2">
-<h2 id="org362ecb1"><span class="section-number-2">1</span> Review</h2>
+<div id="outline-container-org99bce81" class="outline-2">
+<h2 id="org99bce81"><span class="section-number-2">1</span> Review</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 #+begin<sub>note</sub>
@@ -280,8 +281,8 @@ for the JavaScript code in this tag.
 </p>
 </div>
 
-<div id="outline-container-orge516d9f" class="outline-3">
-<h3 id="orge516d9f"><span class="section-number-3">1.1</span> 문제(problem)</h3>
+<div id="outline-container-orgdf94aa1" class="outline-3">
+<h3 id="orgdf94aa1"><span class="section-number-3">1.1</span> 문제(problem)</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="note">
 <p>
@@ -319,8 +320,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org96cbdcc" class="outline-3">
-<h3 id="org96cbdcc"><span class="section-number-3">1.2</span> 답(values)</h3>
+<div id="outline-container-org20ccdaa" class="outline-3">
+<h3 id="org20ccdaa"><span class="section-number-3">1.2</span> 답(values)</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="note">
 <p>
@@ -346,8 +347,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orge74e2be" class="outline-3">
-<h3 id="orge74e2be"><span class="section-number-3">1.3</span> 문제의 기술 1 - expressions</h3>
+<div id="outline-container-orgc1fda49" class="outline-3">
+<h3 id="orgc1fda49"><span class="section-number-3">1.3</span> 문제의 기술 1 - expressions</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="note">
 <p>
@@ -460,8 +461,8 @@ expression이라고 하는 것을 아는게 중요하다.
 </div>
 
 
-<div id="outline-container-org10af912" class="outline-3">
-<h3 id="org10af912"><span class="section-number-3">1.4</span> 문제의 기술2 - function(1)</h3>
+<div id="outline-container-org67e9c91" class="outline-3">
+<h3 id="org67e9c91"><span class="section-number-3">1.4</span> 문제의 기술2 - function(1)</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="note">
 <p>
@@ -485,8 +486,8 @@ domain-specific하기 보단 개념적이다. 아래 그림처럼 개념적이�
 </div>
 </div>
 
-<div id="outline-container-orgcfcf26d" class="outline-3">
-<h3 id="orgcfcf26d"><span class="section-number-3">1.5</span> 문제의 기술2 - function과 expression의 비교</h3>
+<div id="outline-container-orgdbe2d7d" class="outline-3">
+<h3 id="orgdbe2d7d"><span class="section-number-3">1.5</span> 문제의 기술2 - function과 expression의 비교</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 <font color="red">[functions vs expressions: 일반화]</font>
@@ -551,13 +552,13 @@ number =&gt; number로 모든 함수가 표현.
 </div>
 </div>
 
-<div id="outline-container-org7b54da1" class="outline-3">
-<h3 id="org7b54da1"><span class="section-number-3">1.6</span> 함수의 사용과 특징.</h3>
+<div id="outline-container-orgc78a282" class="outline-3">
+<h3 id="orgc78a282"><span class="section-number-3">1.6</span> 함수의 사용과 특징.</h3>
 <div class="outline-text-3" id="text-1-6">
 <div class="note">
 <p>
 다시 한번 정리하자면, 함수는 보편적인 개념이기 때문에 어느 문제에도 적용될 수 
-있다.
+있다. 또한 함수는 각각의 학문(언어)이 포함하는 expression을 표현할 수도 있다. 
 각각의 학문에는 기본적인 함수가 존재한다. 이 함수를 foundation을 삼아서 새로운
 function을 작성한다. 기본이 되는 함수를 operator라고 한다. 마치 axiom과 같다.
 </p>
@@ -593,8 +594,8 @@ y = x + 1
 </div>
 </div>
 </div>
-<div id="outline-container-org0c939ca" class="outline-3">
-<h3 id="org0c939ca"><span class="section-number-3">1.7</span> 기타</h3>
+<div id="outline-container-org29a5101" class="outline-3">
+<h3 id="org29a5101"><span class="section-number-3">1.7</span> 기타</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 <font color="red">[ Logic]</font>
@@ -639,17 +640,122 @@ logic과 predicate logic 모두에 대한 기반 연구를 했다. 그런데 Ari
 <p><span class="figure-number">Figure 4: </span>lisp idea</p>
 </div>
 
+</div>
+</div>
+</div>
+<div id="outline-container-org5ac1ef2" class="outline-3">
+<h3 id="org5ac1ef2"><span class="section-number-3">1.8</span> code와 data 그리고 data structure 그리고 알고리즘.</h3>
+<div class="outline-text-3" id="text-1-8">
+<div class="note">
 <p>
-Propositional logic은 t/f라는 value가 있고, 그 value를 나타내는 symbol들이
-이 있으며, 그것을      
+우리는 3개의 학문은 문제, 질문으로 부터 시작되었다고 말했다. 그 질문은 답을
+원한다. 답은 3가지 종류가 있다고 했다. 이 답을 value라고 부르는데, propositional
+logic에서 찾는 답은 t/f, true,false가 value다. predicate logic은 문자열로
+표현되는 thing을 찾는다. 그래서 value는 문자열이다. math에서는 number를 찾는다.
+그래서 value는 number다. 
 </p>
+
+<p>
+<font color="red">[code란?]</font>
+</p>
+
+<p>
+code는 문제다. 문제가 어떻게 표현하는가는 expression과 function을 사용한다. expression
+과 function은 기존에 알고있는 value와 모르는것(알고자 하는 것)과의 관계를 통해서
+value를 구한다. 이것을 표현할때, 이미 알고 있는 value나 알고자하는 value에 이름을
+붙여서 사용할 수 있다. 이것을 상수와 변수라고 한다. 상수는 이미 알고 있는 value에
+이름을 붙인것을 말한다. 변수는 value를 가르키는 이름이지만, 아직 모르는 것이다.
+이름을 붙이는 것은 logic이란 학문이다. logic이란 학문은 자연어로 문장을 표현하는데
+그 문장이 "String"이기 때문에 value다. 긴 value로 code를 표현한다? 너무 복잡하다.
+그래서 이름을 붙여준것이다. 이름을 상수와 변수라고 하는것은 조금 문제가 있다. logic에선
+수가 value가 아니기때문이다. constants, variable은 수가 아니다. 수학에서만 통용되는
+용어다.
+</p>
+
+<p>
+code는 문제를 표현한것이고,  문제의 표현은,  알고있는것(constant)와 모르는것(variable)의
+관계를 통해서 기술된다. 이렇게 기술된 문제를 해결하는것, code로 부터 value를 얻는 과정이 evaluation이다. 
+</p>
+
+<p>
+<font color="red">[data란?]</font>
+</p>
+
+<p>
+data란 이미 알고있는 value다. t,f도 data고, 문자열도 data고, number도 data다. 각각의 학문에서
+data다. 그런데 data는 datum의 복수다. 하나가 아니다. txt파일의 수많은 문장들, 숫자들, true,false
+모두 data다.
+</p>
+
+<p>
+<font color="red">[data structure란?]</font>
+</p>
+
+<p>
+data는 values라고 말했다. 수많은 values를 특정한 구조에 맞추어 넣어놓으면 그게 data structure이다.
+예를 들어, food가 data라고 한다면 food를 선반에 놓는 것을 data structure라고 한다. structure를
+사용해서 values를 정리하는 것에는 특정한 관계가 생긴다. 예를 들어서 선반1에 food1을 올려놓고 선반2에
+food2를 올려놓자. structure가 생기면 가장 먼저 values에는 membership이라는 게 생긴다. food1이
+선반1에 있는가? 선반2에 있는가? 이것을 membership relation이라고 한다. values만 있을때는 없었던
+현상이다. value와 structure간의 관계, 그것이 membership relation이다. 그리고 생각할 수 있는게,
+선반1의 food1을 선반2로 옮길수 있다. 이런것을 operation이라고 한다. 즉 구조가 만들어지면서 value의
+이동이 가능해지는데, 이런것을 operator라고 한다. 이제 새로운 물건이 들어왔다. A라는 물건이 들어왔다.
+선반1에 놓는 법, 선반2에 놓을 수도 있다. 우리는 이럴때 새로운 function을 만든다. 새로운 물건이 들어오면
+선반1이 꽉차지 않았다면 선반1에, 그렇지 않다면 선반2에 넣는다. 이것은 어떤 입력이 들어와도 해당되는
+법칙이다. 이런 법칙들이 만들어진다. 법칙안에 보면, operator가 사용되는 것을 볼 수 있다. operator는
+structure가 도입되면 당연히 만들어지는 법칙이라면, function은 그냥 법칙이다. 그래서 operator도 function으로
+구현할 수 있다. 즉 선반1의 물건을 선반2로 옮기는 법칙을 만들면 되는 것이다. 
+</p>
+
+<p>
+structure의 종류는 많다. array,list,graph,tree, db도 마찬가지다. 이런 구조에는 구조에 맞는 operator
+가 있게 된다. 그리고 function으로 이 구조와,data,operator를 적절히 사용한 법칙을 만들어 내고, 이
+법칙으로 문제를 푼다.
+</p>
+
+<p>
+다시, 종합해서, data가 많아질때, 그것을 정리하기 위해서 structure가 도입되고, structure가 생기면, operator가
+만들어지고, 새로운 법칙도 만들어진다. 
+</p>
+
+
+<p>
+<font color="red">[알고리즘이란?]</font>
+</p>
+
+<p>
+알고리즘이란? operator와 기존의 값, 새로운값, relation, function을 기술해서 모르는것을 찾는 단계를
+말한다. 그래서 알고리즘은 함수를 design해서 만들어질 수도 있고 가장 간단하게 expression을 통해서 
+만들어질 수도 있다. 
+</p>
+
+<div class="important">
+<p>
+아무것도 없는 상태에서, 태초 지구가 생겼을때라는 비유는 맞지 않지만, 바구니와 사과만 있었다고 하자.
+사과는 2가지 상태를 가질 수 있다. 바구니에 있을때, 바구니에 없을때..바구니와 사과간의 관계가 생긴다.
+우리는 바구니가 사과가 있다. 없다. t/f를 말할 수 있고, 판정할 수도 있다. 사과를 바구니에 넣는다. 바구니에서
+사과를 꺼낸다. 같은 operator도 만들 수 있다. 물리적 세계의 관점에선 존재와 operator밖에 존재하지 않는다.
+하지만, 상상의 나래를 피면 우리는 사과를 똑같이 복제해서 거기에 2라는 값을 줄 수 있다. 음&#x2026;
+이건 개소리다. 철학적관점을 도입하다 보니&#x2026;머리속이 복잡해진다. 
+</p>
+
+</div>
+
+<div class="caution">
+<p>
+lisp은 이런 3개의 학문에서 다루는 것을 통합했다. 그리고 자신만의 value를 정의한다. 그것은 Symbol이다.
+Symbol을 사용해서 기존학문의 value를 모두 사용한다. value를 이동하거나, value를 조작하는 operator
+expression, function을 모두 symbol로 표현한다.
+</p>
+
+</div>
 
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org0a55228" class="outline-2">
-<h2 id="org0a55228"><span class="section-number-2">2</span> Introduction</h2>
+<div id="outline-container-org619b051" class="outline-2">
+<h2 id="org619b051"><span class="section-number-2">2</span> Introduction</h2>
 <div class="outline-text-2" id="text-2">
 <div class="note">
 <p>
@@ -668,11 +774,29 @@ LISP(LISt Processor)은 IBM704 컴퓨터에서 돌아갈 수 있는 programming 
 Mccarthy는 Advice Taker라는 상식을 수행하는 computer를 만들고 싶었는데, 그래서
 논문도 썼다. 이것은 또 다른 논문이라서 여기선 언급하지 않겠지만, 상식을 수행하기
 위해선 Declarative sentence의 처리와 imperative sentence에 대한 처리를 할 수
-있어야 하기 때문에 LISp이 만들어진거라고 한다. 
+있어야 하기 때문에 LISP이 만들어진거라고 한다. 
 </p>
 <div class="tip">
 <p>
 모든 언어는 목적이 있다. LISP의 목적은 deduction을 수행할 수 있어야 하기 때문에
+수학의 function만을 이용해서 수학적 문제만을 해결할 생각이 없었다. 수리 논리를
+프로그래밍 언어로 만들기 위해서, logic과 math의 개념을 차용하는 언어를 만들었다고
+보면 된다.
+</p>
+
+</div>
+
+<p>
+Lisp을 단순화 하려고 여러번 고쳤는데, 결국 최종적으로는 특정 symbolic expression을
+partial recursive function으로 표현하는 방식을 사용했다. 이런 표현은 기계에 
+구애받지 않는다. 독립적인 시스템이기때문에 바로 S-expression과 S-function을 설명해도
+문제가 없을꺼 같다.
+</p>
+
+<p>
+#+begin<sub>note</sub>
+이 문서에서, formalism을 제일 먼저 설명하겠다. formalism을 설명해야 함수를 
+recursive하게 정의할 수 있기 때문이다.
 </p>
 
 </div>
@@ -680,17 +804,14 @@ Mccarthy는 Advice Taker라는 상식을 수행하는 computer를 만들고 싶�
 
 
 <p>
-Lisp을 단순화 하려고 여러번 고쳤는데, 결국 최종적으로는 symbolic expression중에 일부를
-partial recursive function으로 표현하는 방식을 사용했다고 한다. 
+#+end<sub>note</sub>
 </p>
-
-</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-28 Fri 00:59</p>
+<p class="date">Created: 2018-12-29 Sat 14:14</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -190,8 +190,29 @@
      
    math의 모든 것은 function으로 표현된다. math가 곧 function으로 봐도 무방.
    number => number로 모든 함수가 표현.
+
+   각각의 학문(언어,type)을 function으로 표현가능하고, 또한 function은 학문이
+   가진 모든 요소들도 설명이 가능하다.
+
+   우선 value는 그냥 function으로 봐도 된다. function을 수행하면 return을 한다.
+   return은 value의 형태로 할수 있다. 그래서 function을 수행한 결과를 value로 하면
+   function은 value를 표현할 수 있다. 물론, function은 모든 형태를 다 return할
+   수도 있다. function이 function을 return할 수도 있다. 또한 church number나 괴델
+   number처럼, function 그 자체로 value를 표현할 수 있다. 여튼, 그다음, name에
+   대해서 알아보자. value는 name을 붙여서 사용하는데, constant와 variable은 
+   말 그대로 name과 valueb를 연결한 하나의 함수다.
+   operator도 당연히 함수로 표현 가능하다. propositional logic의 connectivities들도
+   function으로 가능하고, predicate의 operator equal greater, 이런거 다 함수다.
+   수학의 operator인 +,\,*- 도 다 함수가 된다.
+
+   data structure도 array, list, graph,tree 모두 함수다.
+
+   어떻게 보면 이세상 모든 것, 모든 학문은 함수로 표현 될 수 있다. 그러니 math,
+   predicate logic, propositional logic을 통합하려고 하는 시도. mathlogic을
+   이어 받은 programming language에서 function을 안 쓸수가 없는 것이다. functional
+   language가 얼마나 자연스러운 개념인지 우리는 알수 있다.
    
-** 함수의 사용과 특징.
+** function의 사용과 특징.
    #+begin_note
    다시 한번 정리하자면, 함수는 보편적인 개념이기 때문에 어느 문제에도 적용될 수 
    있다. 또한 함수는 각각의 학문(언어)이 포함하는 expression을 표현할 수도 있다. 
@@ -216,6 +237,22 @@
     
     이런 함수를 봐도, 1, +(기존에 알고있는 값과 함수)를 x와 연결하는 것을 볼 수 있다.
 
+   #+end_note
+
+** class에 대해서.
+   #+begin_note
+   class의 경우, lisp에는 없지만, function을 얘기하면서 class를 얘기하지 않을 수 없다.
+   function이 모든 것을 포함하지만, function은 일반적으로 다양한 학문에서 파생된 
+   operator와 name들을 섞어서 사용할 수 있게 해준다. 비슷한것으로 class가 있다.
+   class는 하나의 새로운 data type을 만든다고 볼 수 있다. type이란게 하나의 학문
+   이라고 했는데, 각각의 학문에선 value가 있고, 그 안에서 operator가 있다고 했다.
+   이것을 비슷하게 흉내 낼 수 있지 않을까? 그게 class 다. 함수 처럼 다양한 학문의
+   value의 name과 operator를 정의해서 type을 만들어 버린다. 함수나 class나 모두
+   다양한 기존학문의 요소를 가져다가 사용하기 때문에 definition이 필수다. 그러면
+   data structure와 class의 차이도 자연스럽게 알수 있지 않나?
+
+ 그래서 class
+   와 function은 definition을 하고 적용해서 사용한다.
    #+end_note
 ** 기타
 
@@ -248,6 +285,122 @@
  [[./img/mccarthy/idea1.png]]
 
  #+end_note
+** code와 data 그리고 data structure 그리고 알고리즘.
+   #+begin_note
+   우리는 3개의 학문은 문제, 질문으로 부터 시작되었다고 말했다. 그 질문은 답을
+   원한다. 답은 3가지 종류가 있다고 했다. 이 답을 value라고 부르는데, propositional
+   logic에서 찾는 답은 t/f, true,false가 value다. predicate logic은 문자열로
+   표현되는 thing을 찾는다. 그래서 value는 문자열이다. math에서는 number를 찾는다.
+   그래서 value는 number다. 
+
+   {{{color(red,[code란?])}}}
+     
+   code는 문제다. 문제가 어떻게 표현하는가는 expression과 function을 사용한다. expression
+   과 function은 기존에 알고있는 value와 모르는것(알고자 하는 것)과의 관계를 통해서
+   value를 구한다. 이것을 표현할때, 이미 알고 있는 value나 알고자하는 value에 이름을
+   붙여서 사용할 수 있다. 이것을 상수와 변수라고 한다. 상수는 이미 알고 있는 value에
+   이름을 붙인것을 말한다. 변수는 value를 가르키는 이름이지만, 아직 모르는 것이다.
+   이름을 붙이는 것은 logic이란 학문이다. logic이란 학문은 자연어로 문장을 표현하는데
+   그 문장이 "String"이기 때문에 value다. 긴 value로 code를 표현한다? 너무 복잡하다.
+   그래서 이름을 붙여준것이다. 이름을 상수와 변수라고 하는것은 조금 문제가 있다. logic에선
+   수가 value가 아니기때문이다. constants, variable은 수가 아니다. 수학에서만 통용되는
+   용어다.
+   
+   code는 문제를 표현한것이고,  문제의 표현은,  알고있는것(constant)와 모르는것(variable)의
+   관계를 통해서 기술된다. 이렇게 기술된 문제를 해결하는것, code로 부터 value를 얻는 과정이 evaluation이다. 
+
+   {{{color(red,[data란?])}}}
+   
+   data란 이미 알고있는 value다. t,f도 data고, 문자열도 data고, number도 data다. 각각의 학문에서
+   data다. 그런데 data는 datum의 복수다. 하나가 아니다. txt파일의 수많은 문장들, 숫자들, true,false
+   모두 data다.
+
+  {{{color(red,[data structure란?])}}}
+  
+  data는 values라고 말했다. 수많은 values를 특정한 구조에 맞추어 넣어놓으면 그게 data structure이다.
+  예를 들어, food가 data라고 한다면 food를 선반에 놓는 것을 data structure라고 한다. structure를
+  사용해서 values를 정리하는 것에는 특정한 관계가 생긴다. 예를 들어서 선반1에 food1을 올려놓고 선반2에
+  food2를 올려놓자. structure가 생기면 가장 먼저 values에는 membership이라는 게 생긴다. food1이
+  선반1에 있는가? 선반2에 있는가? 이것을 membership relation이라고 한다. values만 있을때는 없었던
+  현상이다. value와 structure간의 관계, 그것이 membership relation이다. 그리고 생각할 수 있는게,
+  선반1의 food1을 선반2로 옮길수 있다. 또한 선번1 food옆에는 다른 물건이 있을 수 있다. 단일 동작이
+  주어진 구조에서 있을 수 있는 것이다. 이렇게 단순한 동작은 structure안에 여러개 있을 수 있다. 
+  이런것을 operation이라고 한다. 즉 구조가 만들어지면서 value의 단순한 이동이나 변경이 가능해지는데, 
+  이런것을 operator라고 한다. operator와 비슷한것으로 function이 있다.  선반1의 물건을 선반2로 
+  옮기고, 다시 선반1로 옮기자. 이런것은 operator로 한번에 할 수 없다. 선반1을 선반2로 옮기는 operator
+  와  선반2의 food를 선반1로 옮기는 operator를 사용한다. 여러개의 operator를 사용하는 것은 번거로운일이다.
+  그래서 function이란게 생겼다. function은 여러개의 operator를 조합해서 만들 수도 있고, 간단한 function
+  으로는 operator도 만들 수 있다. function은 원래 특정 언어에 속하는 operator나 value와는 다르다.
+  개념만 있고 여러 학문에서 두루 사용되었다. 그래서 mathlogic(math +logic)을 물려받은 programming언어
+  에서도 function은 사용된다. 이런 특징으로 function은 여러 type을 섞어 쓸수 있게 만들어주는 유일한 도구
+  이기도 하다. operator는 해당 type(학문)에서만 사용된다면, function은 여러 type에서 사용하는 operator를
+  다 사용할 수 있다. 그래서 function에는 type을 명시해야 한다. cross-over를 하기 때문이다. 또한 function은
+  이름을 갖는다. value가 이름을 갖는 거랑 비슷하다. 문장이란 value를 이름을 써서 간단히 사용하듯이 function도
+  수많은 operator를 갖는데, 간단히 표현하기 위해 name도 갖는다. function이 여러type에 적용되고 처리하는 value도
+  여러가지 이기 때문에 function은 반드시 definition이 필요하다. 또 한가지 특징으로 function 법칙과 같다.
+  즉 하나의 케이스에만 해당하는 게 아니라, 모든 value에 대해 행해진다. 모든 value라는
+  표현보다, 집합이란 표현이 더 나을 수도 있다. 여튼 특정 케이스 하나에만 적용되지 않기 때문에 법칙과
+  비슷하다. 다시 정리하자. operator는 structure가 도입되면 당연히 만들어지는 법칙이라면, function은 그냥 법칙이다. 그래서 operator도
+  function으로 구현할 수 있다. 
+
+  structure의 종류는 많다. array,list,graph,tree, db도 마찬가지다. 이런 구조에는 구조에 맞는 operator
+  가 있게 된다. 그리고 function으로 이 구조와,data,operator를 적절히 사용한 법칙을 만들어 내고, 이
+  법칙으로 문제를 푼다.
+
+  다시, 종합해서, data가 많아질때, 그것을 정리하기 위해서 structure가 도입되고, structure가 생기면, operator가
+  만들어지고, 새로운 법칙도 만들어진다. 
+  
+
+  {{{color(red,[알고리즘이란?])}}}
+  
+  알고리즘이란? operator와 기존의 값, 새로운값, relation, function을 기술해서 모르는것을 찾는 단계를
+  말한다. 그래서 알고리즘은 함수를 design해서 만들어질 수도 있고 가장 간단하게 expression을 통해서 
+  만들어질 수도 있다. 
+
+  {{{color(red,[data types?])}}}
+
+  #+begin_note
+   programming language는 3개의 학문으로부터 시작되었다. 3개의 학문은 고유한 언어와 values를 가지고 
+   있고, operator도 각자 가지고 있다. 대부분의 programming languages는 이런 특성들을 그대로 물려받았다.
+   3개의 학문을 type이라고 부른다. 무슨말인고 하니, propositional logic의 value는 true/false고,
+   이 value들의 있는 공간에서 operator는 and,or,not...같은 connectives가 있다. connectives는 물론
+   함수로 표현 가능하다. 수학의 경우도, number라는 value가 있고 number라는 공간에서 +,-,*,/라는 operator
+   가 존재한다. predicate logic에선 value가 string이고, string공간에선 많은 operator가 존재한다.
+   각각의 type은 value공간과 operator를 포함한다. programming language에서 일반적인 type은
+   boole type, String type, number로는 int,float,double이 존재하고 각각의 type에 맞는 operator
+   가 존재하게 된다.
+  #+end_note
+
+  {{{color(red,[data type과 name 그리고 operator])}}}
+   #+begin_note
+   value들은 이름을 가질수 있다고 했다. constant와 variable이다. 그럼 type이 있는 현대 언어에서
+   constant와 variable에도 type이 있는가? 그렇다. 이름을 붙여서 value를 사용하더라도,
+   type을 명시해 주어야 한다. 그럼 operator는 어떤가? operator는 해당 value를 조작하는
+   함수(명령어)이기 때문에 value에 영향을 받는다. 예를 들어보자.
+   #+BEGIN_SRC 
+   int num =3;
+   string str ="str";
+
+   num + str이 가능할까? 불가능하다.
+   #+END_SRC
+   #+end_note   
+       
+  #+begin_important
+  아무것도 없는 상태에서, 태초 지구가 생겼을때라는 비유는 맞지 않지만, 바구니와 사과만 있었다고 하자.
+  사과는 2가지 상태를 가질 수 있다. 바구니에 있을때, 바구니에 없을때..바구니와 사과간의 관계가 생긴다.
+  우리는 바구니가 사과가 있다. 없다. t/f를 말할 수 있고, 판정할 수도 있다. 사과를 바구니에 넣는다. 바구니에서
+  사과를 꺼낸다. 같은 operator도 만들 수 있다. 물리적 세계의 관점에선 존재와 operator밖에 존재하지 않는다.
+  하지만, 상상의 나래를 피면 우리는 사과를 똑같이 복제해서 거기에 2라는 값을 줄 수 있다. 음...
+  이건 개소리다. 철학적관점을 도입하다 보니...머리속이 복잡해진다. 
+  
+  #+end_important
+  
+   #+begin_caution
+   lisp은 이런 3개의 학문에서 다루는 것을 통합했다. 그리고 자신만의 value를 정의한다. 그것은 Symbol이다.
+   Symbol을 사용해서 기존학문의 value를 모두 사용한다. value를 이동하거나, value를 조작하는 operator
+   expression, function을 모두 symbol로 표현한다.
+   #+end_caution
+   #+end_note
 * Introduction
 #+begin_note
 LISP(LISt Processor)은 IBM704 컴퓨터에서 돌아갈 수 있는 programming system이라고

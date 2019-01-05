@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2019-01-01 Tue 19:44 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swift Tutorial</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Hoyoul Park">
+<meta name="description" content="Org-HTML export made simple."
+>
+<meta name="keywords" content="org-mode, export, html, theme, style, css, js, bigblow">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Swift Tutorial</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4d68a7a">1. comment</a></li>
+<li><a href="#org5d71c73">2. print</a></li>
+<li><a href="#org0d7f746">3. Values</a></li>
+<li><a href="#orgae76f2c">4. names</a>
+<ul>
+<li><a href="#orgad2fb74">4.1. constants</a></li>
+<li><a href="#org8f9a69f">4.2. variables</a></li>
+</ul>
+</li>
+<li><a href="#org96a64e0">5. type conversion</a></li>
+<li><a href="#org5bda006">6. 특이한 function(if)</a></li>
+<li><a href="#org2d7c1e9">7. 특이한 function - switch function</a></li>
+<li><a href="#org8d67bbb">8. 특이한 함수 -for in loop</a></li>
+<li><a href="#org6afe477">9. 특이한 함수 - while, repeat while</a></li>
+<li><a href="#orgef088ba">10. function</a></li>
+<li><a href="#org07f6def">11. class</a></li>
+<li><a href="#orgeeee3b5">12. classs init function</a></li>
+<li><a href="#orge09c0bb">13. class Inheritance</a></li>
+<li><a href="#org94816b4">14. optional</a></li>
+<li><a href="#orgddd1c51">15. optional binding</a></li>
+<li><a href="#orgc237e25">16. optional chaining</a></li>
+<li><a href="#org435b561">17. compute Properties</a></li>
+<li><a href="#orgad3dfae">18. Array</a></li>
+<li><a href="#org0cf53c6">19. dictionary</a></li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li>if you want go back?  <a href="http://www.holytofrege.space/index.html">home</a></li>
+</ul>
+<p>
+*-----&#x2013;&#x2014;
+작성자: FregeHoly
+작성일: <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-12-30 Sun&gt;</span></span>
+작성장소: Jeju
+날씨: cloudy
+------&#x2013;&#x2014;*
+</p>
+
+<div id="outline-container-org4d68a7a" class="outline-2">
+<h2 id="org4d68a7a"><span class="section-number-2">1</span> comment</h2>
+<div class="outline-text-2" id="text-1">
+<div class="note">
+<p>
+주석은 2가지가 있다.
+</p>
+<pre class="example">
+singline: //
+multiline: /* */  
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org5d71c73" class="outline-2">
+<h2 id="org5d71c73"><span class="section-number-2">2</span> print</h2>
+<div class="outline-text-2" id="text-2">
+<div class="note">
+<p>
+자주 쓰이는 print 사용법
+</p>
+
+<p>
+print(value), print(name)
+</p>
+
+<blockquote>
+<p>
+string value는 조금 특이하다.
+</p>
+
+<p>
+print(value \(name))
+</p>
+
+<p>
+ex) print("test\(name)")
+</p>
+</blockquote>
+
+</div>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">var</span> bint:<span style="color: #DCDCCC; font-weight: bold;">Int</span> = 3&#57344;&#57345;&#57345;
+<span style="color: #DCDCCC; font-weight: bold;">print</span>(<span style="color: #CC9393;">"test \(</span>bint<span style="color: #CC9393;">)"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0d7f746" class="outline-2">
+<h2 id="org0d7f746"><span class="section-number-2">3</span> Values</h2>
+<div class="outline-text-2" id="text-3">
+<div class="note">
+<ol class="org-ol">
+<li>string -&gt;predicate logic value</li>
+<li>true/false -&gt; propositional logic value</li>
+<li>numbers -&gt; math</li>
+</ol>
+<p>
+이 3개가 기본적인 type이고 value이지만, swift는 엄청나게 많은 type을
+만들어버렸다. data structure도 type이고 class도 type이다. 옛날 수학과
+논리학만 있었다면, swift에서는 수학 논리학과 같은 type을 수없이 만들 수
+있다는 것이다.
+</p>
+
+</div>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #DCDCCC; font-weight: bold;">print</span>(<span style="color: #CC9393;">"asdfasdf"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgae76f2c" class="outline-2">
+<h2 id="orgae76f2c"><span class="section-number-2">4</span> names</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+이름은 value를 가리킨다. 이름이 아무것도 가리키지 않는다면 문제가 생긴다.
+존재하지 않는것에 이름을 붙일순 없다. 하지만, swift는 약간 유동적이다.
+존재하지 않는것을 nil이라는 value라고 하는데, optional로 그 값을 허용할
+수도 있다. 이름을 짓는 것은 camelcase로 한다.
+</p>
+
+<p>
+또한, value는 종류가 있다. 그것을 type이라고 한다.
+종류에 맞게 operator도 정해지기 때문에, 변수나 상수에 type을 명시한다.
+swift는 약간 유동적이라서 안해도 된다. 그런데 나는 명시하기로 한다.
+</p>
+</div>
+
+<div id="outline-container-orgad2fb74" class="outline-3">
+<h3 id="orgad2fb74"><span class="section-number-3">4.1</span> constants</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="note">
+<p>
+let으로 values를 가르킨다. 이름이다. 변하지 않는다.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">let</span> cons:<span style="color: #DCDCCC; font-weight: bold;">String</span> = <span style="color: #CC9393;">"constants"</span>&#57344;&#57345;&#57345;
+<span style="color: #DCDCCC; font-weight: bold;">print</span>(cons)
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org8f9a69f" class="outline-3">
+<h3 id="org8f9a69f"><span class="section-number-3">4.2</span> variables</h3>
+<div class="outline-text-3" id="text-4-2">
+<div class="note">
+<p>
+var로 value를 가르킨다. 이름이다. 변한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">var</span> str:<span style="color: #DCDCCC; font-weight: bold;">String</span> = <span style="color: #CC9393;">"string"</span>&#57344;&#57345;&#57345;
+<span style="color: #DCDCCC; font-weight: bold;">print</span>(str)
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org96a64e0" class="outline-2">
+<h2 id="org96a64e0"><span class="section-number-2">5</span> type conversion</h2>
+<div class="outline-text-2" id="text-5">
+<div class="note">
+<p>
+value가 3개에서 수많은 value가 생긴것은 수많은 type이 만들어졌다는 것을 
+의미한다. type간의 변환이 가능한가? type간의 변환이란 말보다 직접적으로
+value의 변환이라고 말할 수 있다. 또한 value를 가르키는 이름의 변환이라고도
+말할 수 있다.
+</p>
+
+<p>
+우선 기본적인 3가지 type에 대한 변환은 가능하다.
+</p>
+
+<p>
+int -&gt; string,float,double,bool
+float-&gt;string,double,int,bool
+string-&gt;int,float,double,bool =&gt;nil
+boole-&gt;string
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">var</span> intnum:<span style="color: #DCDCCC; font-weight: bold;">Int</span> = 3&#57344;&#57345;&#57345;
+<span style="color: #F0DFAF; font-weight: bold;">var</span> floatnum:<span style="color: #DCDCCC; font-weight: bold;">Float</span> = 3.3&#57344;&#57345;&#57345;
+<span style="color: #DCDCCC; font-weight: bold;">print</span>(<span style="color: #DCDCCC; font-weight: bold;">String</span>(intnum))&#57344;&#57345;&#57345;
+<span style="color: #DCDCCC; font-weight: bold;">print</span>(<span style="color: #DCDCCC; font-weight: bold;">Float</span>(intnum))
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org5bda006" class="outline-2">
+<h2 id="org5bda006"><span class="section-number-2">6</span> 특이한 function(if)</h2>
+<div class="outline-text-2" id="text-6">
+<div class="note">
+<p>
+if는 function이라고 할 수 있다. 
+형태는 다음과 같다.
+</p>
+<pre class="example">
+if condition {
+  some code.
+} else if condition {
+some code.
+} else {
+some code.
+}
+
+</pre>
+
+<p>
+ 좀 특이하다. predicate + form의 형태다. predicate으로 premise를 나타내고
+form으로 conclusion으로 conditional expression을 함수를 사용한다는
+mccarthy의 생각을 그대로 나타냈다. Mccarthy가 말한 partial function의 개념이
+여기에도 들어가 있다. condition이 입력이고, form이 출력이라면, 모든 입력에 
+대해 값이 계산되는게 아니라, 일부 값은 undefined될 수 있다. if와 else if에
+해당되지 않으면 undefined이기 때문이다. 그래서 else를 추가했다.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">var</span> bnumber:<span style="color: #DCDCCC; font-weight: bold;">Int</span> = 8&#57344;&#57345;&#57345;
+<span style="color: #F0DFAF; font-weight: bold;">if</span> bnumber &lt; 10&#57344;&#57345;&#57345;
+{&#57344;&#57345;&#57345;
+<span style="color: #DCDCCC; font-weight: bold;">print</span>(<span style="color: #CC9393;">"number is smaller 10"</span>)&#57344;&#57345;&#57345;
+}
+</pre>
+</div>
+
+<p>
+참고할 것중에 하나는, predicate function에 해당하는 조건은 엄청 길어지거나
+함수로도 표현 가능하다. a &amp;&amp; b &amp;&amp; c || d &#x2026;.이렇게 길어지는 계산을 function
+으로 간략하게 표현할 수도 있다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org2d7c1e9" class="outline-2">
+<h2 id="org2d7c1e9"><span class="section-number-2">7</span> 특이한 function - switch function</h2>
+<div class="outline-text-2" id="text-7">
+<div class="note">
+<p>
+Mccarthy가 말한 cond함수와 상당히 유사하다.
+</p>
+
+<p>
+형식은 다음과 같다.
+</p>
+<pre class="example">
+swithc value {
+    case value1 : some code
+
+    case value2, value3 : some code
+
+    default: some code
+}
+</pre>
+
+<p>
+value와 value1 같다면 (true)이면 code를 실행한다. 실행하는게 if처럼 function form형태는
+아니다.  :으로 code를 나타낸다. if에선 else로 처리한것을 switch에서 default로
+표현한다.
+</p>
+
+<p>
+case에서 여러개의 value가 있다면 or연산이 숨어있다. 두번째를 보면 된다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org8d67bbb" class="outline-2">
+<h2 id="org8d67bbb"><span class="section-number-2">8</span> 특이한 함수 -for in loop</h2>
+<div class="outline-text-2" id="text-8">
+<div class="note">
+<p>
+일반적으로 loop라고 부르는 함수가 있다. for in 형태는 매우 특이하다.
+</p>
+
+<p>
+형태는 다음과 같다.
+</p>
+<pre class="example">
+for counter(variable name) in lower...upper{
+some code
+}
+</pre>
+
+<p>
+매우 특이하다. counter의 이름을 lower나 upper를 가르치게 한다. 그리고 그 변수가
+함수의 입력이 되고, 함수의 form은 그대로 사용한다. 각각의 함수에서 인자로 넘어온
+counter는 별개의 scope를 갖게 된다. counter가 인자의 역할을 하기 때문에 인자를
+주지 않고 lower&#x2026;upper만큼의 수만큼 반복되는 함수를 만들 수 있다. 그렇게 할려면
+counter를 _로 표시하면 된다. 또한 counter의 type은 정해져 있다. Int형이다. 왜냐면
+주어진 value가 int형 밖에 안된다. lower와 upper를 string으로 하고 counter:String
+식으로 하면 에러가 난다. 에러의 이유는 Protocol때문이라는 데 잘 모르겠다.
+</p>
+
+<p>
+1)for in 전형적인 example1
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">for</span> index <span style="color: #F0DFAF; font-weight: bold;">in</span> 1...3&#57344;&#57345;&#57345;
+{&#57344;&#57345;&#57345;
+<span style="color: #DCDCCC; font-weight: bold;">print</span>(index)&#57344;&#57345;&#57345;
+}
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>for in 각각의 local 인자를 갖는 함수라는 증거 example2</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">for</span> index <span style="color: #F0DFAF; font-weight: bold;">in</span> 1...5&#57344;&#57345;&#57345;
+{&#57344;&#57345;&#57345;
+  <span style="color: #F0DFAF; font-weight: bold;">var</span> sum = 0&#57344;&#57345;&#57345;
+  sum += index&#57344;&#57345;&#57345;
+  <span style="color: #DCDCCC; font-weight: bold;">print</span>(sum)&#57344;&#57345;&#57345;
+}
+</pre>
+</div>
+<p>
+예상과는 달리 1에서 5까지 합을 출력하지 않는다. loop를 돌때 각각의 함수가
+독립적으로 호출 되기 때문이다. 이것을 해결할려면 sum의 scope를 for이전에
+기술해야 한다. 이것은 pure function이 아니라는 증거이기도 하다. 이것을
+고쳐보자.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">var</span> sum = 0&#57344;&#57345;&#57345;
+<span style="color: #F0DFAF; font-weight: bold;">for</span> index <span style="color: #F0DFAF; font-weight: bold;">in</span> 1...5&#57344;&#57345;&#57345;
+{&#57344;&#57345;&#57345;
+  sum += index&#57344;&#57345;&#57345;
+  <span style="color: #DCDCCC; font-weight: bold;">print</span>(sum)&#57344;&#57345;&#57345;
+}
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org6afe477" class="outline-2">
+<h2 id="org6afe477"><span class="section-number-2">9</span> 특이한 함수 - while, repeat while</h2>
+<div class="outline-text-2" id="text-9">
+<div class="note">
+<p>
+while함수는 우리가 기존에 알고있는 while문과 같다.
+</p>
+<pre class="example">
+while condition {
+some code.
+}
+</pre>
+
+<p>
+repeat while의 경우는 condition이 뒤에 있다.
+</p>
+<pre class="example">
+repeat {
+some code
+} while condition
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgef088ba" class="outline-2">
+<h2 id="orgef088ba"><span class="section-number-2">10</span> function</h2>
+<div class="outline-text-2" id="text-10">
+<div class="note">
+<p>
+형태는 다음과 같다.
+</p>
+
+<pre class="example">
+func name () {
+some code
+}
+</pre>
+
+<p>
+func란 키워드를 사용하고, name과 form으로 구성되어 있다. function name은
+camelcase로 작성한다. form안에는 expression이 들어간다. 일반적인 function의
+예를 보자.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #F0DFAF; font-weight: bold;">func</span> <span style="color: #93E0E3;">addTwoNumbers</span>() {&#57344;&#57345;&#57345;
+   <span style="color: #F0DFAF; font-weight: bold;">let</span> a = 1&#57344;&#57345;&#57345;
+   <span style="color: #F0DFAF; font-weight: bold;">let</span> b = 2&#57344;&#57345;&#57345;
+   <span style="color: #F0DFAF; font-weight: bold;">let</span> c = a + b&#57344;&#57345;&#57345;
+   <span style="color: #DCDCCC; font-weight: bold;">print</span>(c)&#57344;&#57345;&#57345;
+}
+</pre>
+</div>
+
+<p>
+위에서 보듯이 c = a+b라는 expression을 나타내기 위해서 name과 operator를 
+사용했다. 솔직히 간단한 expression인데도 programming language에선 좀 
+복잡하다. function을 지우고, 그냥 let부터 print까지 써도 실행하는데 문제가 
+없다. expression만 죽 나열해도 되는데 이렇게 쓰는 이유는 한번 정의하면 재사용이
+가능하기 때문이다.
+</p>
+
+<p>
+또다른 예를 보자. 
+</p>
+
+<p>
+return값이 있는 function
+</p>
+
+<pre class="example">
+func addTwoNumber() -&gt; Int {
+   let a = 1
+   let b = 1
+   let c = a + b
+   return c
+}
+let sum = addTwoNumbers()
+</pre>
+
+<p>
+return값이 있는 함수는 expression만 표현한것과는 다르다. function이 재사용으로만
+사용하는게 아니라, 특정 값을 표현하는 것처럼 보인다. value처럼 sum이 function을
+가르킨다. return값이 있는 function은 value라고 보여진다. 형식적으로는 return값의
+type을 function에 기술하는데, 이 부분도 function이 값으로 취급됨을 보여준다.
+</p>
+
+<p>
+이제 인자가 있는 경우를 보자.
+</p>
+
+<pre class="example">
+func addTwoNumbers(arg para:Int) -&gt; Int {
+   let a = para
+   let b = 1
+
+   return a+b
+}
+let sum = addTwoNumbers(arg: 2)
+
+</pre>
+
+<p>
+argument가 있는 function은 좀 다르다. 우선 argument label이란게 있다. 이것은
+lambda 함수의 영향을 받았다. lambda (x y) (y<sup>2</sup> + x)에서 앞에 (x y)는 form에서의
+bound variable 적용 순서를 가르킨다. 그래서 함수가 적용될때 (3 4)라는 인자에 
+대해서 13이란 값, 19라는 값이 결정되기 모호한것을 해결하기 위해 lambda calculus에선
+x가 3이고 y가 4라는 것을 가리킨다는 것을 명시적으로 보여주기 위해서 (x y)가 추가되었다고
+Mccarthy논문에서 밝히고 있다. 따라서 지금 swift에서 argument label은 람다형식을
+따르고 있다. 즉 argument label을 사용해서 호출할 때, 이 값은 어떤 변수와 binding
+될것임을 명확히 해준다. 이건 기존의 프로그램에는 없는 방식이다. 그래서 swift에서는
+기존과 같이 쓸수 있게 argument label을 _로 설정하면 기존 프로그래밍처럼 
+addTwoNumbers(2)라고 쓸수 있게 된다.
+</p>
+
+
+<p>
+그리고 함수에 사용되는 내부 인자들은 name이다. name은 무언가를 가리켜야 한다.
+아무것도 없는데 가리키면 안된다. 이런 일이 함수를 정의하는데 있어선 자주 일어난다.
+함수에선 인자를 그냥 쓰는 경우가 많다. swift에선 그런경우를 위해서 optional이란것도
+준비해두었다. 
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org07f6def" class="outline-2">
+<h2 id="org07f6def"><span class="section-number-2">11</span> class</h2>
+<div class="outline-text-2" id="text-11">
+<div class="note">
+<p>
+현대 언어는 상당히 복잡하다. 옛날 언어는 value와 value를 모은 structure, structure
+가 있어서 생기는 operator만 가지고 프로그래밍을 했다. 거기서 value의 종류가 달라도 
+각각의  value와 관련된 연산이 적용되었거 그 연산과 value로 computation을 했다. value를
+한데 모아서 data structure란 것도 만들고, structure가 만들어지면서 자연스럽게
+operator도 생겼다. 이것은 기존의 학문 predicate logic, propositional logic, math에
+있던것이다. 그런것들이 mathlogic과 programming language의 과정을 거치면서 변하게
+된다. mathlogic과 programming language에선 3개의 서로다른 value들을 조합해서 사용해야하고
+3개의 서로 다른 type에 적절한 structure, operator도 합쳐써야 했다. 그런것을 하기 
+위해서 함수라는 math방법론이 사용되게 된다. function은 type에 구분하지 않고 쓴다. 
+type에 독립적이다.따라서 type을 명시를 해주어야 한다. 어떤 type을 써써 어떻게 할것인가?
+그것을 function definition이라고 한다. 수많은 function을 사용해서 우리는 3개의 type을 넘나드는
+cross over한 연산이 가능해 졌다. 즉 function은 return값이 있는경우, 뭉뜬거려서 
+하나의 값으로 볼 수 있는데, 어차피 수행결과가 값이기 때문이다. name이 특정 value를
+가리키고 있고, 해석을 통하면 하나의 value로 되는 것과 마찬가지다. 그런데 operator의 경우
+bool값을 가지고 조합해서 bool을 리턴한다. bool operator는 bool value로 볼 수 있다.
+function은 cross over라고 말했듯이, int, float, double, bool, string 여러 값을
+표현한다. 정의를 어떻게 하느냐의 따른다. 
+</p>
+
+<p>
+그런데 여기서 class란게 나온다. class란것은
+하나의 type을 만들겠다는 것이다. 기존의 type은 자신만의 value가 있었고, 그것에 따른
+structure와 operator가 있었다. 새로운 type을 만들려면 그래야 한다. 그런데, class는
+좀 다르다. 마치 data structure처럼 비슷한 형태지만, function처럼 type에 독립적이다.
+우리가 array란 자료구조를 보면 int array처럼 type에 종속적이다. 또한 structure는
+value를 모은거라서, constant의 집합으로 보면 된다. 요즘은 type에 종속적이지 않은 
+structure를 만들어서 많이 사용한다. 반면 class는 data
+structure와 비슷하지만, constant만 사용하는 게 아니라 variable도 사용한다. 그리고  type에 종속적이지 않다. 
+여러종류의 data를 모아서 사용한다. 아까 말했듯이  요즘 언어의 structure는 여러종류의 
+value로 모아져 있을 수 있다. 다만 constants로 구성된건 변함이 없는거 같다.
+그래서 function과 상당히 비슷하다. function처럼 type에 의존적이지 않기 때문에
+function처럼 어떤 type을 사용해서 무엇을 할것인지 명시해줘야 한다. class도 definition
+이 필요한 것이다. function이 return값을 사용하면서 value의 역할도 하듯이 class도
+instance화 되면서 value의 역할을 하게 된다. 그런데 이 value는 좀 다르다. function도
+value를 return하면서 마치 function이 value처럼 보이기도 하지만, 어디까지나 기존의
+value형태로 도출되었지 새로운 value를 만든건 아니였다. 그런데 class는 기존의 type
+에서 사용된 value를 사용해서 해서 하나의 구조체(data structure)를 만들었지만, type이
+없기 때문에 새로운 type을 만들고 새로운 value를 만들어버린다. 새로운 value를
+만든다는 것은 대단하다. 새로운 value에 대한 operator는 무엇인가? function이 그 
+역할을 하게 된다. function은 원래가 이종적인 data type을 처리하고 type에 맞는 
+value를 return한다. 그런데 class란 놈이 새로운 value를 만들어 냈는데, 이 value를
+처리하는 operator는 새롭게 만드는 것이 아닌, function을 이용하는 것이다. function이란게
+원래 잡놈이기 때문에 이를 충실히 수행한다. 
+</p>
+
+<p>
+class는 또 한편으로는 data structure와 비슷하기도 하다. data structure는 
+type종속적이여서, 그 structure를 사용하는 operator 또한 type 종속적이다. 반면
+class는 data structure와 마찬가지로 여러 value를 가지고 있다. 이 value는 data
+structure처럼 한가지 값만으로 이루어지지 않았다. 그래서 그것을 처리하는 operator도
+function을 쓴다고 한다. class는 그 자체가 하나의 value로 사용되기도 하지만,
+여러개의 data가 내부적으로 저장되어 있고, function을 통해서 그 값을 가져올수도
+변경할 수도 있다. 그 자체가 value인 동시에 내부적으로도 value를 가지고 있는
+특이한 형태다. 예를 들어보자.
+</p>
+<pre class="example">
+class person {
+   var name = "holy"
+   var age = 0
+
+   func test() -&gt;Int
+   {
+      return age + 10
+   }
+}
+
+var a = person()
+a. name
+</pre>
+<p>
+위에서 보면 Person()로 value를 만든다. 그리고 a라는 이름을 붙인다. value에
+이름을 붙이는 것은 너무나 당연하기 때문이다. class는 value라는 것을 보여준다.
+</p>
+
+<p>
+그런데 그 value내부의 또다른 value를 a.name이란 식으로 조작할 수 있다. class는
+atom value는 아니다. function은 하나의 value만 표시하지만, class에는 여러 
+종류의 value가 있다. a.name, a.age 등 여러가지가 있다.
+</p>
+
+<p>
+그리고 상수라고 부르는 이름은 변경하지 못했다. 변수로 value를 가리킬때
+우리는 value를 변경할 수 있었다. 마찬가지로 function이나, class에서의
+value들은 변수를 가지고 있다. argument라고 한다. 그것을 변경 시키면서
+value를 변경하는 것이다.
+</p>
+
+<p>
+class의 탄생으로 우리는 엄청나게 많은 type과 그 type에 맞는 value를 갖게 되었다. 현대 언어는 매우 복잡하게 되었다.
+</p>
+
+<p>
+class definition은 다음과 같다. 
+</p>
+
+<pre class="example">
+class cname {
+  var a = 3
+  var b = 2
+
+  func f -&gt;Int {
+  return a+b
+  }
+}
+
+cname() --&gt;value를 만든다.
+var classname = cname() --&gt;value이기 때문에 이름도 있을 수 있다.
+</pre>
+
+<p>
+class는 여러 type의 기능을 조합적으로 사용해서 만들기 때문에 definition이
+필요하다고 했다. 어떤 type을 사용해서 만드는지 알아야 할 것 아닌가? 이렇게
+만드는게 class definiton이다. class를 만들고 class name()하면 value가 
+만들어진다. value가 만들어지면 name도 붙일 수 있다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgeeee3b5" class="outline-2">
+<h2 id="orgeeee3b5"><span class="section-number-2">12</span> classs init function</h2>
+<div class="outline-text-2" id="text-12">
+<div class="note">
+<p>
+class의 생성자라고 볼 수 있다. return값은 없는 그냥 함수다.
+</p>
+
+<p>
+사용법은 다음과 같다.
+</p>
+
+<pre class="example">
+class Car 
+{
+   var speed:Int = 10
+   init(paraLabel number:Int = 10)
+   {
+   self.speed = number
+   }
+}
+</pre>
+<p>
+내부 변수를 사용하기 위해서 self를 사용할 수도 있고 그냥 speed라고 써도 된다.
+그런데 self를 안쓰면 name confliction이 발생할 수 있으니까, self를 쓰자.
+</p>
+
+<p>
+class의 내부 변수를 property는 그냥 name이라고 볼 수 있지만, 약간 다르다.
+class에서 
+</p>
+<pre class="example">
+class Car
+{
+   var speed:Int
+}
+</pre>
+<p>
+위와 같이 사용할 수는 없다. var speed:Int를 선언하는건 일반적으로 문제가 없었는데
+property에서는 불가능 하다. 그래서 초기화를 class에선 반드시 해줘야 한다.
+초기화 해주는 함수를 init이라고 부르는데, designated init으로 부르기도 한다.
+초기화 함수의 역할에 맞게 모든 property를 초기화 해야 한다. 반면에 필요한것만
+초기화 할수 있는데, 그것을 convenience init함수라고 한다.
+사용법은 아래와 같다.
+</p>
+<pre class="example">
+class Car
+{
+   var speed:Int
+   var name:String
+   init()
+   { 
+     self.speed = 5
+     self.name = "mycar"
+    }
+   convenience int()
+   {
+     self.init()
+     self.name = "yourcar"
+   }
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orge09c0bb" class="outline-2">
+<h2 id="orge09c0bb"><span class="section-number-2">13</span> class Inheritance</h2>
+<div class="outline-text-2" id="text-13">
+<div class="note">
+<p>
+class는 수만개의 type과 value를 만들 수 있게 되었다. class는 type을 만드는데
+새롭게 만든다. 상속이란 방법을 통해서 기존의 type을 재사용하는 것이다. 재사용의
+의미도 있지만, 우리가 operator라는 아주작은 function으로 부터 복잡한 function을
+만들어서 쉽게 사용했던 거와 비슷하게 사용할 목적으로 inheritance라는 개념을 사용
+한것이다. 
+</p>
+
+<p>
+사용법
+</p>
+<pre class="example">
+class MyCar : Car
+{
+}
+</pre>
+
+<p>
+이렇게 쉽게 상속한다. 이렇게 되면 Car라는 superclass에서 사용하는 함수와 value를
+사용할 수 있게 된다. 그리고 function도 재정의가 가능하다.
+</p>
+
+<p>
+override function의 예를 보자.
+</p>
+<pre class="example">
+class Car {
+   var speed = 200
+
+   func drive {
+       print("Driving at \(speed)")
+       }
+  }
+
+class myCar : Car {
+   override func drive() {
+       super.drive()
+       print("mycar print")
+       }
+       func fly(){
+       print("flying")
+       }
+}
+</pre>
+<p>
+여기서 보면 car를 상속받고 function을 재정의 할 수 있다. function을 재정의
+한다는 의미는 아예 새롭게 쓰겠다는 말이다. 그런데 superclass에서 사용된 내용도
+지우지말고 수행하려면 super().drvie()를 사용한다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org94816b4" class="outline-2">
+<h2 id="org94816b4"><span class="section-number-2">14</span> optional</h2>
+<div class="outline-text-2" id="text-14">
+<div class="note">
+<p>
+swift에선 optional이란게 있다. 모든 variable, constant는 name이기 때문에
+value를 가리켜야 한다. 만일 가르키지 않는다면, 존재하지 않는데, 이름이 있는경우가
+된다. 이것은 나중에 문제가 될 수 있다. 우리가 존재하지 않는데 이름만 가지고 
+무엇을 변경한다거나, operator를 가한다면 error가 날 수 있다. 이름만 선언하는건
+문제가 없는데, 즉,evaluation할때 문제가 된다. 그래서 optional로 선언하면 nil이라는
+값을 갖게 된다. 이것을 wrapping이라고 한다. wrapping을 하면 무조건 nil이란 보호막으로
+둘러싸진다. 이게 좀 특이하다.
+</p>
+
+<pre class="example">
+var name:String? = "holy"
+print(name)
+</pre>
+<p>
+이것은 에러가 난다. 왜냐면 nil이란 wrap으로 둘러 싸여져 있고 내부에 holy라는 value를
+가지고 있다. print는 string operator이기 때문에 string만을 입력으로 받고 value가
+아니면 evaluate해서  nil이 deduce되면 에러를 난다. 에러를 없애기 위해서는 wrap을 풀어야 한다. 
+그것은 !을 사용한다.하지만, 이방식은 추천하지 않는다. 강제적이기 때문에 비추한다.  강제적이지 않고 if else로
+풀어야 한다고 apple은 말한다. 즉 !는 2번 evaluate하는 것이다.
+</p>
+
+<p>
+모든 value를 가리키는 name에게서만 optional처리를 한다. 왜냐 이름이 가리키는
+value가 아예 없을수 있기때문이다. 그러면 value는 어떤게 있는가? 
+primitive한 value,  class도 value, function도 value라고 할 수 있다. primitive한
+value도 name으로 가리키고, class를 가리키는 name도, function을 가리키는 name도
+optional이 될 수 있다는 것이다. 
+</p>
+
+<p>
+여기서 optional은 evaluate하면  nil이라는 값을 갖게 된다는 것이 많은 변화를 일으킨다. 
+optional로 하게 되면, bool값으로도 활용될 수 있다는 것이다. 예를 들어보자.
+</p>
+
+<pre class="example">
+var strname:String?
+
+if let a = strname {
+   print(a + "test")
+}
+</pre>
+<p>
+좀 이상한 구조긴 한데, 이게 수행 될까? 수행된다. 왜냐면, let은 symbol이 value를
+가리키는 name이다. let 심볼 = 심볼에선 오른쪽 symbol에서 evaluation이 일어난다. 
+value가 아니기때문이다. 그래서 strname을 evaluate하면 nil이 나온다. 그리고 a는
+constant이기 때문에,  if nil {} 과 같은 형식을 같는다고 보면 된다. 그래서 
+print문을 출력하지 않는다.
+</p>
+
+<pre class="example">
+var strname:String? = "string name"
+
+if let a = strname {
+   print(a + "test")
+}
+</pre>
+<p>
+이것은 어떻게 수행 될까? 이것은 if "string name" { }이라고 보면 된다. 
+if value 형태라서 수행이된다. 
+</p>
+
+<p>
+다시 한번 복습해보자.
+</p>
+<pre class="example">
+var myname:String?
+
+print(!myname + "really?")
+</pre>
+<p>
+여기서 보면, myname은 value가 nil이다. 그런데 string연산을 한다. nil은
+bool type인데 string operator인 +를 사용한다는 것은 에러가 나야 한다. 그렇다.
+에러가 난다.
+</p>
+
+<p>
+ 이것을 없애기 위해서 myname!을 통해서 원래의 type으로 강제 적용한다.
+이것을 unwrapping이라고 하는데, unwrapping해도 에러는 난다. 왜냐면 value를
+가리키지 않는 name이라서 그렇다.
+</p>
+
+<p>
+optional은 재밌는 개념이다. 이것을 통해서 여러가지 value를 가리키는 name들이
+일시적으로 nil값을 가리키게 된다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgddd1c51" class="outline-2">
+<h2 id="orgddd1c51"><span class="section-number-2">15</span> optional binding</h2>
+<div class="outline-text-2" id="text-15">
+<div class="note">
+<p>
+optional은 모든 name이 nil을 가리킬수 있다는 것이다. 주어진 type의 value와
+nil을 가리킨다. 이럴경우 optional을 명확하게 하나의 value를 가리키도록 정해줄
+필요가 있다. 이것을 optional binding이라고 한다. 즉 name을 사용하고자 할때,
+우리는 optional의 형태를 갖는 name이라면 명확히 binding해주고 사용해야 한다.
+binding하는 방식은 또다른 constant를 사용한다. 
+</p>
+<pre class="example">
+var test:String = "teststring"
+
+if let newtest = test {
+    print("this is new test"+newtest)
+}
+else {
+}
+</pre>
+<p>
+이렇게 let으로 또다른 상수를 만들어서 그 상수를 처리한다. 어..그럼 좀 이상하지
+않나? 위에서 test는 변수인데, 아래에서 let으로 상수로 바꿔서 처리한다? 난 변수로
+쓰고 싶은데&#x2026;이건 어쩔수 없다. if condition에서 variable이 사용된다면 runtime
+실행 때 safe 하지 않기 때문에 이렇게 binding하는 작업에선 let으로 처리한다. 즉
+변수로 되어 있는 이름이라도, runtime시에는 그 실행하는 순간의 값으로 binding해야
+하기 때문에 let을 쓴다는 것이다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgc237e25" class="outline-2">
+<h2 id="orgc237e25"><span class="section-number-2">16</span> optional chaining</h2>
+<div class="outline-text-2" id="text-16">
+<div class="note">
+<p>
+name을 사용하는 경우는 class에서도 많이 사용된다. class내부에서 name(변수,상수)가
+사용되는데, class자체도 value라서 class를 사용하는 경우, 대부분 name을 사용한다.
+그래서 class자체가 optional로 선언될 수도, class내부의 변수가 optional로 선택
+될 수도 있다. 이럴때 사용하는게 optional chaning이다. optional이 사용된 name에서 
+또다른 name을 사용할때 chaining(묶어서)사용하겠다는 뜻이다.
+예를 들어보자.
+</p>
+<pre class="example">
+class Person {
+ var residence: Residence?
+}
+class Residence {
+ var numberOfRooms = 1
+}
+let john = Person()
+</pre>
+<p>
+여기서 보면, John은 name이고, Person()은 value다. 이 value내부에는 또다른
+name이 있다. residence라는 이름은 value를 가르키지 않는 name이다. 그래서 
+optional로 되어 있다. 이것을 binding해서 사용해보자.
+</p>
+
+<pre class="example">
+let john = Person()
+if let count = john.residence?.numberOfRooms {
+}
+else {
+}
+</pre>
+
+<p>
+즉 우리가 optional로 선택한게 Residence라는 class의 value다. 그 value내부의
+value를 접근하려고 한다면, Residence의 value를 ?로 명확히 optional value임을
+표시해준다. 이것을 optional chaining이라고 한다. binding하는 것은 primitive
+value를 처리하는 것과 별다를 바 없다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org435b561" class="outline-2">
+<h2 id="org435b561"><span class="section-number-2">17</span> compute Properties</h2>
+<div class="outline-text-2" id="text-17">
+<div class="note">
+<p>
+property라는 건 그냥 class의 내부 name을 가리킨다고 보면 된다. 기존의 oop개념과
+다를게 없다. 그런데 compute property라는 새로운게 있다. 이것은 약간 function과
+form의 개념을 알아야 하는데, 솔직히 꼭 property에만 해당되는게 아니라, 모든 name에
+사용될 수 있는 것이다.
+</p>
+
+<p>
+function에 대한 개념은 예전부터 많았다. 그러나 표기하는 방법은 여러가지가 있었다고
+한다. 가장 유명한게 labmda방식도 있고, programming language의 function도
+있다. lambda에선 function의 이름과 form을 분리한다. form은 순수 계산과정이다.
+계산과정의 결과는 value다. function은 이름과 argument 그리고 value를 가지고있다고
+생각하면 된다. 이 개념을 응용한다면, compute properties라는 개념도 잡을 수 
+있을 듯 하다.
+</p>
+<pre class="example">
+var tempstr:String {
+   var tempbool:Bool = true
+   if tempbool {
+      return "you're ok"
+      }
+      else {
+      return "you're good!"
+      }
+</pre>
+<p>
+위와 같은 개념이 가능하다. 어차피 function에서 form은 value다. 그렇기 때문에,
+그 값을 name으로 가리키는건 무리한 생각이 아니다. property에 있는 name에만
+적용하는게 아니라 그래서 일반적인 name에도 적용 가능하다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgad3dfae" class="outline-2">
+<h2 id="orgad3dfae"><span class="section-number-2">18</span> Array</h2>
+<div class="outline-text-2" id="text-18">
+<div class="note">
+<p>
+Array는 structure다. structure는 원래 value를 모아놓은 것이다. 특정 구조에
+맞추어서, 예를 들면, Maccarthy논문 분석글에도 썼듯이, 선반을 갖다놓으면 음식을
+선반위에 놓을 수 있듯이, value를 구조에 맞게 조작하는 operator가 반드시 있기
+마련이다. 
+</p>
+
+<p>
+그리고 원래 structure라는 건 type에 영향을 받는다. 그래서 true/false를 담는
+structure도 있고, int를 담는 structure도 있고, string을 담는 structure가
+있는 것이다. 각기 type에 맞는 structure를 가지고 있다. 다만, structure의 value
+가 type에 의존적이란 말이지, bool type에는 array를 사용할수 없고, int type에만
+array가 있는 것은 아니다.
+</p>
+
+<p>
+여튼 array를 보자.
+</p>
+<pre class="example">
+var temparray = [String]()
+var myarray = [ "adsf", "dsaf","dsafasdfsa"]
+</pre>
+<p>
+이렇게 사용한다. string array가 되겠다. 첫번째는 빈 array를 만든건데, 
+조금 특이하다. type을 명시하고 함수 호출하듯이 했다. 두 번째는 익숙하다.
+</p>
+
+<p>
+structure에는 operator가 있다고 했다. 왜냐면 structure에서 값을 넣고 꺼내야
+하기 때문에 당연히 operaotr가 있다. insert(),remove()&#x2026;등등 여러가지 operator
+가 존재한다.
+</p>
+
+<p>
+우선 여기서는 모든 structure는 function으로 표현될 수 있기 때문에, 내부적으로도
+structure는 function으로 되어 있기때문에 function같이 처리가 가능 하다.
+</p>
+
+<p>
+예를 들어보자.
+</p>
+
+<pre class="example">
+var mycar = ["benz", "pony", "sonata"]
+print(mycar[0])
+</pre>
+<p>
+위에서 보듯이 mycar[0], mycar[1]&#x2026;이런식으로 값을 표현할 수 있다. 
+domain은 자연수가 되고, range가 값이 되기 때문이다. 그냥 함수이기 때문에
+이렇게 표현이 가능하다. 
+</p>
+
+<p>
+ <font color=""></font>
+array는 for loop와 같이 사용되곤 한다.
+</p>
+<pre class="example">
+var d = ["dog","cat"]
+
+for counter in 0...2 {
+    print("my" + d[counter]
+}
+
+for item in d {
+  print ("my " + item)
+}
+</pre>
+
+<p>
+<font color=""></font>
+</p>
+
+<ol class="org-ol">
+<li>append operator</li>
+</ol>
+
+<p>
+두개의 array를 합치는 것이다.
+</p>
+
+<p>
+간단하게 +를 사용할 수 있다.
+</p>
+
+<pre class="example">
+var d = ["dog","cat"]
+d += ["mouse"]
+
+print(d)
+</pre>
+
+<ol class="org-ol">
+<li>length</li>
+</ol>
+
+<pre class="example">
+var d =["dog","cat"]
+d.count
+</pre>
+<p>
+array의 길이를 알 수 있다. 더 많은 array operator가 있지만, doc을 
+참고해야 한다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org0cf53c6" class="outline-2">
+<h2 id="org0cf53c6"><span class="section-number-2">19</span> dictionary</h2>
+<div class="outline-text-2" id="text-19">
+<div class="note">
+<p>
+array가 domain을 자연수로 갖는 함수로 본다면, dictionary는 domain을 이루는
+원소가 string이다. 관계는 key와 value관계다. 함수의 domain은 set이기 때문에
+unique하다. 즉 key가 동일한 것은 없다. array는 domain이 자연수였기 때문에 
+range의 type을 기술하는 식으로 새로운 array를 만들었다. 반면에 dictionary는
+두개의 type을 모두 기술해야 한다. 한번보자. 두개의 type을 기술해서 empty
+dictionary를 만든다.
+</p>
+
+<pre class="example">
+var d = [String]()
+var e = [String:String]()
+</pre>
+
+<p>
+dictionary와 array가 가장 큰 차이가 있는데, array의 domain은 자연수로
+자동 매치되기 때문에 undefined value가 있을 수 있다.
+</p>
+<pre class="example">
+var array1 = ["one","two"]
+print(array1[3])
+</pre>
+
+<p>
+이렇게 되면 3에 해당하는 value가 없다. undefined되었기 때문에 error가 난다.
+</p>
+
+<p>
+이제 dictionary를 보자.
+</p>
+<pre class="example">
+var dict["one"] = "1"
+print(dict["two"])
+</pre>
+
+<p>
+이것은 에러가 날까? nil이 출력이 된다. 분명히 two라는 key에 value가 없음에도
+불구 하고 dictionary는 에러가 나지 않는다. 그렇다고 해서 string value를 출력하지
+않고 nil을 출력한다. 이것은 무슨의미일까? 그렇다. dictionary는 optional로 
+선언된다는 것이다.
+</p>
+
+<p>
+<font color=""></font>
+</p>
+
+<ol class="org-ol">
+<li>remove</li>
+</ol>
+
+<p>
+가장 간단한 operation은 [key,value]를 삭제하는 것이다.
+</p>
+<pre class="example">
+var dic["one"] ="1"
+dic["two"] = "2"
+
+dic["one"] = nil
+</pre>
+<p>
+여기서, nil로 값을 갖게 되면 자연스럽게 지워진다.
+</p>
+
+<ol class="org-ol">
+<li>for in과 사용</li>
+</ol>
+<pre class="example">
+var dic["one"] ="1"
+dic["two"] = "2"
+
+for (letter, num) in dic
+{
+   print(num)
+}
+</pre>
+<p>
+이렇게 하면 for loop에서 사용할 수 있다. (key,value)의 형태를 잊지말자.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Hoyoul Park</p>
+<p class="date">Created: 2019-01-01 Tue 19:44</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
