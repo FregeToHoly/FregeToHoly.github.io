@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-01-05 Sat 17:27 -->
+<!-- 2019-01-06 Sun 23:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Code</title>
@@ -243,28 +243,29 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2b362a1">1. Preface</a>
+<li><a href="#orge9e969f">1. Preface</a>
 <ul>
-<li><a href="#org262afcf">1.1. 저자</a></li>
-<li><a href="#orgde9c0ee">1.2. 저자의 말</a></li>
-<li><a href="#org81e626f">1.3. 영어 단어</a></li>
+<li><a href="#org79c0ec3">1.1. 저자</a></li>
+<li><a href="#orgc9dfc19">1.2. 저자의 말</a></li>
+<li><a href="#org6c51292">1.3. 영어 단어</a></li>
 </ul>
 </li>
-<li><a href="#org4c45231">2. chapter1. Best Friends</a></li>
-<li><a href="#org0811665">3. chapter2- Codes and Combinations</a></li>
-<li><a href="#orgf7e4c28">4. chapter3 - Braille and Binary Codes</a></li>
+<li><a href="#org8ac3e8e">2. chapter1. Best Friends</a></li>
+<li><a href="#orgdf23f2a">3. chapter2- Codes and Combinations</a></li>
+<li><a href="#org8a6995d">4. chapter3 - Braille and Binary Codes</a></li>
+<li><a href="#orgfacc5cc">5. chapter4 - Anatomy of a Flashlight</a></li>
 </ul>
 </div>
 </div>
 <ul class="org-ul">
 <li>if you want go back?  <a href="http://www.holytofrege.space/index.html">home</a></li>
 </ul>
-<div id="outline-container-org2b362a1" class="outline-2">
-<h2 id="org2b362a1"><span class="section-number-2">1</span> Preface</h2>
+<div id="outline-container-orge9e969f" class="outline-2">
+<h2 id="orge9e969f"><span class="section-number-2">1</span> Preface</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org262afcf" class="outline-3">
-<h3 id="org262afcf"><span class="section-number-3">1.1</span> 저자</h3>
+<div id="outline-container-org79c0ec3" class="outline-3">
+<h3 id="org79c0ec3"><span class="section-number-3">1.1</span> 저자</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 찰스 페졸드(Charles Petzold)
@@ -278,8 +279,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-orgde9c0ee" class="outline-3">
-<h3 id="orgde9c0ee"><span class="section-number-3">1.2</span> 저자의 말</h3>
+<div id="outline-container-orgc9dfc19" class="outline-3">
+<h3 id="orgc9dfc19"><span class="section-number-3">1.2</span> 저자의 말</h3>
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
@@ -288,8 +289,8 @@ for the JavaScript code in this tag.
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org81e626f" class="outline-3">
-<h3 id="org81e626f"><span class="section-number-3">1.3</span> 영어 단어</h3>
+<div id="outline-container-org6c51292" class="outline-3">
+<h3 id="org6c51292"><span class="section-number-3">1.3</span> 영어 단어</h3>
 <div class="outline-text-3" id="text-1-3">
 <pre class="example">
 
@@ -298,8 +299,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org4c45231" class="outline-2">
-<h2 id="org4c45231"><span class="section-number-2">2</span> chapter1. Best Friends</h2>
+<div id="outline-container-org8ac3e8e" class="outline-2">
+<h2 id="org8ac3e8e"><span class="section-number-2">2</span> chapter1. Best Friends</h2>
 <div class="outline-text-2" id="text-2">
 <div class="note">
 <blockquote>
@@ -441,8 +442,8 @@ Morse code는 말을 대체해서 사용할 수도 있다. dot을 "디"로 발�
 </div>
 </div>
 </div>
-<div id="outline-container-org0811665" class="outline-2">
-<h2 id="org0811665"><span class="section-number-2">3</span> chapter2- Codes and Combinations</h2>
+<div id="outline-container-orgdf23f2a" class="outline-2">
+<h2 id="orgdf23f2a"><span class="section-number-2">3</span> chapter2- Codes and Combinations</h2>
 <div class="outline-text-2" id="text-3">
 <div class="note">
 <p>
@@ -602,8 +603,8 @@ combinatorial analysis라고 부른다. 이 학문은 확률과 통계에서도 
 </div>
 </div>
 </div>
-<div id="outline-container-orgf7e4c28" class="outline-2">
-<h2 id="orgf7e4c28"><span class="section-number-2">4</span> chapter3 - Braille and Binary Codes</h2>
+<div id="outline-container-org8a6995d" class="outline-2">
+<h2 id="org8a6995d"><span class="section-number-2">4</span> chapter3 - Braille and Binary Codes</h2>
 <div class="outline-text-2" id="text-4">
 <div class="note">
 <p>
@@ -882,17 +883,269 @@ shift code 혹은 Precedence 코드라고 한다. shift code는 문자의 본래
 braille코드는 binary를 나타낼수 있는 원 6개로 64개의 코드를 만들었다.
 그리고 이 64의 코드로 자연어의 알파벳과 단어를 매핑시키는데 이 방법이
 대단히 주목할 만 하다. 특징을 살펴보자. 크게 2가지인데, 첫번째로
-indicator의 사용. 그리고 문자하나로 단어의 매핑,prefix의 매핑을 들 수
+indicator의 사용. 그리고 문자하나로 단어의 매핑,prefix, post fix의 매핑을 들 수
 있다.  이건 64개의 코드를 효율적으로 썼다는 것이다. 일반인에게 64개의
 코드를 매핑하라고 한다면, 26개의 문자는 대문자, 26개는 소문자, 10개는
 숫자, 2개는 puntuation mark로 나타낼 것이다.  나 또한 그렇다. 그런데
 이렇게 표현하면 처음 만든 Hauy의 생각과 벌다를 바 없다. 그냥
 자연언어의 알파벳을 그대로 적용하겠다는 뜻이니까&#x2026;그렇지 않게 했다는
-면에서 혁명적이다.  대문자와 숫자를 indicator를 이용해서 2개의
-문자밖에 사용하지 않았다. 그리고 문자를 단어와 대응 시키면서
-배치하면서 적은 문자로 긴 자연어를 표시할 수 있게 했다. 이것은 굉장히
-효율적인 것이다. 빨리 쓰고 빨리 읽을수 있게 한것이다.
+면에서 혁명적이다. 대부분을 문자에서 많이 쓰이는 prefix와 postfix에도 할당했으며
+단어에도 할당했다. 또한  대문자와 숫자를 indicator를 이용해서 2개의
+문자밖에 사용하지 않고 많은 것을 표현했다. 이런 방식은 굉장히 효율적인 것이다. 
+빨리 쓰고 빨리 읽을수 있게 한것이다.
 </p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgfacc5cc" class="outline-2">
+<h2 id="orgfacc5cc"><span class="section-number-2">5</span> chapter4 - Anatomy of a Flashlight</h2>
+<div class="outline-text-2" id="text-5">
+<div class="note">
+<p>
+이번장에선 전기의 기초적 지식을 다룬다.
+후래시를 분해해 보자.
+</p>
+
+<div class="figure">
+<p><img src="./img/chap4_1.png" alt="chap4_1.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 28: </span>후래시 내부</p>
+</div>
+
+<p>
+오른쪽에 보면 전선이 끊어 졌는데, switch다. switch를 연결하면 불이
+들어온다.  이런것을 electrical circuit이라고 부른다. circuit은
+circle을 말한다. 배터리로부터 전선을 지나, 전구를 지나, 스위치를 돌아
+다시 배터리로 온다.끊어지지 않고 연결되어야 한다. 회로를 설명할때
+"water and pipe"를 비유해서 설명하기도 하는데, 전기를 이해하기
+위해서는 electron theory을 공부해야 한다. 이 이론은 전기라는 것은
+전자(electron)의 움직임으로 부터 만들어진다고 말한다. 전자의
+역학에너지가 전기를 만들어내기 때문에, 우리는 electron에 대해서 알아야
+한다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/chap4_2.png" alt="chap4_2.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 29: </span>atom</p>
+</div>
+
+<p>
+위 그림에서 외곽에 타원을 그리며 돌고 있는게 electron이다. 가운데는
+중성자(neutrons) 와 양성자(protons)가 뭉쳐있다. 이 그림은 모든 물질이
+가지고 있는 atom을 그린것이다.  마치 태양 주위로 행성들이 도는 것과
+비슷한 모양이다. 이그림은 atom model이고 전자가3개 양성자 3개, 중성자
+4개로 이루어진 lithium 원소의 원자 모델이다. 지금까지 원소는 112개가
+알려져 있다. 각각의 원소는 번호를 가지고 있다. 이 번호를 원자번호라고
+하는데, 양성자의 수가 원자 번호가 된다. lithium의 경우에는 3번이다.
+</p>
+
+<p>
+atom은 합쳐져서 분자가 되는데, 분자는 완전히 다른 성질을 갖는
+요소다. 예를 들면 물은 h2O라서 2개의 수소와 한개의 산소로 이루어진
+분자다. 물은 수소와 산소와 완전히 다르다.  소금도 한 예가 될 수
+있다. 분자는 화합물(compounds)이라고 부른다. 수소와 산소처럼
+원소(element)가 아니다. 그러면 소금물은 어떨까? 소금물은 화합물인가?
+소금물은 소금과 물이 합쳐졌지만, 소금과 물의 고유한 성질이 없어지지
+않고 남아 있다. 이런경우는 mixture라고 부른다.
+</p>
+
+<p>
+이제 다시 전기에 대해서 얘기해보자. electrons와 protons의 수는
+일반적으로 같다. 그런데 어떤 상황이 되면 electrons가 atom에서 빠져나가
+버린다. 이렇게 해서 전기가 생긴다. 고대 그리스에서 호박(amber)와
+양털을 문지르면 정전기가 생긴다는것을 알았는데, 이것도 양털이 호박의
+전자를 가져가기 때문에 전기가 생긴거다.
+</p>
+
+<p>
+electrons와 protons가 가지는 중요한 특성이 있는데, charge라는
+특성이다. protons는 "+" charge가 있고 electrons는 "-" charge가 있다.
+반면 neutrons는 charge가 없다. +,- charge라는게 수학에서 말하는 더많다
+더 적다라는 의미는 아니다. +,-는 서로 반대다라는 의미를 가질 뿐이다.
+</p>
+
+<p>
++를 나타내는 양성자와 -를 나타내는 전자의 수가 같을 때, 안정적이
+된다. 만일 다르다면 중성자는 전자를 가져올려고 시도 한다. 그러한
+시도가 전기를 일으킨다. 예를 들어보자.  카페트는 늘 접촉하기 때문에
+전자가 모자른 상태다. 그런상태에서 신발끈을 묶으려하는데 갑자기
+스파크가 튀는 정전기 현상이 발생할 수 있다. 이것은 전자가 이동하면서
+일부가 열과 빛에너지로 바뀌어서 생기는 현상이다. 계속해서 스파크가
+튀지 않는건, 카페트가 필요한 전자를 가져가서 안정이 되었다는 것을
+의미한다. 또 한가지 전기가 흐를수 있었던 것은 circuit의 형태를 갖췄기
+때문이다. circuit는 circle이라고 했다. 카펫으로부터 몸을 통해 다시
+카펫으로 오는 경로가 생겼기 때문에 electron이 움직일 수 있었고,
+접촉부분에서 스파크가 생긴것이다.
+</p>
+
+<p>
+같은  charge면 서로  밀어내고,  다르면 땡기는  charge의 특성이  이해가
+안갈때가  있다. atom  model에서  보면 protons끼리  뭉쳐있는것을 볼  수
+있다. 어떻게 해서 서로 밀어내지 않는가? 그것은 어떤 강력한 힘이 그렇게
+만드는 것이다. 그 힘이 strong force다. 이 힘을 사용한 것이 핵폭탄이다.
+</p>
+
+<p>
+다시 정전기로 되돌아 가서, 그러면, 정전기의 또다른 예를 보자. 번개가
+있다. 번개는 구름에 윗쪽에 양전하가 몰려 있고, 아래쪽에 전자가
+몰려있다. 그리고 땅에는 양전하가 몰려있다. 이런 상황은 안정된 상황이
+아니다. 양성자와 전자가 섞여있어서 그 수가 같을때는 안정적이지만,
+이렇게 양성만 몰려 있고, 전자가 따로 몰려 있으면 불안정한것이다.
+그리고 이것을 전위차가 있다고 한다. 이러한 상황에서는 가벼운 전자가
+route만 찾으면 이동을 하게 되고 이 이동은 전기를 발생한다. 그것이
+번개다.
+</p>
+
+<p>
+후래쉬도 마찬가지도 후래쉬에 보면 전지가 그런 전위차를 가지고 있는
+구름과 같은 존재고 거기서 route에 해당하는게 전선이다. 번개와 달리
+후래쉬회로는 명시적으로 전선이 있기 때문에 전기가 흐를수 밖에 없다.
+</p>
+
+<p>
+후래쉬 회로를 구성하는 요소중 전지(battery)에 대해서
+알아보자. battery는 내부적으로 화학작용이 일어나서 1.5V의 전위차를
+유지한다. -극에는 전자가 몰려있고, +극에는 양성자가 몰려있다. 이상황은
+한쪽엔 풍선이 있고, 다른 한쪽엔 진공청소기가 물려있다고 보면 된다.
+여기에 전선을 연결하면, 그 연결이 circle형태가 된다면 전류가 흐르게
+된다. 전자가 이동한 만큼 화학반응을 통해서 또다른 전자를 만들어 내는것이
+계속된다. 불이 켜지는 것을 그림은 아래와 같다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/chap4_3.png" alt="chap4_3.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 30: </span>회로의 연결</p>
+</div>
+
+<p>
+위 그림에서 빨간선은 전자가 이동하고 있다는 것을 보여준다. 여기서
+착각해선 안되는게, 전지에서 나오는 전자가 전선(구리선)을 통과해서
+간다고 생각할지 모르겠지만, 구리선의 전자도 배터리에서 나오는 전자와
+동일하다. 전자는 다 동일하다. 전자는 구분할 수가 없는 것이다. 그래서
+구리에 있는 전자들이 밀려서 다른 극으로 이동한다고 보면 된다. 구리와
+같은 금속은 전자이동이 자유롭다. 전자 바다 모형으로 설명되는 금속류는
+이렇듯 매우 자유롭게 이동한다. 그리고 위에 보면 배터리가 서로 연결되어
+있는데, 아래쪽 배터리의 +극에 윗쪽 배터리의 -극이 연결되어 있다. 이런
+경우에 +극에서 -의 전자를 가져온다. 그래서 흡사 하나의 전지처럼
+보인다. 그리고 전위차는 3V가 된다. 직렬 연결이기때문이다.
+</p>
+
+<p>
+아래 그림을 한번보자.
+</p>
+
+<div class="figure">
+<p><img src="./img/chap4_4.png" alt="chap4_4.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 31: </span>전지의 연결</p>
+</div>
+
+<p>
+회로는 circle모양이긴 한데 전류가 흐르지 않는다. 전지가 같은 극으로
+연결되면 회로는 동작하지 않는다.
+그런데 다음 그림을 보자. 이 경우도 +가 +와 연결되었는데 전류가 흐른다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/chap4_5.png" alt="chap4_5.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 32: </span>전지의 연결</p>
+</div>
+
+<p>
+우선 두개의 전지는 1.5V의 전위를 가지고 있다. 그래서 두 전지 사이에는
+전류가 후르지는 않는다. 오른쪽전지의 전위가 1.5V이기 때문에 먼저
+전류가 오르쪽에서 전구쪽으로 흐른다.  왼쪽 전지가 사용될때는 오른쪽
+전지의 전위가 1.5V가 안될 경우, 왼쪽전지의 전위가 높기 때문에 전류가
+흐르게 된다. 이런 연결을 병렬(parallel)연결이라고 한다. 이 경우, 불의 밝기는
+직렬보단 더 희미하다. 하지만 더 오래 지속된다. 2배정도.
+</p>
+
+<p>
+배터리는 전자가 이동하면 내부적으로 화학작용이 일어난다. 전자를
+보충하는 것이다.  만일 화학작용이 더 이상 작용이 안되면, 배터리는 그
+기능을 잃게 된다.
+</p>
+
+<p>
+전선은 왜 필요한가? 전선이 없이 공기중으로 전류는 흐를수 없는 것인가?
+물론 축축한 공기속에선 전류가 흐를 수 있다. 하지만, 불을 킬정도로 흐를
+순 없다. 쉽게 대기중으로 전류는 흐르지 않는다. 전류는 특정 물질에는 더
+잘 흐른다. 이렇게 특정 물질에 잘 흐르는 이유는 원자의 하부구조와
+관련되어 있다. 전자는 핵을 중심으로 궤도를 돌고 있는데, 그 궤도를
+shell이라고 한다.  최외곽 shell의 전자는 밖으로 빠져나가기가
+쉽다. 쉽게 최외곽전자를 포기하는 이런 물질을 conductive하다라고 하고
+conductor라고 부른다. 최고의 conductor는 구리,은,금이다. 그래서
+구리,은 금은 주기율표에서 같은 column에 위치한다. 전선으로 제일 잘
+사용되는 것은 구리다.
+</p>
+
+<p>
+conductance의 반대되는 말은 resistance라고 한다. 그리고 resistance가
+높은 물질을 resistor라고 부른다. 유명한 것으로는 고무가 있다. 그래서
+고무를 전선의 피복으로 사용하는 것이다.
+</p>
+
+<p>
+구리가 conductance는 높고 resistance는 낮지만, 만일 전선을 길게 한다면,
+resistance가 높아진다. 그래서 후래쉬에 사용되는 전선을 몇마일로 늘어뜨린다면
+불은 안켜질 것이다. resistance가 높아지기 때문이다.
+</p>
+
+<p>
+구리가 두껍다면, resistance는 낮아진다. 두꺼우면 두꺼울수록 많은 전자가 
+전선을 통과할 수 있기 때문에 resistance는 낮아진다.
+</p>
+
+<p>
+전압에 대해선 얘기하지 않았는데, 배터리가 1.5V란 말이 대체 무슨
+말인가?  1.5V는 잠재적 에너지다. 책에서는 벽돌을 예로 들었다. 지금은
+아무것도 안하지만, 벽돌이 떨어지면 일을 할수 있다. 그런데 산에 벽돌이
+있는 것과 평야의 벽돌이 있는것은 잠재적 에너지(potential energy)는
+다르다고 한다. 내가 생각할때 적절한 예는 사람이 될꺼 같다. 뚱뚱한
+사람과 말라빠진 사람은 모두 지금은 싸우지 않지만, 만일 싸우면 뚱뚱한
+사람이 더 큰 에너지를 낼 것이다. 그래서 뚱뚱한 사람이 잠재적 에너지를
+더 많이 가지고 있다고 말할것이다.
+</p>
+
+<p>
+이제 전류를 얘기해보자. 전류는 보다 쉬운 개념이다. current는 초당
+6,240,000,000,000,000,000개의 전자가 특정 지점을 이동한다면 1
+ampare라고 정의한다.
+</p>
+
+<p>
+이제 전압,전류,저항에 대해서 알아봤으니 서로간의 관계에 대해서
+살펴보자. 흔히 하는 비유로 water-pipe로 비교하는 데 상당히
+효율적이다. pipe를 지나는 물은 전류와 비슷하다. 전압은 수압과
+비슷하다. 저항은 파이프의 두께와 비슷하다. 파이프가 작아지면 그만큼
+resistance가 올라간다. 이렇게 파이프가 작으면, 통과하는 물의 양도
+적어지는데, 이것은 전류가 작아지는것과 같다. 
+</p>
+
+<p>
+공식적인 저항,전압,전류의 관계는 법칙으로 설명된다. Ohm's Law라고 한다.
+</p>
+<pre class="example">
+I = E/R
+</pre>
+
+<p>
+옴의 법칙을 적용해 보자. 
+</p>
+
+
+<div class="figure">
+<p><img src="./img/chap4_6.png" alt="chap4_6.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 33: </span>옴의 법칙의 적용.</p>
+</div>
 
 </div>
 </div>
@@ -900,7 +1153,7 @@ indicator의 사용. 그리고 문자하나로 단어의 매핑,prefix의 매핑
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2019-01-05 Sat 17:27</p>
+<p class="date">Created: 2019-01-06 Sun 23:19</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
