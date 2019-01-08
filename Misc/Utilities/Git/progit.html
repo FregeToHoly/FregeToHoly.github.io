@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-20 Thu 10:46 -->
+<!-- 2019-01-08 Tue 19:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pro Git</title>
@@ -243,86 +243,96 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6ed215e">1. Getting Started</a>
+<li><a href="#org202ae6c">1. 이해해야 할것</a></li>
+<li><a href="#org6a95c5a">2. Getting Started</a>
 <ul>
-<li><a href="#org32ddee2">1.1. About Version Control</a>
+<li><a href="#org3d2a940">2.1. About Version Control</a>
 <ul>
-<li><a href="#orgd1b173a">Local VCS</a></li>
-<li><a href="#org1c04659">Central Version Control System</a></li>
-<li><a href="#org44761dc">Distributed Version Control System</a></li>
+<li><a href="#orge7a700d">Local VCS</a></li>
+<li><a href="#org4d647a2">Central Version Control System</a></li>
+<li><a href="#orgd7cbfce">Distributed Version Control System</a></li>
 </ul>
 </li>
-<li><a href="#org1a7749d">1.2. Git Basics</a>
+<li><a href="#orgafff19f">2.2. Git Basics</a>
 <ul>
-<li><a href="#org3c6bf50">snapshots</a></li>
-<li><a href="#org9762c91">Nearly Every Operation is local</a></li>
-<li><a href="#orgf75cd55">Git Has Integrity</a></li>
-<li><a href="#org9eb0e3f">The three states</a></li>
-<li><a href="#org9ed116e">The Command Line</a></li>
+<li><a href="#org616d01c">snapshots</a></li>
+<li><a href="#org1cb4452">Nearly Every Operation is local</a></li>
+<li><a href="#orgb3946c6">Git Has Integrity</a></li>
+<li><a href="#org694acc7">The three states</a></li>
+<li><a href="#orgd785406">The Command Line</a></li>
 </ul>
 </li>
-<li><a href="#org7f448c3">1.3. Installing git</a></li>
-<li><a href="#org0cee396">1.4. First-Time Git Setup</a>
+<li><a href="#org08ec0ff">2.3. Installing git</a></li>
+<li><a href="#org53d98f5">2.4. First-Time Git Setup</a>
 <ul>
-<li><a href="#org95ba2d1">Your Identity [setting1]</a></li>
-<li><a href="#org78bae75">Your Editor [setting2]</a></li>
-<li><a href="#org94b9a27">Checking your settings</a></li>
-<li><a href="#org3481885">Getting Help</a></li>
+<li><a href="#org1747448">Your Identity [setting1]</a></li>
+<li><a href="#orgac4a39f">Your Editor [setting2]</a></li>
+<li><a href="#orgb73cb69">Checking your settings</a></li>
+<li><a href="#orgd2a32f4">Getting Help</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org955972e">2. Git Basics</a>
+<li><a href="#org2baca42">3. Git Basics</a>
 <ul>
-<li><a href="#orgae74f87">2.1. Getting a Git Repository</a>
+<li><a href="#org8cb3878">3.1. Getting a Git Repository</a>
 <ul>
-<li><a href="#org1be614c">Initializing a Repository in an Existing Directory.<font color="red">[git init]</font></a></li>
-<li><a href="#org314d786">Cloning an Existing Repository <font color="red">[git clone]</font></a></li>
+<li><a href="#org4468dba">Initializing a Repository in an Existing Directory.<font color="red">[git init]</font></a></li>
+<li><a href="#org4755df9">Cloning an Existing Repository <font color="red">[git clone]</font></a></li>
 </ul>
 </li>
-<li><a href="#orgdd03208">2.2. Recording Changes to the Repository</a>
+<li><a href="#org728fedf">3.2. Recording Changes to the Repository</a>
 <ul>
-<li><a href="#orge33dcb0">Checking the status of your files <font color="red">[git status]</font></a></li>
-<li><a href="#orgcff9dc3">Tracking New Files</a></li>
-<li><a href="#orgfb09b4a">Staging Modified files <font color="red">[git add]</font></a></li>
-<li><a href="#org56ec002">Short Status</a></li>
-<li><a href="#orgfb822c3">Ignoring Files <font color="red">[중요]</font></a></li>
-<li><a href="#org4489dba">Viewing your staged and unstaged changes <font color="red">[git diff]</font></a></li>
-<li><a href="#orga4cde33">Commiting Your Changes. <font color="red">[git commit]</font></a></li>
-<li><a href="#orgd3e0f27">Skipping the Staging Area <font color="red">[일종의 commit]</font></a></li>
-<li><a href="#org60f8af6">Removing Files  <font color="red">[git rm]</font></a></li>
-<li><a href="#org7f83a5d">Moving Files<font color="red">[git mv]</font></a></li>
+<li><a href="#org3656c28">Checking the status of your files <font color="red">[git status]</font></a></li>
+<li><a href="#org8b618af">Tracking New Files</a></li>
+<li><a href="#org6ce42d6">Staging Modified files <font color="red">[git add]</font></a></li>
+<li><a href="#orgb432fde">Short Status</a></li>
+<li><a href="#orgf40c62b">Ignoring Files <font color="red">[중요]</font></a></li>
+<li><a href="#orga144b0a">Viewing your staged and unstaged changes <font color="red">[git diff]</font></a></li>
+<li><a href="#org3c6720e">Commiting Your Changes. <font color="red">[git commit]</font></a></li>
+<li><a href="#org6e34421">Skipping the Staging Area <font color="red">[일종의 commit]</font></a></li>
+<li><a href="#orgfcc9bdd">Removing Files  <font color="red">[git rm]</font></a></li>
+<li><a href="#org2cc2ae8">Moving Files<font color="red">[git mv]</font></a></li>
 </ul>
 </li>
-<li><a href="#orgdb430d1">2.3. Viewing the Commit History <font color="red">[git log]</font></a>
+<li><a href="#org1eef2cc">3.3. Viewing the Commit History <font color="red">[git log]</font></a>
 <ul>
-<li><a href="#orga9fd8d1">Limiting Log output <font color="red">[git log ]</font></a></li>
+<li><a href="#org73c8ff7">Limiting Log output <font color="red">[git log ]</font></a></li>
 </ul>
 </li>
-<li><a href="#orgf50f87b">2.4. Undoing Things <font color="red">[git commit --amend]</font></a>
+<li><a href="#orga5d49c4">3.4. Undoing Things <font color="red">[git commit --amend]</font></a>
 <ul>
-<li><a href="#orgf8ecebc">Unstaging a Staged File <font color="red">[git reset Head]</font></a></li>
-<li><a href="#org932a4ec">Unmodifying a Modified File. <font color="red">[git checkout]</font></a></li>
+<li><a href="#org6c58a1c">Unstaging a Staged File <font color="red">[git reset Head]</font></a></li>
+<li><a href="#org38ec9f9">Unmodifying a Modified File. <font color="red">[git checkout]</font></a></li>
 </ul>
 </li>
-<li><a href="#org6ce9319">2.5. Working with Remotes</a></li>
-<li><a href="#orgf57eb9b">2.6. Tagging</a></li>
-<li><a href="#orgf6b4734">2.7. Git Aliases</a></li>
-<li><a href="#org9475efc">2.8. Summary</a></li>
+<li><a href="#org36f164a">3.5. Working with Remotes</a>
+<ul>
+<li><a href="#org11a0b39">Showing Your Remotes</a></li>
+<li><a href="#org73dd113">Adding Remote Repositories</a></li>
+<li><a href="#org0d0447b">Fetching and Pulling from Your Remotes</a></li>
+<li><a href="#org7bd2a3b">Pushing to Your Remotes</a></li>
+<li><a href="#orgd61b089">Inspecting a Remote</a></li>
+<li><a href="#orgb1851b2">Renaming and Removing Remotes</a></li>
 </ul>
 </li>
-<li><a href="#orgeadf136">3. Git Branching</a></li>
-<li><a href="#org44c79e9">4. Git on the Server</a></li>
-<li><a href="#org7743e6e">5. Distributed Git</a></li>
-<li><a href="#org24d4ec6">6. GitHub</a></li>
-<li><a href="#org6067e5f">7. Git Tools</a></li>
-<li><a href="#orgc89068e">8. Customize Git</a></li>
-<li><a href="#orgbd75a60">9. Git and Other Systems</a></li>
-<li><a href="#orgd918bc2">10. Git Internals</a></li>
-<li><a href="#org7585212">11. Git in other Environments</a></li>
-<li><a href="#org89c5522">12. Embedding Git in your Applications</a></li>
-<li><a href="#org2960c6f">13. Git Commands</a></li>
-<li><a href="#org0383bc7">14. </a></li>
+<li><a href="#orgf228670">3.6. Tagging</a></li>
+<li><a href="#org678b566">3.7. Git Aliases</a></li>
+<li><a href="#orga69fe09">3.8. Summary</a></li>
+</ul>
+</li>
+<li><a href="#orgc1df3c5">4. Git Branching</a></li>
+<li><a href="#org2e00e8c">5. Git on the Server</a></li>
+<li><a href="#org2f40064">6. Distributed Git</a></li>
+<li><a href="#org1f57b42">7. GitHub</a></li>
+<li><a href="#orgbe6b851">8. Git Tools</a></li>
+<li><a href="#orgeb0705a">9. Customize Git</a></li>
+<li><a href="#org7a46dcc">10. Git and Other Systems</a></li>
+<li><a href="#orgf5e151e">11. Git Internals</a></li>
+<li><a href="#orgba8f673">12. Git in other Environments</a></li>
+<li><a href="#orgb839128">13. Embedding Git in your Applications</a></li>
+<li><a href="#orgf30da06">14. Git Commands</a></li>
+<li><a href="#org38c2bcd">15. </a></li>
 </ul>
 </div>
 </div>
@@ -337,17 +347,32 @@ for the JavaScript code in this tag.
 날씨: cloudy
 ------&#x2013;&#x2014;*
 </p>
-<div id="outline-container-org6ed215e" class="outline-2">
-<h2 id="org6ed215e"><span class="section-number-2">1</span> Getting Started</h2>
+
+<div id="outline-container-org202ae6c" class="outline-2">
+<h2 id="org202ae6c"><span class="section-number-2">1</span> 이해해야 할것</h2>
 <div class="outline-text-2" id="text-1">
+<div class="important">
+<p>
+git은 저장 시스템이다. git을 이해하는 한가지 방식은 비유와 비교를 통한 이해다.
+물론 비유에는 한계가 있다. 완전히 동일하지 않기 때문이다. 
+포토샵에서 아니 어떤 응용프로그램에서 저장은 쉽다. git 저장 시스템을 일반응용프로그램의
+저장 방식과 비유와 비교를 통해서 이해를 해본다.
+</p>
+
 </div>
-<div id="outline-container-org32ddee2" class="outline-3">
-<h3 id="org32ddee2"><span class="section-number-3">1.1</span> About Version Control</h3>
-<div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orgd1b173a" class="outline-4">
-<h4 id="orgd1b173a">Local VCS</h4>
-<div class="outline-text-4" id="text-orgd1b173a">
+</div>
+<div id="outline-container-org6a95c5a" class="outline-2">
+<h2 id="org6a95c5a"><span class="section-number-2">2</span> Getting Started</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org3d2a940" class="outline-3">
+<h3 id="org3d2a940"><span class="section-number-3">2.1</span> About Version Control</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orge7a700d" class="outline-4">
+<h4 id="orge7a700d">Local VCS</h4>
+<div class="outline-text-4" id="text-orge7a700d">
 <div class="note">
 <pre class="example">
 version control: 시간에 따른 파일의 변경사항을 기록하는 system. 
@@ -376,9 +401,9 @@ version: software는 시간에 따라 파일이 변경되거나, 파일의 집�
 </div>
 </div>
 
-<div id="outline-container-org1c04659" class="outline-4">
-<h4 id="org1c04659">Central Version Control System</h4>
-<div class="outline-text-4" id="text-org1c04659">
+<div id="outline-container-org4d647a2" class="outline-4">
+<h4 id="org4d647a2">Central Version Control System</h4>
+<div class="outline-text-4" id="text-org4d647a2">
 <div class="note">
 <p>
 Local system에 database로 관리하는 것은 여러사람이 공동작업을 할 수 없다.
@@ -394,9 +419,9 @@ Local system에 database로 관리하는 것은 여러사람이 공동작업을 
 </div>
 </div>
 
-<div id="outline-container-org44761dc" class="outline-4">
-<h4 id="org44761dc">Distributed Version Control System</h4>
-<div class="outline-text-4" id="text-org44761dc">
+<div id="outline-container-orgd7cbfce" class="outline-4">
+<h4 id="orgd7cbfce">Distributed Version Control System</h4>
+<div class="outline-text-4" id="text-orgd7cbfce">
 <div class="note">
 <p>
 CVS의 server가 문제가 생기면 모든 이력이 날라간다. hdd가 문제가 있거나, 네
@@ -414,13 +439,13 @@ CVS의 server가 문제가 생기면 모든 이력이 날라간다. hdd가 문�
 </div>
 </div>
 
-<div id="outline-container-org1a7749d" class="outline-3">
-<h3 id="org1a7749d"><span class="section-number-3">1.2</span> Git Basics</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgafff19f" class="outline-3">
+<h3 id="orgafff19f"><span class="section-number-3">2.2</span> Git Basics</h3>
+<div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org3c6bf50" class="outline-4">
-<h4 id="org3c6bf50">snapshots</h4>
-<div class="outline-text-4" id="text-org3c6bf50">
+<div id="outline-container-org616d01c" class="outline-4">
+<h4 id="org616d01c">snapshots</h4>
+<div class="outline-text-4" id="text-org616d01c">
 <div class="note">
 <blockquote>
 <p>
@@ -453,9 +478,9 @@ file에 변경사항이 없다면 ㅣink로 대체한다. 이것이 git이 기�
 </div>
 </div>
 
-<div id="outline-container-org9762c91" class="outline-4">
-<h4 id="org9762c91">Nearly Every Operation is local</h4>
-<div class="outline-text-4" id="text-org9762c91">
+<div id="outline-container-org1cb4452" class="outline-4">
+<h4 id="org1cb4452">Nearly Every Operation is local</h4>
+<div class="outline-text-4" id="text-org1cb4452">
 <div class="note">
 <p>
 Git은 대부분의 local에서 작업을 한다. local에 db가 있기 때문이다.
@@ -465,9 +490,9 @@ Git은 대부분의 local에서 작업을 한다. local에 db가 있기 때문�
 </div>
 </div>
 
-<div id="outline-container-orgf75cd55" class="outline-4">
-<h4 id="orgf75cd55">Git Has Integrity</h4>
-<div class="outline-text-4" id="text-orgf75cd55">
+<div id="outline-container-orgb3946c6" class="outline-4">
+<h4 id="orgb3946c6">Git Has Integrity</h4>
+<div class="outline-text-4" id="text-orgb3946c6">
 <div class="note">
 <p>
 git은 version이나 file들을 server와 주고받는 일을 많이 하는데, 이렇게 
@@ -487,9 +512,9 @@ sha-1 hash는 이렇게 생겼다. 40 characters.
 </div>
 </div>
 
-<div id="outline-container-org9eb0e3f" class="outline-4">
-<h4 id="org9eb0e3f">The three states</h4>
-<div class="outline-text-4" id="text-org9eb0e3f">
+<div id="outline-container-org694acc7" class="outline-4">
+<h4 id="org694acc7">The three states</h4>
+<div class="outline-text-4" id="text-org694acc7">
 <div class="note">
 <blockquote>
 <p>
@@ -572,9 +597,9 @@ area and stores that snapshot permanently to your Git directory.</li>
 </div>
 </div>
 
-<div id="outline-container-org9ed116e" class="outline-4">
-<h4 id="org9ed116e">The Command Line</h4>
-<div class="outline-text-4" id="text-org9ed116e">
+<div id="outline-container-orgd785406" class="outline-4">
+<h4 id="orgd785406">The Command Line</h4>
+<div class="outline-text-4" id="text-orgd785406">
 <div class="note">
 <p>
 git을 사용하는 여러방법이 있다. GUI방법이 많은데, 모든 기능이 있는게 아니다.
@@ -587,9 +612,9 @@ command line은 모든 기능이 있다. 그래서 command line을 사용한다.
 </div>
 </div>
 
-<div id="outline-container-org7f448c3" class="outline-3">
-<h3 id="org7f448c3"><span class="section-number-3">1.3</span> Installing git</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org08ec0ff" class="outline-3">
+<h3 id="org08ec0ff"><span class="section-number-3">2.3</span> Installing git</h3>
+<div class="outline-text-3" id="text-2-3">
 <div class="note">
 <p>
 git을 설치해야 사용할 수 있다. 설치는 알아서 하고, 이책에선 2.8버전의 git
@@ -600,9 +625,9 @@ git을 설치해야 사용할 수 있다. 설치는 알아서 하고, 이책에�
 </div>
 </div>
 
-<div id="outline-container-org0cee396" class="outline-3">
-<h3 id="org0cee396"><span class="section-number-3">1.4</span> First-Time Git Setup</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org53d98f5" class="outline-3">
+<h3 id="org53d98f5"><span class="section-number-3">2.4</span> First-Time Git Setup</h3>
+<div class="outline-text-3" id="text-2-4">
 <div class="note">
 <p>
 git을 설치했으면 git 환경을 설정해야 한다. git config로 할 수 있다. 환경은
@@ -628,16 +653,16 @@ overwrite될수 있다는 건데, A라는 변수가 시스템,사용자,저장�
 </div>
 </div>
 
-<div id="outline-container-org95ba2d1" class="outline-4">
-<h4 id="org95ba2d1">Your Identity [setting1]</h4>
-<div class="outline-text-4" id="text-org95ba2d1">
+<div id="outline-container-org1747448" class="outline-4">
+<h4 id="org1747448">Your Identity [setting1]</h4>
+<div class="outline-text-4" id="text-org1747448">
 <div class="note">
 <p>
 git을 설치한후 제일 먼저 할것은 git의 username과 email address를 설정하는
 것이다. 이것은 매우 중요한데, commit이 이 정보를 사용하기 때문이다. 
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">$ git config --global user.name <span style="color: #61CE3C;">"John Doe"</span>&#57344;&#57345;&#57345;
+<pre class="src src-sh">$ git config --global user.name <span style="color: #CC9393;">"John Doe"</span>&#57344;&#57345;&#57345;
 $ git config --global user.email johndoe@ example.com
 </pre>
 </div>
@@ -646,9 +671,9 @@ $ git config --global user.email johndoe@ example.com
 </div>
 </div>
 
-<div id="outline-container-org78bae75" class="outline-4">
-<h4 id="org78bae75">Your Editor [setting2]</h4>
-<div class="outline-text-4" id="text-org78bae75">
+<div id="outline-container-orgac4a39f" class="outline-4">
+<h4 id="orgac4a39f">Your Editor [setting2]</h4>
+<div class="outline-text-4" id="text-orgac4a39f">
 <div class="note">
 <p>
 commit할때 message를 남겨야 하기 때문에 editor설정이 필요하다. emacs를
@@ -663,9 +688,9 @@ commit할때 message를 남겨야 하기 때문에 editor설정이 필요하다.
 </div>
 </div>
 
-<div id="outline-container-org94b9a27" class="outline-4">
-<h4 id="org94b9a27">Checking your settings</h4>
-<div class="outline-text-4" id="text-org94b9a27">
+<div id="outline-container-orgb73cb69" class="outline-4">
+<h4 id="orgb73cb69">Checking your settings</h4>
+<div class="outline-text-4" id="text-orgb73cb69">
 <div class="note">
 <p>
 설정된 모든 환경변수를 보여준다. system에 저장된 변수, user에게 저장된 변수,
@@ -679,7 +704,7 @@ commit할때 message를 남겨야 하기 때문에 editor설정이 필요하다.
 특정 변수값도 볼 수 있는데, 다음과 같이 하면 된다.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">$<span style="color: #FF6400;">git</span> config user.name
+<pre class="src src-sh">$<span style="color: #DFAF8F;">git</span> config user.name
 </pre>
 </div>
 <p>
@@ -692,7 +717,7 @@ commit할때 message를 남겨야 하기 때문에 editor설정이 필요하다.
 을 보여주는 명령어도 있다.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">$<span style="color: #FF6400;">git</span> config --show-origin rerere.autoUpdate
+<pre class="src src-sh">$<span style="color: #DFAF8F;">git</span> config --show-origin rerere.autoUpdate
 </pre>
 </div>
 
@@ -700,9 +725,9 @@ commit할때 message를 남겨야 하기 때문에 editor설정이 필요하다.
 </div>
 </div>
 
-<div id="outline-container-org3481885" class="outline-4">
-<h4 id="org3481885">Getting Help</h4>
-<div class="outline-text-4" id="text-org3481885">
+<div id="outline-container-orgd2a32f4" class="outline-4">
+<h4 id="orgd2a32f4">Getting Help</h4>
+<div class="outline-text-4" id="text-orgd2a32f4">
 <div class="note">
 <p>
 git의 도움말은 git help &lt;verb&gt; 형식으로 볼 수 있다.
@@ -731,9 +756,9 @@ git help 명령어를 통해 도움말을 볼 수도 있지만, 아래와 같이
 </div>
 </div>
 
-<div id="outline-container-org955972e" class="outline-2">
-<h2 id="org955972e"><span class="section-number-2">2</span> Git Basics</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org2baca42" class="outline-2">
+<h2 id="org2baca42"><span class="section-number-2">3</span> Git Basics</h2>
+<div class="outline-text-2" id="text-3">
 <div class="note">
 <p>
 <font color="red">이 책에서 오직 한개의 chapter만 읽어야 한다면 이 chapter는 꼭 읽어라!</font>
@@ -741,9 +766,9 @@ git help 명령어를 통해 도움말을 볼 수도 있지만, 아래와 같이
 
 </div>
 </div>
-<div id="outline-container-orgae74f87" class="outline-3">
-<h3 id="orgae74f87"><span class="section-number-3">2.1</span> Getting a Git Repository</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org8cb3878" class="outline-3">
+<h3 id="org8cb3878"><span class="section-number-3">3.1</span> Getting a Git Repository</h3>
+<div class="outline-text-3" id="text-3-1">
 <div class="note">
 <p>
 git의 기초를 말할려면 우선 git 저장소에 대해 얘기해야 한다. 저장소가 먼저 있어야 한다.
@@ -753,9 +778,9 @@ git의 기초를 말할려면 우선 git 저장소에 대해 얘기해야 한다
 
 </div>
 </div>
-<div id="outline-container-org1be614c" class="outline-4">
-<h4 id="org1be614c">Initializing a Repository in an Existing Directory.<font color="red">[git init]</font></h4>
-<div class="outline-text-4" id="text-org1be614c">
+<div id="outline-container-org4468dba" class="outline-4">
+<h4 id="org4468dba">Initializing a Repository in an Existing Directory.<font color="red">[git init]</font></h4>
+<div class="outline-text-4" id="text-org4468dba">
 <div class="note">
 <p>
 저장소가 없는경우, 우선 Project폴더를 만든다. 이미 있다면 그쪽으로 이동한다.
@@ -763,7 +788,7 @@ git의 기초를 말할려면 우선 git 저장소에 대해 얘기해야 한다
 포토샵으로 비유하면, 포토샵을 저장할 폴더를 설정하는 것이다. 다음과 같이 하자.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">$<span style="color: #FF6400;">git</span> init
+<pre class="src src-sh">$<span style="color: #DFAF8F;">git</span> init
 </pre>
 </div>
 <p>
@@ -773,7 +798,7 @@ git의 기초를 말할려면 우선 git 저장소에 대해 얘기해야 한다
 <div class="org-src-container">
 <pre class="src src-sh">$ git add *.c&#57344;&#57345;&#57345;
 $ git add LICENSE&#57344;&#57345;&#57345;
-$ git commit -m <span style="color: #61CE3C;">'Initial Project Version'</span>
+$ git commit -m <span style="color: #CC9393;">'Initial Project Version'</span>
 </pre>
 </div>
 <p>
@@ -783,9 +808,9 @@ $ git commit -m <span style="color: #61CE3C;">'Initial Project Version'</span>
 </div>
 </div>
 </div>
-<div id="outline-container-org314d786" class="outline-4">
-<h4 id="org314d786">Cloning an Existing Repository <font color="red">[git clone]</font></h4>
-<div class="outline-text-4" id="text-org314d786">
+<div id="outline-container-org4755df9" class="outline-4">
+<h4 id="org4755df9">Cloning an Existing Repository <font color="red">[git clone]</font></h4>
+<div class="outline-text-4" id="text-org4755df9">
 <div class="note">
 <p>
 이제 다른 사람이 만든 저작물을 가져오는 경우를 생각하자. 다른 사람이 만든 
@@ -827,9 +852,9 @@ clone하는 방식은 공유하는 저장폴더가 보통은 특정 server에 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgdd03208" class="outline-3">
-<h3 id="orgdd03208"><span class="section-number-3">2.2</span> Recording Changes to the Repository</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-org728fedf" class="outline-3">
+<h3 id="org728fedf"><span class="section-number-3">3.2</span> Recording Changes to the Repository</h3>
+<div class="outline-text-3" id="text-3-2">
 <div class="note">
 <p>
 이번 장에서 설명하는 것은 용어인데 tracked/untracked라는 용어가 나온다. 솔직히
@@ -847,9 +872,9 @@ clone하는 방식은 공유하는 저장폴더가 보통은 특정 server에 �
 
 </div>
 </div>
-<div id="outline-container-orge33dcb0" class="outline-4">
-<h4 id="orge33dcb0">Checking the status of your files <font color="red">[git status]</font></h4>
-<div class="outline-text-4" id="text-orge33dcb0">
+<div id="outline-container-org3656c28" class="outline-4">
+<h4 id="org3656c28">Checking the status of your files <font color="red">[git status]</font></h4>
+<div class="outline-text-4" id="text-org3656c28">
 <div class="note">
 <p>
 git은 save와 관련된 일을 하는 tool이다. 이 tool은 포토샵이나 여타 application
@@ -867,8 +892,8 @@ git status인데, 여기선 clone해서 가져온 저장소에서 아무런 수�
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">$ git status&#57344;&#57345;&#57345;
-On branch master Your branch is up-to-date with <span style="color: #61CE3C;">'origin/ master'</span>.&#57344;&#57345;&#57345;
-Your branch is up-to-date with <span style="color: #61CE3C;">'origin/ master'</span>.&#57344;&#57345;&#57345;
+On branch master Your branch is up-to-date with <span style="color: #CC9393;">'origin/ master'</span>.&#57344;&#57345;&#57345;
+Your branch is up-to-date with <span style="color: #CC9393;">'origin/ master'</span>.&#57344;&#57345;&#57345;
 nothing to commit, working directory clean
 </pre>
 </div>
@@ -886,19 +911,19 @@ nothing to commit이란 말은 commit해야 할것들(staging된 file)이 없다
 <font color="red">[새로운 파일을 생성해 보자]</font>
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">$ echo <span style="color: #61CE3C;">'My Project'</span> &gt; README
+<pre class="src src-sh">$ echo <span style="color: #CC9393;">'My Project'</span> &gt; README
 </pre>
 </div>
 <div class="org-src-container">
 <pre class="src src-sh">$ git status&#57344;&#57345;&#57345;
 On branch master&#57344;&#57345;&#57345;
-Your branch is up-to-date with <span style="color: #61CE3C;">'origin/master'</span>.&#57344;&#57345;&#57345;
+Your branch is up-to-date with <span style="color: #CC9393;">'origin/master'</span>.&#57344;&#57345;&#57345;
 untracked files:&#57344;&#57345;&#57345;
-   (use <span style="color: #61CE3C;">"git add &lt;file&gt;..."</span> to include<span style="color: #FBDE2D;"> in</span> what will be committed)&#57344;&#57345;&#57345;
+   (use <span style="color: #CC9393;">"git add &lt;file&gt;..."</span> to include<span style="color: #F0DFAF; font-weight: bold;"> in</span> what will be committed)&#57344;&#57345;&#57345;
 &#57344;&#57345;&#57345;
    README&#57344;&#57345;&#57345;
 &#57344;&#57345;&#57345;
-nothing added to commit but untracked files present(use <span style="color: #61CE3C;">"git add"</span>&#57344;&#57345;&#57345;
+nothing added to commit but untracked files present(use <span style="color: #CC9393;">"git add"</span>&#57344;&#57345;&#57345;
 to track)
 </pre>
 </div>
@@ -910,9 +935,9 @@ to track)
 </div>
 </div>
 </div>
-<div id="outline-container-orgcff9dc3" class="outline-4">
-<h4 id="orgcff9dc3">Tracking New Files</h4>
-<div class="outline-text-4" id="text-orgcff9dc3">
+<div id="outline-container-org8b618af" class="outline-4">
+<h4 id="org8b618af">Tracking New Files</h4>
+<div class="outline-text-4" id="text-org8b618af">
 <div class="note">
 <p>
 이 새로 만든 file을 git add하면 tracking이 시작된다고 보면 된다는데 tracking
@@ -942,9 +967,9 @@ README가 stage에 올라갔다. 그것을 git입장에선 tracked file이 새�
 </div>
 </div>
 </div>
-<div id="outline-container-orgfb09b4a" class="outline-4">
-<h4 id="orgfb09b4a">Staging Modified files <font color="red">[git add]</font></h4>
-<div class="outline-text-4" id="text-orgfb09b4a">
+<div id="outline-container-org6ce42d6" class="outline-4">
+<h4 id="org6ce42d6">Staging Modified files <font color="red">[git add]</font></h4>
+<div class="outline-text-4" id="text-org6ce42d6">
 <div class="note">
 <p>
 untracked된 파일, 그러니까 기존에 없던 파일,스케치에 없던 채색을 하고 stage에
@@ -1021,9 +1046,9 @@ commit을 해서 새로운 commit으로 저장하면 되는 것이다.
 </div>
 </div>
 </div>
-<div id="outline-container-org56ec002" class="outline-4">
-<h4 id="org56ec002">Short Status</h4>
-<div class="outline-text-4" id="text-org56ec002">
+<div id="outline-container-orgb432fde" class="outline-4">
+<h4 id="orgb432fde">Short Status</h4>
+<div class="outline-text-4" id="text-orgb432fde">
 <div class="note">
 <p>
 status 정보를 좀 더 간단히 보여줄 수 있다.
@@ -1040,9 +1065,9 @@ status 정보를 좀 더 간단히 보여줄 수 있다.
 </div>
 </div>
 </div>
-<div id="outline-container-orgfb822c3" class="outline-4">
-<h4 id="orgfb822c3">Ignoring Files <font color="red">[중요]</font></h4>
-<div class="outline-text-4" id="text-orgfb822c3">
+<div id="outline-container-orgf40c62b" class="outline-4">
+<h4 id="orgf40c62b">Ignoring Files <font color="red">[중요]</font></h4>
+<div class="outline-text-4" id="text-orgf40c62b">
 <div class="note">
 <p>
 이번에 설명할 내용은 실제 많이 사용된다. 저장하고 싶지 않은 파일들, git status로
@@ -1097,9 +1122,9 @@ recursive하게 적용된다. subdirectory마다 .gitignore파일을 둘 수도 
 </div>
 </div>
 </div>
-<div id="outline-container-org4489dba" class="outline-4">
-<h4 id="org4489dba">Viewing your staged and unstaged changes <font color="red">[git diff]</font></h4>
-<div class="outline-text-4" id="text-org4489dba">
+<div id="outline-container-orga144b0a" class="outline-4">
+<h4 id="orga144b0a">Viewing your staged and unstaged changes <font color="red">[git diff]</font></h4>
+<div class="outline-text-4" id="text-orga144b0a">
 <div class="note">
 <p>
 git status는 save하기 위해 어떤것들이 추가되었고, 변경되었고, 어떤게 삭제
@@ -1285,9 +1310,9 @@ commit사이의 비교는 git diff로는 알 수 없다. 이럴 경우 option을
 </div>
 </div>
 </div>
-<div id="outline-container-orga4cde33" class="outline-4">
-<h4 id="orga4cde33">Commiting Your Changes. <font color="red">[git commit]</font></h4>
-<div class="outline-text-4" id="text-orga4cde33">
+<div id="outline-container-org3c6720e" class="outline-4">
+<h4 id="org3c6720e">Commiting Your Changes. <font color="red">[git commit]</font></h4>
+<div class="outline-text-4" id="text-org3c6720e">
 <div class="note">
 <p>
 이제 저장하는 것을 배울 차례다. 저장을 git에서는 commit(동사)한다고 한다.
@@ -1303,23 +1328,23 @@ git commit을 실행하면 자동으로 연결된 editor가 실행되게 된다.
 귀찮기 때문에 보통은 다음과 같은 명령을 쓴다.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">git commit -m <span style="color: #61CE3C;">" blah blah "</span>
+<pre class="src src-sh">git commit -m <span style="color: #CC9393;">" blah blah "</span>
 </pre>
 </div>
 
 </div>
 </div>
 </div>
-<div id="outline-container-orgd3e0f27" class="outline-4">
-<h4 id="orgd3e0f27">Skipping the Staging Area <font color="red">[일종의 commit]</font></h4>
-<div class="outline-text-4" id="text-orgd3e0f27">
+<div id="outline-container-org6e34421" class="outline-4">
+<h4 id="org6e34421">Skipping the Staging Area <font color="red">[일종의 commit]</font></h4>
+<div class="outline-text-4" id="text-org6e34421">
 <p>
 저장하는 방식은 stage area의 파일을 git commit으로 저장하는 것이다. 다른
 방식도 있다. staging area를 사용하지 않고 바로 파일을 저장(commit)하는 
 방식이다.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">git commit -a -m <span style="color: #61CE3C;">" blah blah "</span>
+<pre class="src src-sh">git commit -a -m <span style="color: #CC9393;">" blah blah "</span>
 </pre>
 </div>
 <p>
@@ -1327,9 +1352,9 @@ git commit을 실행하면 자동으로 연결된 editor가 실행되게 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-org60f8af6" class="outline-4">
-<h4 id="org60f8af6">Removing Files  <font color="red">[git rm]</font></h4>
-<div class="outline-text-4" id="text-org60f8af6">
+<div id="outline-container-orgfcc9bdd" class="outline-4">
+<h4 id="orgfcc9bdd">Removing Files  <font color="red">[git rm]</font></h4>
+<div class="outline-text-4" id="text-orgfcc9bdd">
 <div class="note">
 <p>
 rm은 파일을 지우는 명령어다. git rm도 동일하게 파일을 지우는 명령어일까?
@@ -1478,9 +1503,9 @@ git rm을 사용해서 하나의 파일만 지우는 경우는 많지 않을 것
 </div>
 </div>
 </div>
-<div id="outline-container-org7f83a5d" class="outline-4">
-<h4 id="org7f83a5d">Moving Files<font color="red">[git mv]</font></h4>
-<div class="outline-text-4" id="text-org7f83a5d">
+<div id="outline-container-org2cc2ae8" class="outline-4">
+<h4 id="org2cc2ae8">Moving Files<font color="red">[git mv]</font></h4>
+<div class="outline-text-4" id="text-org2cc2ae8">
 <div class="note">
 <p>
 mv 명령어는 file이나 folder를 이동하거나 명령어다. 그런데 이런 명령어가
@@ -1541,9 +1566,9 @@ rename이라는 메시지가 stage영역에 남아 있는 것을 볼 수 있다.
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb430d1" class="outline-3">
-<h3 id="orgdb430d1"><span class="section-number-3">2.3</span> Viewing the Commit History <font color="red">[git log]</font></h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-org1eef2cc" class="outline-3">
+<h3 id="org1eef2cc"><span class="section-number-3">3.3</span> Viewing the Commit History <font color="red">[git log]</font></h3>
+<div class="outline-text-3" id="text-3-3">
 <div class="note">
 <p>
 <font color="red">[git log (default)]</font>
@@ -1712,9 +1737,9 @@ git log에는 위에서 살펴본 &#x2013;pretty, &#x2013;graph말고도 많은 
 
 </div>
 </div>
-<div id="outline-container-orga9fd8d1" class="outline-4">
-<h4 id="orga9fd8d1">Limiting Log output <font color="red">[git log ]</font></h4>
-<div class="outline-text-4" id="text-orga9fd8d1">
+<div id="outline-container-org73c8ff7" class="outline-4">
+<h4 id="org73c8ff7">Limiting Log output <font color="red">[git log ]</font></h4>
+<div class="outline-text-4" id="text-org73c8ff7">
 <div class="note">
 <p>
 Linmiting이란 건 그냥 filtering한다고 보면 된다.
@@ -1796,9 +1821,9 @@ git log &#x2013;grep 옵션은 commit message를 찾는 용도로 주로 쓰인�
 </div>
 </div>
 </div>
-<div id="outline-container-orgf50f87b" class="outline-3">
-<h3 id="orgf50f87b"><span class="section-number-3">2.4</span> Undoing Things <font color="red">[git commit --amend]</font></h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-orga5d49c4" class="outline-3">
+<h3 id="orga5d49c4"><span class="section-number-3">3.4</span> Undoing Things <font color="red">[git commit --amend]</font></h3>
+<div class="outline-text-3" id="text-3-4">
 <div class="note">
 <p>
 git에서 do는 working area에서 staging area로, staging area에서 commit으로
@@ -1937,9 +1962,9 @@ version을 의미한다. 자기실수로 인해서 version을 만든다는건 �
 
 </div>
 </div>
-<div id="outline-container-orgf8ecebc" class="outline-4">
-<h4 id="orgf8ecebc">Unstaging a Staged File <font color="red">[git reset Head]</font></h4>
-<div class="outline-text-4" id="text-orgf8ecebc">
+<div id="outline-container-org6c58a1c" class="outline-4">
+<h4 id="org6c58a1c">Unstaging a Staged File <font color="red">[git reset Head]</font></h4>
+<div class="outline-text-4" id="text-org6c58a1c">
 <div class="note">
 <p>
 그럼 staging에 올라온 파일을 다시 내릴려면 어떻게 할까?
@@ -1981,9 +2006,9 @@ version을 의미한다. 자기실수로 인해서 version을 만든다는건 �
 </div>
 </div>
 
-<div id="outline-container-org932a4ec" class="outline-4">
-<h4 id="org932a4ec">Unmodifying a Modified File. <font color="red">[git checkout]</font></h4>
-<div class="outline-text-4" id="text-org932a4ec">
+<div id="outline-container-org38ec9f9" class="outline-4">
+<h4 id="org38ec9f9">Unmodifying a Modified File. <font color="red">[git checkout]</font></h4>
+<div class="outline-text-4" id="text-org38ec9f9">
 <div class="note">
 <p>
 위에서 git reset Head &lt;file&gt;을 사용하면 staging area에서 파일이 없어진다.
@@ -2010,16 +2035,24 @@ git checkout으로 commit과 동일한 파일로 바꿀 수 있다. 물론 그�
 </div>
 </div>
 
-<div id="outline-container-org6ce9319" class="outline-3">
-<h3 id="org6ce9319"><span class="section-number-3">2.5</span> Working with Remotes</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-org36f164a" class="outline-3">
+<h3 id="org36f164a"><span class="section-number-3">3.5</span> Working with Remotes</h3>
+<div class="outline-text-3" id="text-3-5">
 <div class="note">
 <p>
-원격에 저장소가 있는 경우는 주로 협업하는 경우에 많이 사용된다. 공동의 저장소를
-유지할려면 관리 기술이 필요하다. 이것을 배울것이다. 원격이라는 것은 반드시 외부를
-뜻하는 건 아니다. 지금 local에서도 원격 저장소를 만들 수 있다.
+원격에 저장소가 있는 경우는 주로 협업하는 경우에 많이
+사용된다. 공동의 저장소를 유지할려면 관리 기술이 필요하다. 이것을
+배울것이다. 원격이라는 것은 반드시 외부를 뜻하는 건 아니다. 지금
+local에서도 원격 저장소를 만들 수 있다. 다만, repository를 접근할 때 URL로
+접근하면, protocol을 이용해서 접근하면, remote라고 본다.
 </p>
 
+</div>
+</div>
+<div id="outline-container-org11a0b39" class="outline-4">
+<h4 id="org11a0b39">Showing Your Remotes</h4>
+<div class="outline-text-4" id="text-org11a0b39">
+<div class="note">
 <p>
 <font color="red">[git remote]</font>
 </p>
@@ -2030,77 +2063,303 @@ git checkout으로 commit과 동일한 파일로 바꿀 수 있다. 물론 그�
 </div>
 
 <p>
-원격 저장소의 server name을 출력한다. 보통은 origin이다. clone한 저장소의
-경우 테스트 할 수 있다.
+remote의 저장소 이름을 출력한다. 보통은 origin이다. clone한
+저장소의 경우 remote(URL저장소)의 이름은 origin으로 정해진다.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">git remote -v(verbose)
+</pre>
+</div>
+<p>
+이것은 remote의 이름과 더불어 URL저장소 출력해준다.
+</p>
+
+<p>
+책에 나온 예를 보자.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/remote.png" alt="remote.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 57: </span>git remote</p>
+</div>
+
+<p>
+위에서 보면 bakkdoor,cho45,defunkt는 remote name이다. remote
+저장소는 URL로 되어 있다. URL은 repository를
+나타낸다. URL저장소를 사용하는 명령어들이 url을 매번 입력하면
+불편하다. 길기 때문이다. 따라서, 이름이 필요하다. 그런데, 각각의
+이름마다 (fetch)와 (push)로 중복된 이름이 있는데 이것은 왜
+그런지는 모르겠다. 다만 원격 서버에서 repository를 가져올 때는
+fetch를 하고 원격서버에 repository를 보낼때는 push를 사용하는데,
+https는 단방향이라서 두개의 server name이 있는것이 아닐까 추측할
+뿐이다.  
 </p>
 
 </div>
 </div>
 </div>
-<div id="outline-container-orgf57eb9b" class="outline-3">
-<h3 id="orgf57eb9b"><span class="section-number-3">2.6</span> Tagging</h3>
+<div id="outline-container-org73dd113" class="outline-4">
+<h4 id="org73dd113">Adding Remote Repositories</h4>
+<div class="outline-text-4" id="text-org73dd113">
+<div class="note">
+
+<div class="figure">
+<p><img src="./img/remote1.png" alt="remote1.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 58: </span>remote repository</p>
 </div>
 
-<div id="outline-container-orgf6b4734" class="outline-3">
-<h3 id="orgf6b4734"><span class="section-number-3">2.7</span> Git Aliases</h3>
+<p>
+Network를 통한 외부 서버의 repository에 접근하려면, 외부서버의
+repository를 가리키는 무언가가 필요하다. 그 무언가는
+URL주소다. URL주소는 접속 protocol과 repository name이 함께
+기술되어 있다. repository name에는 디렉토리 path도 기술되는데,
+사용자도 하나의 폴더라는 것도 유의해야 한다. local의 repository는
+project의 이름만을 기술하는 것과는 다르다.
+</p>
+
+<p>
+이제 설명을 해보자. 원격의 repository가 있고, 우리가 그
+repository에 접근해서 project를 가져오려면 제일 먼저 해야 하는
+것은 원격 repository의 이름과 URL을 등록해서 prject를 가져올 수
+있어야 한다. 이 이름과 URL을 등록하는 과정이 git remte add이다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/remote2.png" alt="remote2.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 59: </span>remote add example</p>
 </div>
 
-<div id="outline-container-org9475efc" class="outline-3">
-<h3 id="org9475efc"><span class="section-number-3">2.8</span> Summary</h3>
+<p>
+위의 예를 보면, bp라는 이름과 repository의 위치를 알려주는 URL을 등록하는
+것을 볼 수 있다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/remote3.png" alt="remote3.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 60: </span>remote fetch (remote name)</p>
+</div>
+
+<p>
+git fetch는 해당 프로젝트를 가져온다. git remote add로 remote
+name과 URL을 이미 등록시켜 주었기에 가능한 것이다.
+</p>
+
+</div>
 </div>
 </div>
 
-<div id="outline-container-orgeadf136" class="outline-2">
-<h2 id="orgeadf136"><span class="section-number-2">3</span> Git Branching</h2>
+<div id="outline-container-org0d0447b" class="outline-4">
+<h4 id="org0d0447b">Fetching and Pulling from Your Remotes</h4>
+<div class="outline-text-4" id="text-org0d0447b">
+<div class="note">
+<p>
+<font color="red">[git clone vs git fetch]</font>
+</p>
+<pre class="example">
+git clone = git add origin URL + git fetch origin + git checkout
+git fetch = (download) ;; git add로 이미 만들어진 remote name이 반드시 필요.
+</pre>
+<p>
+git clone은 git add를 하고, fetch하고 checkout하는 연속적
+과정이다.  git fetch는 단지 project를 다운로드 할
+뿐이다. merge하진 않는다. 반면, pull은 merge를 한다. merge는
+remote repository와 local의 repository를 merge한다. merge에는
+3가지가 있다.
+잠깐 merge를 살펴보자.
+</p>
+
+<p>
+(1) fast-forward
+</p>
+
+<div class="figure">
+<p><img src="./img/merge1.png" alt="merge1.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 61: </span>fast-foward</p>
 </div>
 
-<div id="outline-container-org44c79e9" class="outline-2">
-<h2 id="org44c79e9"><span class="section-number-2">4</span> Git on the Server</h2>
+
+<p>
+(2) 병합커밋
+</p>
+
+
+<div class="figure">
+<p><img src="./img/merge2.png" alt="merge2.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 62: </span>병합커밋</p>
 </div>
 
-<div id="outline-container-org7743e6e" class="outline-2">
-<h2 id="org7743e6e"><span class="section-number-2">5</span> Distributed Git</h2>
+<p>
+merge는 fast-forward와 병합 커밋 2개가 있다.
+</p>
+
+<p>
+git pull을 하면 기존의 local repository와 remote repository를
+merge한다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org7bd2a3b" class="outline-4">
+<h4 id="org7bd2a3b">Pushing to Your Remotes</h4>
+<div class="outline-text-4" id="text-org7bd2a3b">
+<div class="note">
+<p>
+push는 다른 사람과 공유하기위해서 서버에 commit들을 올린다. write
+access permission이 있어야 하고, fast-forward를 할수 있게 한 상태에서
+push를 해야 한다고 한다. 더 자세한 내용은 branch에서 설명된다고 한다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgd61b089" class="outline-4">
+<h4 id="orgd61b089">Inspecting a Remote</h4>
+<div class="outline-text-4" id="text-orgd61b089">
+<div class="note">
+<p>
+remote에 대해 자세히 알고 싶을때 git remote show를 쓴다.
+</p>
+<pre class="example">
+git remote show origin
+</pre>
+
+<p>
+한번 책에 있는 것을 봐보자.
+</p>
+
+<div class="figure">
+<p><img src="./img/remote4.png" alt="remote4.png" width="600px" />
+</p>
+<p><span class="figure-number">Figure 63: </span>remote show</p>
 </div>
 
-<div id="outline-container-org24d4ec6" class="outline-2">
-<h2 id="org24d4ec6"><span class="section-number-2">6</span> GitHub</h2>
+<p>
+보면, remote의 URL이 나와 있다. URL은 연결하는 방법(protocol)과
+위치(directory path)를 나타내는 정보를 제공한다. 또한 branch정보도
+나와있다.  branch는 repository가 여러개의 commit들이 모여있지만,
+폴더마냥, 특정 commit만 가지고 있는게 branch이다. HEAD는 active한
+branch를 가리킨다. 위에서는 HEAD branch가 master로 가리키는 것을
+보여준다. Fetch(download)할 remote와 push할 remote도 보여준다.
+'git pull'을 하게 되면, remote master branch와 local master
+branch를 merge한다고 보여준다. 'git push'도 local의 master
+branch를 remote의 master branch로 push하는데, 이미 동기화가
+되어있다는(up to date) 정보도 알려 준다.  git push나 pull을 할때,
+remote name과 branch를 지정하지 않아도 자동으로 수행하는데, 그
+정보가 git remote show를 통해 알 수 있다는데, 정확히 모르겠다.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgb1851b2" class="outline-4">
+<h4 id="orgb1851b2">Renaming and Removing Remotes</h4>
+<div class="outline-text-4" id="text-orgb1851b2">
+<div class="note">
+<p>
+우리가 remote의 repository를 git add로 등록할 때, shortname과
+URL을 기술했다. 그리고 그 shortname을 git fetch로
+downloand했다. 그럼 그 short name을 바꿀 수 있다. git remote
+rename을 사용하면 된다.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/remote5.png" alt="remote5.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 64: </span>git remote rename</p>
 </div>
 
-<div id="outline-container-org6067e5f" class="outline-2">
-<h2 id="org6067e5f"><span class="section-number-2">7</span> Git Tools</h2>
+<p>
+remote를 삭제할 수도 있다. 삭제할때도 shortname을 사용한다.
+삭제하는 이유는 여러가지가 있을 수 있다. server를 옯겼던가, contributer가 더이상
+운영을 하지 않던가&#x2026;
+</p>
+
+<div class="figure">
+<p><img src="./img/remote6.png" alt="remote6.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 65: </span>remote delte</p>
 </div>
 
-<div id="outline-container-orgc89068e" class="outline-2">
-<h2 id="orgc89068e"><span class="section-number-2">8</span> Customize Git</h2>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf228670" class="outline-3">
+<h3 id="orgf228670"><span class="section-number-3">3.6</span> Tagging</h3>
 </div>
 
-<div id="outline-container-orgbd75a60" class="outline-2">
-<h2 id="orgbd75a60"><span class="section-number-2">9</span> Git and Other Systems</h2>
+<div id="outline-container-org678b566" class="outline-3">
+<h3 id="org678b566"><span class="section-number-3">3.7</span> Git Aliases</h3>
 </div>
 
-<div id="outline-container-orgd918bc2" class="outline-2">
-<h2 id="orgd918bc2"><span class="section-number-2">10</span> Git Internals</h2>
+<div id="outline-container-orga69fe09" class="outline-3">
+<h3 id="orga69fe09"><span class="section-number-3">3.8</span> Summary</h3>
+</div>
 </div>
 
-<div id="outline-container-org7585212" class="outline-2">
-<h2 id="org7585212"><span class="section-number-2">11</span> Git in other Environments</h2>
+<div id="outline-container-orgc1df3c5" class="outline-2">
+<h2 id="orgc1df3c5"><span class="section-number-2">4</span> Git Branching</h2>
 </div>
 
-<div id="outline-container-org89c5522" class="outline-2">
-<h2 id="org89c5522"><span class="section-number-2">12</span> Embedding Git in your Applications</h2>
+<div id="outline-container-org2e00e8c" class="outline-2">
+<h2 id="org2e00e8c"><span class="section-number-2">5</span> Git on the Server</h2>
 </div>
 
-<div id="outline-container-org2960c6f" class="outline-2">
-<h2 id="org2960c6f"><span class="section-number-2">13</span> Git Commands</h2>
+<div id="outline-container-org2f40064" class="outline-2">
+<h2 id="org2f40064"><span class="section-number-2">6</span> Distributed Git</h2>
 </div>
 
-<div id="outline-container-org0383bc7" class="outline-2">
-<h2 id="org0383bc7"><span class="section-number-2">14</span> </h2>
+<div id="outline-container-org1f57b42" class="outline-2">
+<h2 id="org1f57b42"><span class="section-number-2">7</span> GitHub</h2>
+</div>
+
+<div id="outline-container-orgbe6b851" class="outline-2">
+<h2 id="orgbe6b851"><span class="section-number-2">8</span> Git Tools</h2>
+</div>
+
+<div id="outline-container-orgeb0705a" class="outline-2">
+<h2 id="orgeb0705a"><span class="section-number-2">9</span> Customize Git</h2>
+</div>
+
+<div id="outline-container-org7a46dcc" class="outline-2">
+<h2 id="org7a46dcc"><span class="section-number-2">10</span> Git and Other Systems</h2>
+</div>
+
+<div id="outline-container-orgf5e151e" class="outline-2">
+<h2 id="orgf5e151e"><span class="section-number-2">11</span> Git Internals</h2>
+</div>
+
+<div id="outline-container-orgba8f673" class="outline-2">
+<h2 id="orgba8f673"><span class="section-number-2">12</span> Git in other Environments</h2>
+</div>
+
+<div id="outline-container-orgb839128" class="outline-2">
+<h2 id="orgb839128"><span class="section-number-2">13</span> Embedding Git in your Applications</h2>
+</div>
+
+<div id="outline-container-orgf30da06" class="outline-2">
+<h2 id="orgf30da06"><span class="section-number-2">14</span> Git Commands</h2>
+</div>
+
+<div id="outline-container-org38c2bcd" class="outline-2">
+<h2 id="org38c2bcd"><span class="section-number-2">15</span> </h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-20 Thu 10:46</p>
+<p class="date">Created: 2019-01-08 Tue 19:45</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

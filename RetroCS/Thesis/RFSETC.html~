@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-12-29 Sat 14:14 -->
+<!-- 2018-12-29 Sat 21:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part1</title>
@@ -243,19 +243,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org99bce81">1. Review</a>
+<li><a href="#orgad4b4c9">1. Review</a>
 <ul>
-<li><a href="#orgdf94aa1">1.1. 문제(problem)</a></li>
-<li><a href="#org20ccdaa">1.2. 답(values)</a></li>
-<li><a href="#orgc1fda49">1.3. 문제의 기술 1 - expressions</a></li>
-<li><a href="#org67e9c91">1.4. 문제의 기술2 - function(1)</a></li>
-<li><a href="#orgdbe2d7d">1.5. 문제의 기술2 - function과 expression의 비교</a></li>
-<li><a href="#orgc78a282">1.6. 함수의 사용과 특징.</a></li>
-<li><a href="#org29a5101">1.7. 기타</a></li>
-<li><a href="#org5ac1ef2">1.8. code와 data 그리고 data structure 그리고 알고리즘.</a></li>
+<li><a href="#orgca7598a">1.1. 문제(problem)</a></li>
+<li><a href="#orga68a787">1.2. 답(values)</a></li>
+<li><a href="#orgf9cb729">1.3. 문제의 기술 1 - expressions</a></li>
+<li><a href="#org67cf9a3">1.4. 문제의 기술2 - function(1)</a></li>
+<li><a href="#orgdf67308">1.5. 문제의 기술2 - function과 expression의 비교</a></li>
+<li><a href="#org2f022cd">1.6. 함수의 사용과 특징.</a></li>
+<li><a href="#org068c152">1.7. 기타</a></li>
+<li><a href="#org934b366">1.8. code와 data 그리고 data structure 그리고 알고리즘.</a></li>
 </ul>
 </li>
-<li><a href="#org619b051">2. Introduction</a></li>
+<li><a href="#orga233071">2. Introduction</a></li>
 </ul>
 </div>
 </div>
@@ -271,8 +271,8 @@ for the JavaScript code in this tag.
 ------&#x2013;&#x2014;*
 </p>
 
-<div id="outline-container-org99bce81" class="outline-2">
-<h2 id="org99bce81"><span class="section-number-2">1</span> Review</h2>
+<div id="outline-container-orgad4b4c9" class="outline-2">
+<h2 id="orgad4b4c9"><span class="section-number-2">1</span> Review</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 #+begin<sub>note</sub>
@@ -281,8 +281,8 @@ for the JavaScript code in this tag.
 </p>
 </div>
 
-<div id="outline-container-orgdf94aa1" class="outline-3">
-<h3 id="orgdf94aa1"><span class="section-number-3">1.1</span> 문제(problem)</h3>
+<div id="outline-container-orgca7598a" class="outline-3">
+<h3 id="orgca7598a"><span class="section-number-3">1.1</span> 문제(problem)</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="note">
 <p>
@@ -320,8 +320,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org20ccdaa" class="outline-3">
-<h3 id="org20ccdaa"><span class="section-number-3">1.2</span> 답(values)</h3>
+<div id="outline-container-orga68a787" class="outline-3">
+<h3 id="orga68a787"><span class="section-number-3">1.2</span> 답(values)</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="note">
 <p>
@@ -347,8 +347,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc1fda49" class="outline-3">
-<h3 id="orgc1fda49"><span class="section-number-3">1.3</span> 문제의 기술 1 - expressions</h3>
+<div id="outline-container-orgf9cb729" class="outline-3">
+<h3 id="orgf9cb729"><span class="section-number-3">1.3</span> 문제의 기술 1 - expressions</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="note">
 <p>
@@ -461,8 +461,8 @@ expression이라고 하는 것을 아는게 중요하다.
 </div>
 
 
-<div id="outline-container-org67e9c91" class="outline-3">
-<h3 id="org67e9c91"><span class="section-number-3">1.4</span> 문제의 기술2 - function(1)</h3>
+<div id="outline-container-org67cf9a3" class="outline-3">
+<h3 id="org67cf9a3"><span class="section-number-3">1.4</span> 문제의 기술2 - function(1)</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="note">
 <p>
@@ -486,8 +486,8 @@ domain-specific하기 보단 개념적이다. 아래 그림처럼 개념적이�
 </div>
 </div>
 
-<div id="outline-container-orgdbe2d7d" class="outline-3">
-<h3 id="orgdbe2d7d"><span class="section-number-3">1.5</span> 문제의 기술2 - function과 expression의 비교</h3>
+<div id="outline-container-orgdf67308" class="outline-3">
+<h3 id="orgdf67308"><span class="section-number-3">1.5</span> 문제의 기술2 - function과 expression의 비교</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 <font color="red">[functions vs expressions: 일반화]</font>
@@ -552,8 +552,8 @@ number =&gt; number로 모든 함수가 표현.
 </div>
 </div>
 
-<div id="outline-container-orgc78a282" class="outline-3">
-<h3 id="orgc78a282"><span class="section-number-3">1.6</span> 함수의 사용과 특징.</h3>
+<div id="outline-container-org2f022cd" class="outline-3">
+<h3 id="org2f022cd"><span class="section-number-3">1.6</span> 함수의 사용과 특징.</h3>
 <div class="outline-text-3" id="text-1-6">
 <div class="note">
 <p>
@@ -594,8 +594,8 @@ y = x + 1
 </div>
 </div>
 </div>
-<div id="outline-container-org29a5101" class="outline-3">
-<h3 id="org29a5101"><span class="section-number-3">1.7</span> 기타</h3>
+<div id="outline-container-org068c152" class="outline-3">
+<h3 id="org068c152"><span class="section-number-3">1.7</span> 기타</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 <font color="red">[ Logic]</font>
@@ -643,8 +643,8 @@ logic과 predicate logic 모두에 대한 기반 연구를 했다. 그런데 Ari
 </div>
 </div>
 </div>
-<div id="outline-container-org5ac1ef2" class="outline-3">
-<h3 id="org5ac1ef2"><span class="section-number-3">1.8</span> code와 data 그리고 data structure 그리고 알고리즘.</h3>
+<div id="outline-container-org934b366" class="outline-3">
+<h3 id="org934b366"><span class="section-number-3">1.8</span> code와 data 그리고 data structure 그리고 알고리즘.</h3>
 <div class="outline-text-3" id="text-1-8">
 <div class="note">
 <p>
@@ -729,6 +729,44 @@ structure의 종류는 많다. array,list,graph,tree, db도 마찬가지다. 이
 만들어질 수도 있다. 
 </p>
 
+<p>
+<font color="red">[data types?]</font>
+</p>
+
+<p>
+#+begin<sub>note</sub>
+ programming language는 3개의 학문으로부터 시작되었다. 3개의 학문은 고유한 언어와 values를 가지고 
+ 있고, operator도 각자 가지고 있다. 대부분의 programming languages는 이런 특성들을 그대로 물려받았다.
+ 3개의 학문을 type이라고 부른다. 무슨말인고 하니, propositional logic의 value는 true/false고,
+ 이 value들의 있는 공간에서 operator는 and,or,not&#x2026;같은 connectives가 있다. connectives는 물론
+ 함수로 표현 가능하다. 수학의 경우도, number라는 value가 있고 number라는 공간에서 +,-,*,/라는 operator
+ 가 존재한다. predicate logic에선 value가 string이고, string공간에선 많은 operator가 존재한다.
+ 각각의 type은 value공간과 operator를 포함한다. programming language에서 일반적인 type은
+ boole type, String type, number로는 int,float,double이 존재하고 각각의 type에 맞는 operator
+ 가 존재하게 된다.
+</p>
+
+</div>
+
+<p>
+<font color="red">[data type과 name 그리고 operator]</font>
+</p>
+<div class="note">
+<p>
+value들은 이름을 가질수 있다고 했다. constant와 variable이다. 그럼 type이 있는 현대 언어에서
+constant와 variable에도 type이 있는가? 그렇다. 이름을 붙여서 value를 사용하더라도,
+type을 명시해 주어야 한다. 그럼 operator는 어떤가? operator는 해당 value를 조작하는
+함수(명령어)이기 때문에 value에 영향을 받는다. 예를 들어보자.
+</p>
+<pre class="example">
+int num =3;
+string str ="str";
+
+num + str이 가능할까? 불가능하다.
+</pre>
+
+</div>
+
 <div class="important">
 <p>
 아무것도 없는 상태에서, 태초 지구가 생겼을때라는 비유는 맞지 않지만, 바구니와 사과만 있었다고 하자.
@@ -749,13 +787,14 @@ expression, function을 모두 symbol로 표현한다.
 </p>
 
 </div>
-
+<p>
+#+end<sub>note</sub>
+</p>
 </div>
 </div>
 </div>
-</div>
-<div id="outline-container-org619b051" class="outline-2">
-<h2 id="org619b051"><span class="section-number-2">2</span> Introduction</h2>
+<div id="outline-container-orga233071" class="outline-2">
+<h2 id="orga233071"><span class="section-number-2">2</span> Introduction</h2>
 <div class="outline-text-2" id="text-2">
 <div class="note">
 <p>
@@ -811,7 +850,7 @@ recursive하게 정의할 수 있기 때문이다.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Hoyoul Park</p>
-<p class="date">Created: 2018-12-29 Sat 14:14</p>
+<p class="date">Created: 2018-12-29 Sat 21:34</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

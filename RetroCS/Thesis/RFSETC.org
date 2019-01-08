@@ -15,7 +15,49 @@
 작성장소: Jeju
 날씨: cloudy
 -----------*
+ 
+* 기억
+#+begin_note
+모든 것은 value다.  value를 모아서 structure를 만드는데, structure도
+value다.  상수와 같은 value다. 아무렇게나 value를 모으기만하면
+structure가 되는가? 그렇지는 않다. Programming language는 모두 formal
+language이고 language를 구성하는 모든 것은 function으로 설명이
+가능하다. 특히 recursive function으로 모든 것을 정의하고
+사용한다. 임의의 문자로 language의 모든것을 정의하면 비효율적인
+자연어가 되어 버린다.  a, 한, ㅁㅇㄴㅁㄹ, adf...와 같은 특정 심볼에
+의미를 정의했다고 치자. 그러면 이 무한개의 심볼중에 특정 심볼을 찾는
+과정은 brute force를 사용해야 한다. 그래서 recursive function을
+사용하면 모든 구조는 tree형태로 표현 가능하고, tree에서 심볼을 찾는
+것은 logn, nlogn으로 으로 가능하게 된다. structure로 다시 돌아와서
+structure도 recursive function으로 표현 가능하다. array는 그냥 값을
+일렬로 배열한것이긴 하다. 그런데 값사이의 관계가 있다.  이런 관계는
+function으로 특히 recursive function으로 표현
+가능하다. succesor함수다.  successor함수는 재귀함수다. 재귀함수는
+tree라고 했다. 그럼 array도 트리인가? 그렇다.  unary tree로 볼 수
+있다. recursive function은 maccarthy가 말한 partial function 에
+해당된다. partial function인 이유는, 재귀합수는 자기 자신으로 표현되거나, 
+특정값으로 표현(base case)로 표현되기 때문이다. 그림으로 표현해보자.
 
+#+CAPTION: array structure by recursive function
+#+ATTR_HTML: :width 500px
+[[./img/mccarthy/structure.png]]
+
+unary tree도, binary tree, 자식이 많은 tree...모두 recursive로 표현 가능하다.
+binary tree는 자기자신을 정의하는게 2개가 있으면 binary tree로 표현된다. 만일
+여러개면 muti-fold tree가 된다.map함수 처럼..
+
+#+BEGIN_SRC 
+f(x) = f(x-1) + f(x-2) [자식이 2개인 tree]
+
+f(x) = f(x-3)+f(x-2)+f(x-1)...[자식이 여러개인 tree]
+#+END_SRC
+
+function도 최종값은 value다. function은 변수와 같은 value다.
+function은 인자에 따라 값이 변하기 때문이다. 
+
+class도 최종값은 value다. 
+
+#+end_note
 * Review
 #+begin_note
 이 논문은 lisp의 기본원리를 설명한다. 이 논문을 이해하기 위해선 기본적으로 알아야

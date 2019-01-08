@@ -14,6 +14,14 @@
 작성장소: Jeju
 날씨: cloudy
 -----------*
+
+* 이해해야 할것
+ #+begin_important
+git은 저장 시스템이다. git을 이해하는 한가지 방식은 비유와 비교를 통한 이해다.
+물론 비유에는 한계가 있다. 완전히 동일하지 않기 때문이다. 
+포토샵에서 아니 어떤 응용프로그램에서 저장은 쉽다. git 저장 시스템을 일반응용프로그램의
+저장 방식과 비유와 비교를 통해서 이해를 해본다.
+ #+end_important
 * Getting Started
 ** About Version Control
 *** Local VCS
@@ -1009,32 +1017,158 @@
     #+end_note
 
 ** Working with Remotes
-   #+begin_note
-   원격에 저장소가 있는 경우는 주로 협업하는 경우에 많이 사용된다. 공동의 저장소를
-   유지할려면 관리 기술이 필요하다. 이것을 배울것이다. 원격이라는 것은 반드시 외부를
-   뜻하는 건 아니다. 지금 local에서도 원격 저장소를 만들 수 있다.
-
-   {{{color(red,[git remote])}}}
+    #+begin_note
+    원격에 저장소가 있는 경우는 주로 협업하는 경우에 많이
+    사용된다. 공동의 저장소를 유지할려면 관리 기술이 필요하다. 이것을
+    배울것이다. 원격이라는 것은 반드시 외부를 뜻하는 건 아니다. 지금
+    local에서도 원격 저장소를 만들 수 있다. 다만, repository를 접근할 때 URL로
+    접근하면, protocol을 이용해서 접근하면, remote라고 본다.
+    #+end_note
+*** Showing Your Remotes
+    #+begin_note
+     {{{color(red,[git remote])}}}
    
-   #+BEGIN_SRC sh
-   git remote
-   #+END_SRC
+     #+BEGIN_SRC sh
+     git remote
+     #+END_SRC
 
-   원격 저장소의 server name을 출력한다. 보통은 origin이다. clone한 저장소의
-   경우 테스트 할 수 있다.
+     remote의 저장소 이름을 출력한다. 보통은 origin이다. clone한
+     저장소의 경우 remote(URL저장소)의 이름은 origin으로 정해진다.
 
-   #+BEGIN_SRC sh
-   git remote -v
-   #+END_SRC
-   이것은 server의 이름과 더불어 URL도 출력해준다.
+     #+BEGIN_SRC sh
+     git remote -v(verbose)
+     #+END_SRC
+     이것은 remote의 이름과 더불어 URL저장소 출력해준다.
    
-   책에 나온 예를 보자.
+     책에 나온 예를 보자.
 
-   #+CAPTION: git remote
-   #+ATTR_HTML: :width 600px
-   [[./img/remote.png]]
+     #+CAPTION: git remote
+     #+ATTR_HTML: :width 600px
+     [[./img/remote.png]]
 
-   #+end_note
+     위에서 보면 bakkdoor,cho45,defunkt는 remote name이다. remote
+     저장소는 URL로 되어 있다. URL은 repository를
+     나타낸다. URL저장소를 사용하는 명령어들이 url을 매번 입력하면
+     불편하다. 길기 때문이다. 따라서, 이름이 필요하다. 그런데, 각각의
+     이름마다 (fetch)와 (push)로 중복된 이름이 있는데 이것은 왜
+     그런지는 모르겠다. 다만 원격 서버에서 repository를 가져올 때는
+     fetch를 하고 원격서버에 repository를 보낼때는 push를 사용하는데,
+     https는 단방향이라서 두개의 server name이 있는것이 아닐까 추측할
+     뿐이다.  
+     #+end_note
+*** Adding Remote Repositories
+    #+begin_note
+    #+CAPTION: remote repository
+    #+ATTR_HTML: :width 600px
+    [[./img/remote1.png]]
+    
+    Network를 통한 외부 서버의 repository에 접근하려면, 외부서버의
+    repository를 가리키는 무언가가 필요하다. 그 무언가는
+    URL주소다. URL주소는 접속 protocol과 repository name이 함께
+    기술되어 있다. repository name에는 디렉토리 path도 기술되는데,
+    사용자도 하나의 폴더라는 것도 유의해야 한다. local의 repository는
+    project의 이름만을 기술하는 것과는 다르다.
+
+    이제 설명을 해보자. 원격의 repository가 있고, 우리가 그
+    repository에 접근해서 project를 가져오려면 제일 먼저 해야 하는
+    것은 원격 repository의 이름과 URL을 등록해서 prject를 가져올 수
+    있어야 한다. 이 이름과 URL을 등록하는 과정이 git remte add이다.
+
+    #+CAPTION: remote add example
+    #+ATTR_HTML: :width 600px
+    [[./img/remote2.png]]
+
+    위의 예를 보면, bp라는 이름과 repository의 위치를 알려주는 URL을 등록하는
+    것을 볼 수 있다.
+
+    #+CAPTION: remote fetch (remote name)
+    #+ATTR_HTML: :width 600px
+    [[./img/remote3.png]]
+
+    git fetch는 해당 프로젝트를 가져온다. git remote add로 remote
+    name과 URL을 이미 등록시켜 주었기에 가능한 것이다.
+    #+end_note
+
+*** Fetching and Pulling from Your Remotes
+    #+begin_note
+    {{{color(red,[git clone vs git fetch])}}}
+    #+BEGIN_SRC 
+    git clone = git add origin URL + git fetch origin + git checkout
+    git fetch = (download) ;; git add로 이미 만들어진 remote name이 반드시 필요.
+    #+END_SRC
+    git clone은 git add를 하고, fetch하고 checkout하는 연속적
+    과정이다.  git fetch는 단지 project를 다운로드 할
+    뿐이다. merge하진 않는다. 반면, pull은 merge를 한다. merge는
+    remote repository와 local의 repository를 merge한다. merge에는
+    3가지가 있다.
+    잠깐 merge를 살펴보자.
+
+    (1) fast-forward
+    #+CAPTION: fast-foward
+    #+ATTR_HTML: :width 600px
+    [[./img/merge1.png]]
+
+
+    (2) 병합커밋
+    
+    #+CAPTION: 병합커밋
+    #+ATTR_HTML: :width 600px
+    [[./img/merge2.png]]
+
+    merge는 fast-forward와 병합 커밋 2개가 있다.
+
+    git pull을 하면 기존의 local repository와 remote repository를
+    merge한다.
+    #+end_note
+*** Pushing to Your Remotes
+    #+begin_note
+    push는 다른 사람과 공유하기위해서 서버에 commit들을 올린다. write
+    access permission이 있어야 하고, fast-forward를 할수 있게 한 상태에서
+    push를 해야 한다고 한다. 더 자세한 내용은 branch에서 설명된다고 한다.
+    #+end_note
+*** Inspecting a Remote
+    #+begin_note
+    remote에 대해 자세히 알고 싶을때 git remote show를 쓴다.
+    #+BEGIN_SRC 
+    git remote show origin
+    #+END_SRC
+    
+    한번 책에 있는 것을 봐보자.
+    #+CAPTION: remote show
+    #+ATTR_HTML: :width 600px
+    [[./img/remote4.png]]
+
+    보면, remote의 URL이 나와 있다. URL은 연결하는 방법(protocol)과
+    위치(directory path)를 나타내는 정보를 제공한다. 또한 branch정보도
+    나와있다.  branch는 repository가 여러개의 commit들이 모여있지만,
+    폴더마냥, 특정 commit만 가지고 있는게 branch이다. HEAD는 active한
+    branch를 가리킨다. 위에서는 HEAD branch가 master로 가리키는 것을
+    보여준다. Fetch(download)할 remote와 push할 remote도 보여준다.
+    'git pull'을 하게 되면, remote master branch와 local master
+    branch를 merge한다고 보여준다. 'git push'도 local의 master
+    branch를 remote의 master branch로 push하는데, 이미 동기화가
+    되어있다는(up to date) 정보도 알려 준다.  git push나 pull을 할때,
+    remote name과 branch를 지정하지 않아도 자동으로 수행하는데, 그
+    정보가 git remote show를 통해 알 수 있다는데, 정확히 모르겠다.
+    #+end_note
+*** Renaming and Removing Remotes
+    #+begin_note
+    우리가 remote의 repository를 git add로 등록할 때, shortname과
+    URL을 기술했다. 그리고 그 shortname을 git fetch로
+    downloand했다. 그럼 그 short name을 바꿀 수 있다. git remote
+    rename을 사용하면 된다.
+
+    #+CAPTION: git remote rename
+    #+ATTR_HTML: :width 400px
+    [[./img/remote5.png]]
+
+    remote를 삭제할 수도 있다. 삭제할때도 shortname을 사용한다.
+    삭제하는 이유는 여러가지가 있을 수 있다. server를 옯겼던가, contributer가 더이상
+    운영을 하지 않던가...
+    #+CAPTION: remote delte
+    #+ATTR_HTML: :width 400px
+    [[./img/remote6.png]]
+    #+end_note
 ** Tagging
 
 ** Git Aliases 
